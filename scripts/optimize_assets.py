@@ -53,10 +53,10 @@ RASTER = {
     "hero-shop-merch": ("JSS_0212.jpg", [1000, 1900], "Merch collection hero"),
     "contact-beach": ("sunset-beach.png", [1250, 2500], "Contact page bottom background"),
     "about-palms": ("palm-trees.png", [1400, 2600], "About / sky and palm backdrop"),
+    "about-crowd": ("club.jpg", [514], "About / inline image after LIFE"),
     "about-chocolate": ("mushi-choco-milk-2.png", [640, 1070], "About / inline image before FLAVORS"),
     "about-cherry": ("cherry-2.png", [358], "About / inline image after FLAVORS"),
     "about-picnic": ("picnic.png", [646], "About / inline image after EVERYDAY"),
-    "about-ferris": ("ferris-wheel.png", [526], "About / inline image after MOMENTS INTO"),
     "about-peach-pack": ("mushi-peach-product.png", [378], "About / Peach Bliss pack in WE ARE MUSHI"),
     "hero-shop-all": ("Mushi-SHOP-HeroALL.jpg", [1280, 2576], "Shop All hero"),
     "hero-shop-gummies": ("Mushi-SHOP-HeroGUMMIES.jpg", [1280, 2576], "Gummies collection hero"),
@@ -126,8 +126,6 @@ PLACEHOLDERS = {
     "ugc-4": ("homepage-design-raster.png", (0.645, 0.7665, 0.795, 0.7900), "Instagram polaroid 4"),
     "ugc-5": ("homepage-design-raster.png", (0.855, 0.7610, 0.995, 0.7865), "Instagram polaroid 5"),
     "age-gate": ("age-gate-screenshot.png", (0.4995, 0.1210, 0.8360, 0.8715), "Age gate lifestyle image"),
-    "about-crowd": ("about-comp.png", (946 / 1366, 174 / 3676, 1146 / 1366, 278 / 3676), "About / inline image after LIFE (low-res crop, export needed)"),
-    "about-mouth": ("about-comp.png", (494 / 1366, 321 / 3676, 658 / 1366, 425 / 3676), "About / inline image after TASTES (low-res crop, export needed)"),
 }
 
 
@@ -223,6 +221,38 @@ def main():
             "usage": "Hero background video",
             "sources": ["/assets/video/hero-1080.mp4", "/assets/video/hero-540.mp4"],
             "poster": "/assets/video/hero-poster.webp", "endFrame": "/assets/video/hero-end.webp",
+        }
+        # About page: the same footage cropped to the mouth for the inline frame after TASTES.
+        crop = "crop=960:800:384:205,scale=600:500"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", video, "-vf", crop, "-c:v", "libx264", "-crf", "27",
+                        "-preset", "slow", "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-an",
+                        os.path.join(vdir, "about-mouth.mp4")], check=True)
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-sseof", "-0.2", "-i", video, "-vf", crop, "-frames:v", "1",
+                        "-update", "1", os.path.join(vdir, "_m.png")], check=True)
+        Image.open(os.path.join(vdir, "_m.png")).convert("RGB").save(os.path.join(vdir, "about-mouth-poster.webp"), "WEBP", quality=76, method=6)
+        os.remove(os.path.join(vdir, "_m.png"))
+        manifest["video"]["about-mouth"] = {
+            "original": "mushi-hero-video-gummie.mp4 (cropped to the mouth, 600x500)",
+            "usage": "About / inline video after TASTES",
+            "sources": ["/assets/video/about-mouth.mp4"], "poster": "/assets/video/about-mouth-poster.webp",
+        }
+
+    ferris = os.path.join(SRC, "ferris-wheel-video.mp4")
+    if os.path.exists(ferris):
+        # About page inline frame after MOMENTS INTO: cropped to the wheel, small, silent.
+        vdir = os.path.join(OUT, "video")
+        crop = "crop=1500:904:0:88,scale=498:300,fps=24"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-t", "8", "-i", ferris, "-vf", crop, "-c:v", "libx264", "-crf", "31",
+                        "-preset", "slow", "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-an",
+                        os.path.join(vdir, "about-ferris.mp4")], check=True)
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "2", "-i", ferris, "-vf", crop, "-frames:v", "1",
+                        "-update", "1", os.path.join(vdir, "_f.png")], check=True)
+        Image.open(os.path.join(vdir, "_f.png")).convert("RGB").save(os.path.join(vdir, "about-ferris-poster.webp"), "WEBP", quality=76, method=6)
+        os.remove(os.path.join(vdir, "_f.png"))
+        manifest["video"]["about-ferris"] = {
+            "original": "ferris-wheel-video.mp4 (H.264 1920x1080, 15.2s, 34.8 MB; first 8s, 498x300, no audio)",
+            "usage": "About / inline video after MOMENTS INTO",
+            "sources": ["/assets/video/about-ferris.mp4"], "poster": "/assets/video/about-ferris-poster.webp",
         }
 
     coach = os.path.join(SRC, "mushi-coaching-video-justin.mp4")

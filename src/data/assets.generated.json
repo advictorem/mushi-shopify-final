@@ -620,6 +620,21 @@
         }
       ]
     },
+    "about-crowd": {
+      "original": "club.jpg",
+      "usage": "About / inline image after LIFE",
+      "trimmed": false,
+      "width": 514,
+      "height": 256,
+      "aspectRatio": 2.0078,
+      "variants": [
+        {
+          "width": 514,
+          "webp": "/assets/img/about-crowd-514.webp",
+          "avif": "/assets/img/about-crowd-514.avif"
+        }
+      ]
+    },
     "about-chocolate": {
       "original": "mushi-choco-milk-2.png",
       "usage": "About / inline image before FLAVORS",
@@ -667,21 +682,6 @@
           "width": 646,
           "webp": "/assets/img/about-picnic-646.webp",
           "avif": "/assets/img/about-picnic-646.avif"
-        }
-      ]
-    },
-    "about-ferris": {
-      "original": "ferris-wheel.png",
-      "usage": "About / inline image after MOMENTS INTO",
-      "trimmed": false,
-      "width": 526,
-      "height": 396,
-      "aspectRatio": 1.3283,
-      "variants": [
-        {
-          "width": 526,
-          "webp": "/assets/img/about-ferris-526.webp",
-          "avif": "/assets/img/about-ferris-526.avif"
         }
       ]
     },
@@ -1234,22 +1234,6 @@
       "height": 600,
       "missing": true,
       "source": "cropped from design-source/reference/age-gate-screenshot.png"
-    },
-    "about-crowd": {
-      "usage": "About / inline image after LIFE (low-res crop, export needed)",
-      "file": "/assets/placeholder/about-crowd.webp",
-      "width": 200,
-      "height": 104,
-      "missing": true,
-      "source": "cropped from design-source/reference/about-comp.png"
-    },
-    "about-mouth": {
-      "usage": "About / inline image after TASTES (low-res crop, export needed)",
-      "file": "/assets/placeholder/about-mouth.webp",
-      "width": 164,
-      "height": 104,
-      "missing": true,
-      "source": "cropped from design-source/reference/about-comp.png"
     }
   },
   "video": {
@@ -1262,6 +1246,22 @@
       ],
       "poster": "/assets/video/hero-poster.webp",
       "endFrame": "/assets/video/hero-end.webp"
+    },
+    "about-mouth": {
+      "original": "mushi-hero-video-gummie.mp4 (cropped to the mouth, 600x500)",
+      "usage": "About / inline video after TASTES",
+      "sources": [
+        "/assets/video/about-mouth.mp4"
+      ],
+      "poster": "/assets/video/about-mouth-poster.webp"
+    },
+    "about-ferris": {
+      "original": "ferris-wheel-video.mp4 (H.264 1920x1080, 15.2s, 34.8 MB; first 8s, 498x300, no audio)",
+      "usage": "About / inline video after MOMENTS INTO",
+      "sources": [
+        "/assets/video/about-ferris.mp4"
+      ],
+      "poster": "/assets/video/about-ferris-poster.webp"
     },
     "coaching": {
       "original": "mushi-coaching-video-justin.mp4 (H.264 720x1280, 33.6s, with audio)",

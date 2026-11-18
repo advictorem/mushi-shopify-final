@@ -130,6 +130,6 @@ Built from `design-source/reference/about-comp.png`. Route: `/pages/about` (also
 **Not checked / limits**
 - Safari, Firefox, iOS and Android were not run (not available in this environment). `background-clip: text` and `position: sticky` are the things to look at in Safari.
 - The opening statement is held (sticky) for about 20% of a screen so it can fill before leaving; this adds that much sky between statements one and two compared with the comp.
-- Two inline images (crowd, mouth) were not in the exports or the upload; they are low-resolution crops from the comp until the originals arrive.
-- The supplied cherry, picnic, ferris wheel and pack images are small (358–646px wide); fine at their inline size, soft on very large or 3x screens.
+- The crowd image is the supplied `club.jpg` (514px wide). The frame after TASTES plays the hero gummy video cropped to the mouth: silent, looping, only while on screen, poster only with reduced motion. The frame after MOMENTS INTO plays the supplied ferris wheel video the same way, cropped and re-encoded for its inline size.
+- The supplied cherry, picnic and pack images are small (358–646px wide); fine at their inline size, soft on very large or 3x screens.
 - Muted (unfilled) text and the peach statement are below WCAG AA contrast by design; the same sentences are available to assistive tech as plain text.
