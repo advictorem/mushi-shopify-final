@@ -746,3 +746,34 @@
     border-radius: 3rem;
   }
 }
+
+/* Merch hero: portrait photo, so a taller band framed on the faces. */
+.shop-hero--merch {
+  height: clamp(16rem, 36vw, 36rem);
+  background: #0b0b0b;
+}
+.shop-hero--merch .shop-hero__img img {
+  object-position: 50% 18%;
+}
+@media (max-width: 899px) {
+  .shop-hero--merch .shop-hero__img img {
+    object-position: 50% 28%;
+  }
+}
+
+/* Contact page: beach photo along the bottom, fading up into the page. */
+.page-beach {
+  position: relative;
+  z-index: 0;
+  margin-top: clamp(-14rem, -12vw, -3rem);
+  pointer-events: none;
+}
+.page-beach picture,
+.page-beach img {
+  display: block;
+  width: 100%;
+}
+.page--flush > .page__section {
+  position: relative;
+  z-index: 1;
+}

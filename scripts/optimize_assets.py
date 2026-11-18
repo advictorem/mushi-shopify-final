@@ -50,6 +50,8 @@ RASTER = {
     "product-fan-hover": ("PRODUCTFanHOVER.jpg", [480, 676], "Shop / Fan hover"),
     "ingredients-mushroom-blend": ("mushroom-blend.jpg", [640, 1000], "Ingredients / Organic mushroom blend"),
     "ingredients-lab": ("lab-technician.jpg", [640, 1270], "Ingredients / Science is still exploring"),
+    "hero-shop-merch": ("JSS_0212.jpg", [1000, 1900], "Merch collection hero"),
+    "contact-beach": ("sunset-beach.png", [1250, 2500], "Contact page bottom background"),
     "hero-shop-all": ("Mushi-SHOP-HeroALL.jpg", [1280, 2576], "Shop All hero"),
     "hero-shop-gummies": ("Mushi-SHOP-HeroGUMMIES.jpg", [1280, 2576], "Gummies collection hero"),
     "category-gummies": ("gummies.png", [720, 1400], "Category showcase / Gummies"),

@@ -1,4 +1,5 @@
 import { siteConfig } from '../data/site.config.js';
+import { picture } from '../data/assets.js';
 import { pageHeader, previewBanner } from './_shared.js';
 import { PREVIEW_NOTE } from '../adapters/forms.js';
 
@@ -16,5 +17,7 @@ export function render(main) {
         <p class="form__status" role="status"></p>
       </form>
       <p class="page__cta">Or email us at <a class="link" href="mailto:${siteConfig.contactEmail}">${siteConfig.contactEmail}</a>.</p>
-    </section>`;
+    </section>
+    <div class="page-beach" aria-hidden="true">${picture('contact-beach', { alt: '', sizes: '100vw' })}</div>`;
+  main.classList.add('page--flush');
 }

@@ -560,6 +560,46 @@
         }
       ]
     },
+    "hero-shop-merch": {
+      "original": "JSS_0212.jpg",
+      "usage": "Merch collection hero",
+      "trimmed": false,
+      "width": 1717,
+      "height": 2500,
+      "aspectRatio": 0.6868,
+      "variants": [
+        {
+          "width": 1000,
+          "webp": "/assets/img/hero-shop-merch-1000.webp",
+          "avif": "/assets/img/hero-shop-merch-1000.avif"
+        },
+        {
+          "width": 1717,
+          "webp": "/assets/img/hero-shop-merch-1717.webp",
+          "avif": "/assets/img/hero-shop-merch-1717.avif"
+        }
+      ]
+    },
+    "contact-beach": {
+      "original": "sunset-beach.png",
+      "usage": "Contact page bottom background",
+      "trimmed": false,
+      "width": 2500,
+      "height": 1406,
+      "aspectRatio": 1.7781,
+      "variants": [
+        {
+          "width": 1250,
+          "webp": "/assets/img/contact-beach-1250.webp",
+          "avif": "/assets/img/contact-beach-1250.avif"
+        },
+        {
+          "width": 2500,
+          "webp": "/assets/img/contact-beach-2500.webp",
+          "avif": "/assets/img/contact-beach-2500.avif"
+        }
+      ]
+    },
     "hero-shop-all": {
       "original": "Mushi-SHOP-HeroALL.jpg",
       "usage": "Shop All hero",

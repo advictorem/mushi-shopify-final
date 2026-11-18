@@ -11,6 +11,7 @@ import { esc, icons, qs, qsa } from '../utils/dom.js';
 const COLLECTIONS = {
   all: { hero: 'hero-shop-all', alt: 'MUSHI gummy pouches and chocolate boxes lined up on a stone ledge' },
   gummies: { hero: 'hero-shop-gummies', alt: 'Cherry, Green Apple and Peach Bliss gummy pouches on a stone ledge' },
+  merch: { hero: 'hero-shop-merch', alt: 'Two people in MUSHI World apparel under a concrete overpass', mod: 'merch' },
 };
 
 const SORTS = {
@@ -23,7 +24,7 @@ const SORT_LABELS = { featured: 'Featured', 'price-asc': 'Price, low to high', '
 const sorted = (list, key) => (SORTS[key] ? [...list].sort(SORTS[key]) : list);
 
 const hero = (cfg, title, crumb, showTitle) => `
-  <header class="shop-hero">
+  <header class="shop-hero${cfg.mod ? ` shop-hero--${cfg.mod}` : ''}">
     <div class="shop-hero__media" aria-hidden="true"><div class="shop-hero__img" data-parallax="0.42">${picture(cfg.hero, { alt: '', sizes: '100vw', eager: true })}</div></div>
     <div class="shop-hero__fade" aria-hidden="true"></div>
     <div class="shop-hero__inner">
@@ -60,10 +61,13 @@ const section = (c, withBar = '') => `
 
 /** Collection template: Shop All (sectioned) and single collections via ?category= */
 export function render(main) {
-  const categories = getCategories();
-  const active = categories.find((c) => c.handle === new URLSearchParams(location.search).get('category')) || null;
+  const all = getCategories();
+  // Extras are tagged Merch too: they have their own section but no page or filter of their own.
+  const categories = all.filter((c) => c.handle !== 'extras');
+  const param = new URLSearchParams(location.search).get('category');
+  const active = categories.find((c) => c.handle === (param === 'extras' ? 'merch' : param)) || null;
   const cfg = { ...COLLECTIONS.all, ...(active ? COLLECTIONS[active.handle] || {} : {}) };
-  const shown = active ? [active] : categories;
+  const shown = !active ? all : active.handle === 'merch' ? all.filter((c) => ['merch', 'extras'].includes(c.handle)) : [active];
   document.title = `${active ? active.title : 'Shop all'} — MUSHI`;
 
   const bar = toolbar(categories, active);
