@@ -706,14 +706,6 @@
       "missing": true,
       "source": "cropped from design-source/reference/homepage-design-raster.png"
     },
-    "coaching-still": {
-      "usage": "Coaching video poster",
-      "file": "/assets/placeholder/coaching-still.webp",
-      "width": 331,
-      "height": 434,
-      "missing": true,
-      "source": "cropped from design-source/reference/homepage-design-raster.png"
-    },
     "age-gate": {
       "usage": "Age gate lifestyle image",
       "file": "/assets/placeholder/age-gate.webp",
@@ -733,6 +725,14 @@
       ],
       "poster": "/assets/video/hero-poster.webp",
       "endFrame": "/assets/video/hero-end.webp"
+    },
+    "coaching": {
+      "original": "mushi-coaching-video-justin.mp4 (H.264 720x1280, 33.6s, with audio)",
+      "usage": "Coaching section video (9:16)",
+      "sources": [
+        "/assets/video/coaching.mp4"
+      ],
+      "poster": "/assets/video/coaching-poster.webp"
     }
   }
 }

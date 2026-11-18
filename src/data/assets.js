@@ -7,7 +7,6 @@ export const assets = manifest;
 /** Assets the design needs that were not in Mushi Exports.zip. */
 export const missingAssets = [
   { need: 'Instagram / UGC photos ×5', standIn: 'placeholder/ugc-1…5.webp' },
-  { need: 'Coaching video (instagram.com/p/DeLHTLFAf90) as an .mp4 for inline playback', standIn: 'Instagram embed, cropped to the media' },
   { need: 'Age gate lifestyle image', standIn: 'placeholder/age-gate.webp (cropped from the screenshot)' },
   { need: 'Offer popup A and B artwork + final copy', standIn: 'built from the age gate layout; Figma frames could not be read' },
   { need: 'Merch product images (Floaty, Beach Ball, Fan)', standIn: 'typographic tile' },

@@ -29,10 +29,8 @@ export const siteConfig = {
     tiktok: 'https://www.tiktok.com/@taste.mushi',
   },
 
-  // The live site and the wireframes disagree on the support address
-  // (support@mushiworld.com vs hello@tastemushi.com). Left empty until confirmed;
-  // the footer links to the contact page instead.
-  contactEmail: '',
+  // Confirmed by the client on 2026-11-18.
+  contactEmail: 'support@mushiworld.com',
 
   liveSite: 'https://mushiworld.com',
 };

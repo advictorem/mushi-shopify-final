@@ -122,14 +122,13 @@ export const openWholesale = () =>
   inquiryModal({
     label: 'Wholesale inquiry',
     title: 'Wholesale inquiries',
-    intro: 'Tell us about your shop and we’ll follow up about bulk boxes.',
     name: 'wholesale',
     extra: `
       <div class="field">
-        <label for="wholesale-business">Business name <span aria-hidden="true">*</span></label>
-        <input id="wholesale-business" name="business" type="text" autocomplete="organization" required>
+        <label for="wholesale-business">Business name</label>
+        <input id="wholesale-business" name="business" type="text" autocomplete="organization">
       </div>`,
-    submit: 'Send inquiry',
+    submit: 'Request wholesale info',
     doneMessage: 'A Mushi team member will be in touch regarding your inquiry, Thank you!',
   });
 

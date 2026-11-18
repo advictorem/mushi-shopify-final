@@ -1108,6 +1108,10 @@
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
+.footer__col .footer__plain {
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
 .footer__signup {
   grid-column: span 2;
 }
@@ -1157,7 +1161,7 @@
   width: min(82%, 74rem);
   height: clamp(3.5rem, 10.5vw, 10rem);
   margin: 2.5rem auto 0;
-  fill: var(--c-navy-soft);
+  fill: rgb(255 255 255 / 0.05);
 }
 @media (max-width: 799px) {
   .footer__inner {

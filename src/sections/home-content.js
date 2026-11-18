@@ -87,6 +87,4 @@ export function renderUgc() {
 }
 
 export function renderAssetFlags() {
-  fill('[data-bundle-flag]', reviewFlag('“Save up to 50%” — offer terms not verified on the live site'));
-  fill('[data-coaching-flag]', reviewFlag('Instagram embed — supply the .mp4 for inline playback'));
 }

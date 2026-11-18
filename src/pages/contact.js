@@ -15,6 +15,6 @@ export function render(main) {
         <button class="btn btn--dark" type="submit">Send message</button>
         <p class="form__status" role="status"></p>
       </form>
-      <p class="page__cta">Need an answer today? Use the <a class="link" href="${siteConfig.liveSite}/pages/contact" target="_blank" rel="noopener">contact form on mushiworld.com</a>.</p>
+      <p class="page__cta">Or email us at <a class="link" href="mailto:${siteConfig.contactEmail}">${siteConfig.contactEmail}</a>.</p>
     </section>`;
 }

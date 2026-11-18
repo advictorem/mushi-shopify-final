@@ -164,9 +164,16 @@
   width: 100%;
   max-height: clamp(18rem, 41vw, 38rem);
   object-fit: contain;
-  transform: translateY(5%) scale(0.95);
-  transition: transform 0.9s var(--ease-out);
+  opacity: 0;
+  transform: translateY(14%) scale(0.94);
+  transition: transform 0.3s ease, opacity 0.3s ease;
   -webkit-user-drag: none;
+}
+/* The word lands first; the product follows a beat later and travels further,
+   so the label is read before the PNG covers it. */
+.showcase__slide.is-active .showcase__img {
+  opacity: 1;
+  transition: transform 1.1s var(--ease-out) 0.38s, opacity 0.5s ease 0.38s;
 }
 .showcase__slide.is-active .showcase__label {
   transform: scaleY(var(--display-stretch));
@@ -174,8 +181,9 @@
 .showcase__slide.is-active .showcase__img {
   transform: none;
 }
-.showcase__slide:hover .showcase__img {
+.showcase__slide.is-active:hover .showcase__img {
   transform: scale(1.025);
+  transition: transform 0.6s var(--ease-out);
 }
 .showcase__cta {
   position: absolute;
@@ -331,14 +339,15 @@
   margin: calc(var(--fs-display) * -0.36) auto 1.25rem;
 }
 .products--gummies {
-  padding-bottom: clamp(7rem, 13vw, 12rem);
-  background: linear-gradient(to bottom, var(--c-cream) 0, var(--c-cream) 68%, #ebe2da 82%, #ddd1c9 100%);
+  padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+  /* The blend starts behind the cards so it stays gradual without a tall empty band. */
+  background: linear-gradient(to bottom, var(--c-cream) 0, var(--c-cream) 38%, #ebe2da 62%, #ddd1c9 84%, #d0c2ba 100%);
 }
 .products--gummies .products__carousel {
   margin-top: calc(var(--fs-display) * -0.14); /* most of the word shows above the cards */
 }
 .products--chocolates {
-  padding-top: clamp(14rem, 22vw, 22rem);
+  padding-top: clamp(4.5rem, 7vw, 7rem);
   padding-bottom: clamp(4rem, 7vw, 6.5rem);
   background: var(--g-chocolate);
   color: var(--c-white);
@@ -391,7 +400,7 @@
   object-fit: cover;
 }
 .story__title {
-  max-width: 5.7em;
+  max-width: 6.2em;
 }
 .story__title,
 .coaching__title {
@@ -519,11 +528,14 @@
 }
 .display-label--compare {
   /* Wider than its container on large screens: centre it on the page, not the column. */
+  position: relative;
+  z-index: 0;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   color: #c1e5ca;
 }
 .compare__table {
+  z-index: 1; /* table and its product PNGs sit in front of the background word */
   width: min(100%, var(--container));
   margin: calc(var(--fs-display) * -0.3) auto 0;
   border-collapse: collapse;
@@ -759,32 +771,59 @@
 }
 .coaching__frame {
   position: relative;
-  width: min(23rem, 100%);
+  width: min(21rem, 100%);
   margin-left: auto;
   margin-right: clamp(1rem, 8vw, 7.25rem);
-  padding: 0.55rem 0.55rem 3.2rem;
+  padding: 0.55rem;
   border-radius: var(--radius-l);
   background: #f3eae3;
 }
 .coaching__media {
-  aspect-ratio: 349 / 464;
   overflow: hidden;
   border-radius: 14px;
 }
 .coaching__media {
   position: relative;
-  aspect-ratio: 4 / 5; /* Instagram shows the media at 4:5 */
-  background: #d9cfc8 url('/assets/placeholder/coaching-still.webp') center / cover no-repeat;
+  aspect-ratio: 9 / 16; /* native vertical video, never cropped or stretched */
+  background: #d9cfc8;
 }
-/* Instagram's embed is header (54px) + media + footer. Shift it up and let the
-   rounded container clip everything but the media. */
-.coaching__embed {
+.coaching__video {
   position: absolute;
-  top: -54px;
-  left: 0;
+  inset: 0;
   width: 100%;
-  height: calc(100% + 54px + 30rem);
-  border: 0;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.player__controls {
+  position: absolute;
+  inset: auto 0.75rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.player__btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 0.55);
+  color: var(--c-white);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: auto;
+  transition: background-color var(--dur-fast), transform var(--dur-fast) var(--ease-out);
+}
+.player__btn:hover {
+  background: rgb(0 0 0 / 0.8);
+}
+.player__btn:active {
+  transform: scale(0.92);
+}
+.player__btn:focus-visible {
+  outline-color: var(--c-white);
+  box-shadow: 0 0 0 5px rgb(0 0 0 / 0.6);
 }
 .coaching__frame .review-flag {
   position: absolute;
@@ -818,7 +857,7 @@
 }
 .newsletter__img {
   position: absolute;
-  inset: -22% 0;
+  inset: -58% 0; /* room for the background to travel as the section scrolls */
   background: #e9bfb4 url('/assets/img/newsletter-bg-2000.webp') center / cover no-repeat;
   background-image: image-set(url('/assets/img/newsletter-bg-2000.avif') type('image/avif'), url('/assets/img/newsletter-bg-2000.webp') type('image/webp'));
 }

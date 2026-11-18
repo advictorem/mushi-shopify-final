@@ -53,6 +53,10 @@ RASTER = {
 # Exports with large transparent margins; trimmed to the artwork's bounding box.
 TRIM = {"category-gummies", "category-chocolates", "category-merch", "wholesale-display"}
 
+# Exported at partial opacity. Flattened onto the page colour behind them so
+# nothing shows through: key -> (export opacity, backing RGB).
+FLATTEN = {"compare-alternatives": (0.5, (248, 252, 249))}
+
 # Benefit icons have their label baked into the export. MCT.png is the
 # "Made in USA" artwork despite its filename.
 ICONS = {
@@ -92,7 +96,6 @@ PLACEHOLDERS = {
     "ugc-3": ("homepage-design-raster.png", (0.425, 0.7625, 0.570, 0.7880), "Instagram polaroid 3"),
     "ugc-4": ("homepage-design-raster.png", (0.645, 0.7665, 0.795, 0.7900), "Instagram polaroid 4"),
     "ugc-5": ("homepage-design-raster.png", (0.855, 0.7610, 0.995, 0.7865), "Instagram polaroid 5"),
-    "coaching-still": ("homepage-design-raster.png", (0.1755, 0.8480, 0.4180, 0.8838), "Coaching video poster"),
     "age-gate": ("age-gate-screenshot.png", (0.4995, 0.1210, 0.8360, 0.8715), "Age gate lifestyle image"),
 }
 
@@ -118,6 +121,13 @@ def main():
     for key, (fname, widths, usage) in RASTER.items():
         im = Image.open(os.path.join(SRC, fname))
         im = im.convert("RGBA" if im.mode in ("RGBA", "LA", "P") else "RGB")
+        if key in FLATTEN:
+            opacity, backing = FLATTEN[key]
+            r, g, b, a = im.split()
+            solid = Image.merge("RGB", (r, g, b))
+            faded = Image.blend(Image.new("RGB", im.size, backing), solid, opacity)
+            alpha = a.point(lambda v: min(255, round(v / opacity)))
+            im = Image.merge("RGBA", (*faded.split(), alpha))
         if key in TRIM:  # drop fully transparent padding so layout can size by the artwork
             im = im.crop(im.getbbox())
         entry = {"original": fname, "usage": usage, "trimmed": key in TRIM, "width": im.width, "height": im.height,
@@ -182,6 +192,22 @@ def main():
             "usage": "Hero background video",
             "sources": ["/assets/video/hero-1080.mp4", "/assets/video/hero-540.mp4"],
             "poster": "/assets/video/hero-poster.webp", "endFrame": "/assets/video/hero-end.webp",
+        }
+
+    coach = os.path.join(SRC, "mushi-coaching-video-justin.mp4")
+    if os.path.exists(coach):
+        vdir = os.path.join(OUT, "video")
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", coach, "-c", "copy", "-movflags", "+faststart",  # already web-ready H.264/AAC
+                        os.path.join(vdir, "coaching.mp4")], check=True)
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "0.5", "-i", coach, "-frames:v", "1", "-update", "1",
+                        os.path.join(vdir, "_c.png")], check=True)
+        im = Image.open(os.path.join(vdir, "_c.png")).convert("RGB")
+        im.save(os.path.join(vdir, "coaching-poster.webp"), "WEBP", quality=76, method=6)
+        os.remove(os.path.join(vdir, "_c.png"))
+        manifest["video"]["coaching"] = {
+            "original": "mushi-coaching-video-justin.mp4 (H.264 720x1280, 33.6s, with audio)",
+            "usage": "Coaching section video (9:16)",
+            "sources": ["/assets/video/coaching.mp4"], "poster": "/assets/video/coaching-poster.webp",
         }
 
     with open(os.path.join(ROOT, "src", "data", "assets.generated.json"), "w", encoding="utf8") as fh:

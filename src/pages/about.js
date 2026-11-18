@@ -6,7 +6,7 @@ import { pageHeader } from './_shared.js';
 
 export function render(main) {
   main.innerHTML = `
-    ${pageHeader('Made with intention in every bite', '', 'Our story')}
+    ${pageHeader('Intention in every bite', '', 'Our story')}
     <section class="page__section page__split">
       <div class="page__media">${picture('story-intention', { alt: 'Silhouette of a dancer with arms raised in warm desert haze', sizes: '(min-width: 900px) 44vw, 92vw', eager: true })}</div>
       <div class="prose">

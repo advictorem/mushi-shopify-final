@@ -28,7 +28,7 @@ export function mountFooter() {
           ${footerNav.map((g) => `
             <section class="footer__col">
               <h2>${g.label}</h2>
-              <ul>${g.items.map((it) => `<li><a href="${it.href}"${it.external ? ' target="_blank" rel="noopener"' : ''}>${it.label}</a>${it.pending ? reviewFlag('No dedicated page found on the live site') : ''}</li>`).join('')}</ul>
+              <ul>${g.items.map((it) => `<li><a href="${it.href}"${it.external && !it.plain ? ' target="_blank" rel="noopener"' : ''}${it.plain ? ' class="footer__plain"' : ''}>${it.label}</a>${it.pending ? reviewFlag('No dedicated page found on the live site') : ''}</li>`).join('')}</ul>
             </section>`).join('')}
           <section class="footer__col">
             <h2>Follow</h2>

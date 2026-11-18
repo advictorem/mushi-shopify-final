@@ -9,6 +9,7 @@ import { bindCommerceControls } from './components/product-card.js';
 import { bindModalTriggers, bindPreviewForm } from './components/inquiry-forms.js';
 import { initAgeGate } from './components/age-gate.js';
 import { initOfferPopup } from './components/offer-popup.js';
+import { initVideoPlayers } from './components/video-player.js';
 import { initReveal, initParallax } from './utils/motion.js';
 import { qsa } from './utils/dom.js';
 
@@ -22,6 +23,7 @@ export function initSite() {
   initMarquees();
   initCarousels();
   initAccordions();
+  initVideoPlayers();
   initReveal();
   initParallax();
   initAgeGate();

@@ -22,8 +22,8 @@
 
   /* gradients */
   --g-hero-top: linear-gradient(to bottom, rgb(255 255 255 / 0.82), rgb(255 255 255 / 0.35) 45%, transparent);
-  /* Long, eased blend from the gummies section into brown (continues from #ddd1c9). */
-  --g-chocolate: linear-gradient(to bottom, #ddd1c9 0, #cbbcb4 6rem, #b09c94 13rem, #927a71 21rem, #765b52 29rem, #624339 36rem, var(--c-brown) 44rem);
+  /* Long, eased blend from the gummies section into brown (continues from #d0c2ba). */
+  --g-chocolate: linear-gradient(to bottom, #d0c2ba 0, #c2b2aa 5rem, #b09c94 12rem, #927a71 21rem, #765b52 29rem, #624339 36rem, var(--c-brown) 44rem);
   --g-story: linear-gradient(to bottom, var(--c-story) 0, #f1d8c8 42%, #f4ebe4 78%, var(--c-cream) 100%);
   --g-faq: linear-gradient(to bottom, var(--c-mint) 0, #c8e8d0 46%, var(--c-mint-light) 64%, var(--c-white) 100%);
 

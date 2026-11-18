@@ -75,7 +75,7 @@
           </picture>
         </div>
         <div class="story__text" data-reveal>
-          <h2 class="story__title" id="story-title">Made with intention in every bite</h2>
+          <h2 class="story__title" id="story-title">Intention in every bite</h2>
           <p>At MUSHI, we believe feeling good should taste just as good. That’s why we combine thoughtfully selected ingredients, irresistible flavors, and feel-good experiences into every bite. No complicated routines. No wellness chores. Just delicious indulgences made to elevate everyday moments and give you something worth looking forward to.</p>
           <p>Because life’s better when you savor the moment.</p>
           <a class="btn btn--dark" href="/pages/about.html">About us</a>
@@ -95,8 +95,8 @@
         <img src="/assets/img/bundle-group-1800.webp" alt="Six MUSHI products together: three gummy pouches and three chocolate boxes" width="2176" height="1098" loading="lazy" decoding="async">
       </picture>
       <h2 class="bundle__title" id="bundle-title">Can’t get enough? Save up to 50% on Mushi bundles.<sup>*</sup></h2>
-      <p class="bundle__note">*The more you buy. The more you save. <span data-bundle-flag></span></p>
-      <a class="btn btn--dark" href="/pages/bundles.html">Build your bundle</a>
+      <p class="bundle__note">*The more you buy. The more you save.</p>
+      <a class="btn btn--dark" href="/pages/shop.html">Build your bundle</a>
     </section>
 
     <!-- 7.11 Wholesale -->
@@ -151,11 +151,13 @@
       <p class="display-label display-label--coaching" aria-hidden="true">Coaching</p>
       <div class="coaching__grid">
         <div class="coaching__frame" data-reveal>
-          <div class="coaching__media">
-            <!-- Instagram's own embed, cropped to the media. Swap for a <video> when the .mp4 is supplied. -->
-            <iframe class="coaching__embed" src="https://www.instagram.com/p/DeLHTLFAf90/embed/" title="MUSHI coaching video on Instagram" loading="lazy" scrolling="no" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          <div class="coaching__media" data-video-player>
+            <video class="coaching__video" muted loop playsinline preload="none" poster="/assets/video/coaching-poster.webp" data-src="/assets/video/coaching.mp4" width="720" height="1280" aria-label="A MUSHI coach invites you to train with him"></video>
+            <div class="player__controls">
+              <button class="player__btn" type="button" data-player="play" aria-label="Play video"></button>
+              <button class="player__btn" type="button" data-player="mute" aria-label="Turn sound on"></button>
+            </div>
           </div>
-          <span data-coaching-flag></span>
         </div>
         <div class="coaching__text" data-reveal>
           <h2 class="coaching__title" id="coaching-title">Your journey. Your pace.</h2>
@@ -167,7 +169,7 @@
 
     <!-- 7.17 Newsletter -->
     <section class="newsletter" aria-labelledby="newsletter-title">
-      <div class="newsletter__bg" aria-hidden="true"><div class="newsletter__img" data-parallax="0.14"></div></div>
+      <div class="newsletter__bg" aria-hidden="true"><div class="newsletter__img" data-parallax="0.42"></div></div>
       <div class="newsletter__inner">
         <h2 class="newsletter__title" id="newsletter-title">Join the <em class="marker">feel-<br>good</em> club</h2>
         <p class="newsletter__text">First dibs on new flavors, rituals worth stealing, and 10% off your first order.</p>

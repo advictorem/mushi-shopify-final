@@ -78,3 +78,18 @@ Applied and re-checked at 1440px and 1720px, 54 automated checks passing, consol
 - Sticky header is frosted glass (22px blur, 22% white)
 
 Not verified: the Instagram embed itself (Instagram is blocked from the test environment; checked manually that the embed serves a 54px header and 4:5 media). Instagram's embed shows a poster with a play button and plays on Instagram's terms, not as an inline autoplay loop.
+
+## Round 3 — 2026-11-18
+
+57 automated checks passing, console clean. Re-checked at 1720px.
+
+- Category showcase: the label lands first, the product PNG follows 0.38s later with more travel
+- Gap between the Gummies and Chocolates sections closed; the blend now starts behind the gummy cards
+- Story headline reads "Intention in every bite"
+- Bundle footnote review tag removed; "Build your bundle" links to the Shop All page
+- Wholesale modal matches the coaching modal; Business name optional
+- "WHY MUSHI?" sits behind the product PNGs. `alternatives.png` was exported at 50% opacity, so the word showed through it; the pipeline now flattens it onto the page colour
+- Coaching: native 9:16 video (720x1280), autoplays muted in view, pauses out of view, play/pause and sound buttons. Verified: frame ratio 0.5625, autoplay, pause, unmute
+- Newsletter background parallax travel tripled (factor 0.42)
+- Footer wordmark at 5% white
+- Support email set to support@mushiworld.com (footer, contact page)

@@ -43,7 +43,7 @@ export function initParallax(root = document) {
       const host = n.parentElement.getBoundingClientRect();
       let offset = (host.top + host.height / 2 - vh / 2) * -parseFloat(n.dataset.parallax || '0.1');
       // Never move an oversized child far enough to expose its container.
-      const spare = (n.offsetHeight - host.height) / 2;
+      const spare = (n.offsetHeight - host.height) / 2 - 1;
       if (spare > 0) offset = Math.max(-spare, Math.min(spare, offset));
       n.style.transform = `translate3d(0, ${offset.toFixed(1)}px, 0)`;
     });
