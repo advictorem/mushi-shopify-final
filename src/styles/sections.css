@@ -402,6 +402,12 @@
 .story__title {
   max-width: 6.2em;
 }
+.coaching__kicker {
+  margin-bottom: 0.75rem;
+  font: 400 0.8125rem / 1.2 var(--font-mono);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
 .story__title,
 .coaching__title {
   margin-bottom: 1.5rem;

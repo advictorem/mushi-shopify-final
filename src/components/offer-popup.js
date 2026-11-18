@@ -26,7 +26,7 @@ const VARIANTS = {
     body: 'Save up to 50% on Mushi bundles. The more you buy, the more you save.',
     image: 'bundle-group',
     tone: 'peach',
-    cta: { label: 'Build your bundle', href: '/pages/bundles.html' },
+    cta: { label: 'Build your bundle', href: '/pages/shop.html' },
   },
 };
 

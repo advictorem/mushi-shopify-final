@@ -93,3 +93,7 @@ Not verified: the Instagram embed itself (Instagram is blocked from the test env
 - Newsletter background parallax travel tripled (factor 0.42)
 - Footer wordmark at 5% white
 - Support email set to support@mushiworld.com (footer, contact page)
+
+## Round 4 — 2026-11-18
+
+Bundle builder page removed (`/pages/bundles` now 404s; the homepage button and popup B link to Shop All). "1-on-1 Expert Coaching" added above the coaching headline. Footer sign-up confirmed at 10%.
