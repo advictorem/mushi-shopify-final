@@ -8,6 +8,7 @@ export const primaryNav = [
       { label: 'Gummies', href: '/pages/shop.html?category=gummies' },
       { label: 'Chocolates', href: '/pages/shop.html?category=chocolates' },
       { label: 'Merch', href: '/pages/shop.html?category=merch' },
+      { label: 'Wholesale', href: '/pages/wholesale.html' },
     ],
   },
   {
@@ -29,6 +30,7 @@ export const footerNav = [
       { label: 'Gummies', href: '/pages/shop.html?category=gummies' },
       { label: 'Chocolates', href: '/pages/shop.html?category=chocolates' },
       { label: 'Merch', href: '/pages/shop.html?category=merch' },
+      { label: 'Wholesale', href: '/pages/wholesale.html' },
     ],
   },
   {
@@ -48,8 +50,9 @@ export const footerNav = [
     ],
   },
   {
-    label: 'Partners',
-    items: [{ label: 'Wholesale & Bulk', href: '/pages/wholesale.html' }],
+    label: 'Affiliates',
+    // URL to be confirmed by the client; opens in a new tab once set.
+    items: [{ label: 'Become an affiliate', href: '#', external: false /* set true with the real URL */, pending: true, pendingNote: 'Affiliate link URL to be supplied' }],
   },
 ];
 

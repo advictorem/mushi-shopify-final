@@ -32,7 +32,7 @@ export function mountFooter() {
           ${footerNav.map((g) => `
             <section class="footer__col">
               <h2>${g.label}</h2>
-              <ul>${g.items.map((it) => `<li><a href="${it.href}"${it.external && !it.plain ? ' target="_blank" rel="noopener"' : ''}${it.plain ? ' class="footer__plain"' : ''}>${it.label}</a>${it.pending ? reviewFlag('No dedicated page found on the live site') : ''}</li>`).join('')}</ul>
+              <ul>${g.items.map((it) => `<li><a href="${it.href}"${it.external && !it.plain ? ' target="_blank" rel="noopener"' : ''}${it.plain ? ' class="footer__plain"' : ''}>${it.label}</a>${it.pending ? reviewFlag(it.pendingNote || 'Needs confirmation') : ''}</li>`).join('')}</ul>
             </section>`).join('')}
           <section class="footer__col">
             <h2>Follow</h2>
@@ -57,6 +57,10 @@ export function mountFooter() {
       <div class="footer__bottom">
         <p class="footer__copy">© ${new Date().getFullYear()} MUSHI. Staging preview — checkout, accounts and forms are not connected.</p>
         <ul class="footer__legal">${legalNav.map((it) => `<li><a href="${it.href}">${it.label}</a></li>`).join('')}</ul>
+      </div>
+      <div class="footer__disclaimers">
+        <p><strong>FDA disclaimer.</strong> These statements have not been evaluated by the Food and Drug Administration. MUSHI products are not intended to diagnose, treat, cure or prevent any disease. Information on this site is general information only and does not replace advice from your doctor or another qualified healthcare professional. Talk to a healthcare professional before starting any new supplement.</p>
+        <p><strong>Website disclaimer.</strong> Content on this site is for educational and informational purposes only and is not medical, legal or other professional advice. MUSHI products are for adults 21 and over. Check and follow the laws that apply where you live before buying or using them, and use them responsibly. ${reviewFlag('Disclaimer wording written for MUSHI — needs legal review')}</p>
       </div>
       ${wordmark}
     </footer>`;

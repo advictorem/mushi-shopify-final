@@ -67,7 +67,10 @@
   margin-top: 2rem;
   padding: clamp(1.25rem, 2.5vw, 2rem);
   border-radius: var(--radius-m);
-  background: var(--c-white);
+  /* semi-transparent on every page form */
+  background: rgb(255 255 255 / 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   font-size: 1rem;
 }
 .prose .page-form__title {
@@ -767,6 +770,10 @@
   z-index: 0;
   margin-top: clamp(-14rem, -12vw, -3rem);
   pointer-events: none;
+  overflow: hidden; /* the photo rises into place without pushing the footer */
+}
+.page-beach picture {
+  will-change: transform, opacity;
 }
 .page-beach picture,
 .page-beach img {
@@ -789,11 +796,6 @@
 .wholesale-page .prose {
   position: relative;
   z-index: 1;
-}
-.wholesale-page .page-form {
-  background: rgb(255 255 255 / 0.55);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 @media (max-width: 899px) {
   .wholesale-page .page__media {

@@ -21,6 +21,39 @@ export function initReveal(root = document) {
 }
 
 /**
+ * Scroll-linked rise: [data-rise] fades its first child in and floats it up
+ * from below as the element scrolls into view (and back out when scrolling up).
+ */
+export function initRise(root = document) {
+  const hosts = qsa('[data-rise]', root);
+  if (!hosts.length || reducedMotion()) return;
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const vh = window.innerHeight;
+    hosts.forEach((h) => {
+      const r = h.getBoundingClientRect();
+      if (r.top > vh || r.bottom < 0) return;
+      // 0 when the top edge enters the viewport, 1 once 70% of a screen has scrolled past it
+      const p = Math.max(0, Math.min(1, (vh - r.top) / (vh * 0.7)));
+      const eased = 1 - (1 - p) ** 3;
+      const el = h.firstElementChild;
+      el.style.opacity = eased.toFixed(3);
+      el.style.transform = `translate3d(0, ${((1 - eased) * 140).toFixed(1)}px, 0)`;
+    });
+  };
+  const request = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  };
+  window.addEventListener('scroll', request, { passive: true });
+  window.addEventListener('resize', request, { passive: true });
+  hosts.forEach((h) => (h.firstElementChild.style.opacity = '0'));
+  request();
+}
+
+/**
  * Scroll parallax: [data-parallax="0.12"] shifts by that fraction of its
  * distance from the viewport centre. Transform-only, one rAF per frame, and
  * only for elements currently on screen. Desktop pointers only.

@@ -10,7 +10,7 @@ import { bindModalTriggers, bindPreviewForm } from './components/inquiry-forms.j
 import { initAgeGate } from './components/age-gate.js';
 import { initOfferPopup } from './components/offer-popup.js';
 import { initVideoPlayers } from './components/video-player.js';
-import { initReveal, initParallax } from './utils/motion.js';
+import { initReveal, initParallax, initRise } from './utils/motion.js';
 import { qsa } from './utils/dom.js';
 
 /** Call after page-specific markup has been rendered. */
@@ -26,6 +26,7 @@ export function initSite() {
   initVideoPlayers();
   initReveal();
   initParallax();
+  initRise();
   initAgeGate();
   initOfferPopup();
   // Fonts change text widths; rebuild marquees once they have loaded.

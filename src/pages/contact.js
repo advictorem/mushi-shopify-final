@@ -18,6 +18,6 @@ export function render(main) {
       </form>
       <p class="page__cta">Or email us at <a class="link" href="mailto:${siteConfig.contactEmail}">${siteConfig.contactEmail}</a>.</p>
     </section>
-    <div class="page-beach" aria-hidden="true">${picture('contact-beach', { alt: '', sizes: '100vw' })}</div>`;
+    <div class="page-beach" aria-hidden="true" data-rise>${picture('contact-beach', { alt: '', sizes: '100vw' })}</div>`;
   main.classList.add('page--flush');
 }
