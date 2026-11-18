@@ -36,6 +36,12 @@ img {
 
 h1,
 h2,
+h3 {
+  letter-spacing: var(--tracking-heading);
+}
+
+h1,
+h2,
 h3,
 p,
 ul,

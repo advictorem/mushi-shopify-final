@@ -32,6 +32,8 @@
   --font-marker: 'Permanent Marker', 'Comic Sans MS', cursive;
   --font-mono: 'PT Mono', ui-monospace, 'SFMono-Regular', monospace;
 
+  --tracking-heading: -0.02em; /* global: slightly tightened headline tracking */
+
   --fs-display: clamp(4.5rem, 17.45vw, 22rem);
   --display-stretch: 1.15; /* the comp's labels are ~15% taller than stock Oswald Bold */ /* oversized section labels */
   --fs-h1: clamp(3.25rem, 9.3vw, 8.4rem);

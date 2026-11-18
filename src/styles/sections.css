@@ -31,6 +31,7 @@
   font: 700 clamp(3.9rem, 17.35vw, 22rem) / 0.9 var(--font-display);
   text-transform: uppercase;
   text-align: center;
+  letter-spacing: 0; /* width is calibrated to the comp */
   white-space: nowrap;
   color: transparent;
   -webkit-text-stroke: clamp(1px, 0.14vw, 2.5px) var(--c-white);
@@ -336,15 +337,13 @@
 .products__carousel {
   position: relative;
   max-width: var(--container);
-  margin: calc(var(--fs-display) * -0.36) auto 1.25rem;
+  /* Same offset for every product carousel: most of the background word shows above the cards. */
+  margin: calc(var(--fs-display) * -0.14) auto 1.25rem;
 }
 .products--gummies {
   padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
   /* The blend starts behind the cards so it stays gradual without a tall empty band. */
   background: linear-gradient(to bottom, var(--c-cream) 0, var(--c-cream) 38%, #ebe2da 62%, #ddd1c9 84%, #d0c2ba 100%);
-}
-.products--gummies .products__carousel {
-  margin-top: calc(var(--fs-display) * -0.14); /* most of the word shows above the cards */
 }
 .products--chocolates {
   padding-top: clamp(4.5rem, 7vw, 7rem);
