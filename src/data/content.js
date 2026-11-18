@@ -148,6 +148,19 @@ export const ugc = {
   })),
 };
 
+// Benefit boxes (copy from the approved comps). Gummies page shows the first
+// three; the Ingredients page shows all six.
+export const gummyBenefits = [
+  { icon: 'ingredient-cane', title: 'Organic cane sugar & tapioca syrup', text: 'A premium sweetener base that delivers just the right touch of flavor without overdoing it.' },
+  { icon: 'ingredient-berry', title: 'Real elderberry juice for color, not artificial', text: 'Color from fruit, not artificial dyes because better ingredients make a better experience.' },
+  { icon: 'ingredient-plant', title: 'Plant-based, clean & premium', text: 'Made with pectin, natural flavor, and thoughtfully chosen ingredients nothing fake, nothing synthetic.' },
+];
+export const chocolateBenefits = [
+  { icon: 'ingredient-belgian', title: '100% Belgium chocolate', text: 'Rich, smooth, premium chocolate.' },
+  { icon: 'ingredient-real-berry', title: 'Real berry filling', text: 'Real fruit flavor. Nothing artificial.' },
+  { icon: 'ingredient-no-palm', title: 'No palm oil', text: 'Better ingredients. No shortcuts.' },
+];
+
 export const coachingOutcomes = [
   'Creativity & Inspiration',
   'Focus & Mental Clarity',

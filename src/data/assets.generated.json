@@ -520,6 +520,46 @@
         }
       ]
     },
+    "ingredients-mushroom-blend": {
+      "original": "mushroom-blend.jpg",
+      "usage": "Ingredients / Organic mushroom blend",
+      "trimmed": false,
+      "width": 1000,
+      "height": 1000,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 640,
+          "webp": "/assets/img/ingredients-mushroom-blend-640.webp",
+          "avif": "/assets/img/ingredients-mushroom-blend-640.avif"
+        },
+        {
+          "width": 1000,
+          "webp": "/assets/img/ingredients-mushroom-blend-1000.webp",
+          "avif": "/assets/img/ingredients-mushroom-blend-1000.avif"
+        }
+      ]
+    },
+    "ingredients-lab": {
+      "original": "lab-technician.jpg",
+      "usage": "Ingredients / Science is still exploring",
+      "trimmed": false,
+      "width": 1270,
+      "height": 811,
+      "aspectRatio": 1.566,
+      "variants": [
+        {
+          "width": 640,
+          "webp": "/assets/img/ingredients-lab-640.webp",
+          "avif": "/assets/img/ingredients-lab-640.avif"
+        },
+        {
+          "width": 1270,
+          "webp": "/assets/img/ingredients-lab-1270.webp",
+          "avif": "/assets/img/ingredients-lab-1270.avif"
+        }
+      ]
+    },
     "hero-shop-all": {
       "original": "Mushi-SHOP-HeroALL.jpg",
       "usage": "Shop All hero",
@@ -964,6 +1004,27 @@
       "file": "/assets/icons/ingredient-berry.png",
       "width": 225,
       "height": 234
+    },
+    "ingredient-belgian": {
+      "original": "belgium-chocolate-icon.png",
+      "usage": "Ingredients benefit / 100% Belgium chocolate",
+      "file": "/assets/icons/ingredient-belgian.png",
+      "width": 250,
+      "height": 230
+    },
+    "ingredient-real-berry": {
+      "original": "real-berry-icon.png",
+      "usage": "Ingredients benefit / Real berry filling",
+      "file": "/assets/icons/ingredient-real-berry.png",
+      "width": 215,
+      "height": 251
+    },
+    "ingredient-no-palm": {
+      "original": "nopalm-icon.png",
+      "usage": "Ingredients benefit / No palm oil",
+      "file": "/assets/icons/ingredient-no-palm.png",
+      "width": 192,
+      "height": 218
     },
     "ingredient-cane": {
       "original": "cane-icon.png",

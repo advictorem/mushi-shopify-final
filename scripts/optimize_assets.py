@@ -48,6 +48,8 @@ RASTER = {
     "product-floaty-hover": ("PRODUCTFloatieHOVER.jpg", [480, 676], "Shop / Floaty hover"),
     "product-fan-pack": ("PRODUCTFan.jpg", [480, 678], "Shop / Fan primary"),
     "product-fan-hover": ("PRODUCTFanHOVER.jpg", [480, 676], "Shop / Fan hover"),
+    "ingredients-mushroom-blend": ("mushroom-blend.jpg", [640, 1000], "Ingredients / Organic mushroom blend"),
+    "ingredients-lab": ("lab-technician.jpg", [640, 1270], "Ingredients / Science is still exploring"),
     "hero-shop-all": ("Mushi-SHOP-HeroALL.jpg", [1280, 2576], "Shop All hero"),
     "hero-shop-gummies": ("Mushi-SHOP-HeroGUMMIES.jpg", [1280, 2576], "Gummies collection hero"),
     "category-gummies": ("gummies.png", [720, 1400], "Category showcase / Gummies"),
@@ -95,6 +97,9 @@ ICONS = {
     "shipping-truck": ("shipping-truck.png", "Announcement marquee icon"),
     "ingredient-plant": ("plant-icon.png", "Ingredients page icon"),
     "ingredient-berry": ("berry-icon.png", "Ingredients page icon"),
+    "ingredient-belgian": ("belgium-chocolate-icon.png", "Ingredients benefit / 100% Belgium chocolate"),
+    "ingredient-real-berry": ("real-berry-icon.png", "Ingredients benefit / Real berry filling"),
+    "ingredient-no-palm": ("nopalm-icon.png", "Ingredients benefit / No palm oil"),
     "ingredient-cane": ("cane-icon.png", "Ingredients page icon"),
 }
 

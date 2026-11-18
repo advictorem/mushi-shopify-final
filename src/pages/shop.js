@@ -1,7 +1,9 @@
 import { getProducts, getCategories } from '../adapters/commerce.js';
-import { picture, icon } from '../data/assets.js';
+import { picture } from '../data/assets.js';
 import { productCard } from '../components/product-card.js';
 import { renderComparison } from '../sections/home-content.js';
+import { gummyBenefits } from '../data/content.js';
+import { benefitBoxes } from '../sections/benefit-boxes.js';
 import { newsletterMarkup } from '../sections/newsletter.js';
 import { esc, icons, qs, qsa } from '../utils/dom.js';
 
@@ -10,13 +12,6 @@ const COLLECTIONS = {
   all: { hero: 'hero-shop-all', alt: 'MUSHI gummy pouches and chocolate boxes lined up on a stone ledge' },
   gummies: { hero: 'hero-shop-gummies', alt: 'Cherry, Green Apple and Peach Bliss gummy pouches on a stone ledge' },
 };
-
-// Copy from the approved Gummies collection comp.
-const GUMMY_BENEFITS = [
-  { icon: 'ingredient-cane', title: 'Organic cane sugar & tapioca syrup', text: 'A premium sweetener base that delivers just the right touch of flavor without overdoing it.' },
-  { icon: 'ingredient-berry', title: 'Real elderberry juice for color, not artificial', text: 'Color from fruit, not artificial dyes because better ingredients make a better experience.' },
-  { icon: 'ingredient-plant', title: 'Plant-based, clean & premium', text: 'Made with pectin, natural flavor, and thoughtfully chosen ingredients nothing fake, nothing synthetic.' },
-];
 
 const SORTS = {
   featured: null,
@@ -78,14 +73,7 @@ export function render(main) {
     ${isGummies ? `
       <section class="shop-intro" aria-labelledby="shop-intro-title">
         <h2 class="shop-intro__title" id="shop-intro-title">No fake stuff. Just <em class="marker">feel-good</em> stuff.</h2>
-        <ul class="benefit-boxes">
-          ${GUMMY_BENEFITS.map((b) => { const a = icon(b.icon); return `
-            <li class="benefit-box" data-reveal>
-              <img src="${a.file}" alt="" width="${a.width}" height="${a.height}" loading="lazy">
-              <h3>${esc(b.title)}</h3>
-              <p>${esc(b.text)}</p>
-            </li>`; }).join('')}
-        </ul>
+        ${benefitBoxes(gummyBenefits)}
         ${bar}
         <div class="shop-grid" data-grid="gummies"></div>
       </section>
