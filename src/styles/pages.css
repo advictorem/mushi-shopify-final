@@ -52,14 +52,14 @@
 .page__narrow {
   max-width: 38rem;
 }
-.page__split--top {
+.page__split.page__split--top {
   align-items: start;
 }
 .page__video .coaching__frame {
   width: min(25rem, 100%);
   margin: 0 auto;
 }
-.page__media--sticky {
+.page__media.page__media--sticky {
   position: sticky;
   top: calc(var(--header-h) + 1rem);
 }
@@ -776,4 +776,29 @@
 .page--flush > .page__section {
   position: relative;
   z-index: 1;
+}
+
+/* Wholesale page: larger artwork pulled up under the header; the form may sit over it. */
+.wholesale-page .page__media {
+  z-index: 0;
+  width: 132%;
+  max-width: none;
+  margin: clamp(-5rem, -4vw, -1.5rem) 0 0 -18%;
+  overflow: visible;
+}
+.wholesale-page .prose {
+  position: relative;
+  z-index: 1;
+}
+.wholesale-page .page-form {
+  background: rgb(255 255 255 / 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+@media (max-width: 899px) {
+  .wholesale-page .page__media {
+    position: static;
+    width: 100%;
+    margin: 0;
+  }
 }
