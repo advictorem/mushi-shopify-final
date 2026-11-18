@@ -97,3 +97,9 @@ Not verified: the Instagram embed itself (Instagram is blocked from the test env
 ## Round 4 — 2026-11-18
 
 Bundle builder page removed (`/pages/bundles` now 404s; the homepage button and popup B link to Shop All). "1-on-1 Expert Coaching" added above the coaching headline. Footer sign-up confirmed at 10%.
+
+## Round 5 — Shop All and Gummies collection pages, 2026-11-18
+
+Built from `design-source/reference/shop-all-comp.jpg` and `shop-gummies-comp.jpg`. Checked at 1440px: hero parallax moves on scroll, filter menu navigates, sort re-orders each grid, priced items add to the cart, unpriced apparel cannot be added, console clean. Not checked: mobile widths for these two pages beyond the CSS breakpoints, and other browsers.
+
+Deviations from the comps, on purpose: live-catalog names and prices are used (the comps show $60.00 placeholders and SALE/POPULAR/LIMITED badges); the four apparel items have no verified price and show "Price coming soon".

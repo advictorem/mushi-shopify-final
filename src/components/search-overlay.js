@@ -9,7 +9,7 @@ const row = (p) => `
     <a class="search__result" href="${productUrl(p)}">
       <span class="search__thumb">${p.images.primary ? picture(p.images.primary, { alt: '', sizes: '64px' }) : ''}</span>
       <span class="search__name">${esc(p.title)}<small>${esc(p.formatLabel)}</small></span>
-      <span class="search__price">${money(p.price)}</span>
+      <span class="search__price">${p.price == null ? 'Soon' : money(p.price)}</span>
     </a>
   </li>`;
 

@@ -240,6 +240,326 @@
         }
       ]
     },
+    "product-hoodie-pack": {
+      "original": "PRODUCTHoodie.jpg",
+      "usage": "Shop / Find Your Peace Hoodie primary",
+      "trimmed": false,
+      "width": 678,
+      "height": 678,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-hoodie-pack-480.webp",
+          "avif": "/assets/img/product-hoodie-pack-480.avif"
+        },
+        {
+          "width": 678,
+          "webp": "/assets/img/product-hoodie-pack-678.webp",
+          "avif": "/assets/img/product-hoodie-pack-678.avif"
+        }
+      ]
+    },
+    "product-hoodie-hover": {
+      "original": "PRODUCTHoodieHOVER.jpg",
+      "usage": "Shop / Find Your Peace Hoodie hover",
+      "trimmed": false,
+      "width": 676,
+      "height": 676,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-hoodie-hover-480.webp",
+          "avif": "/assets/img/product-hoodie-hover-480.avif"
+        },
+        {
+          "width": 676,
+          "webp": "/assets/img/product-hoodie-hover-676.webp",
+          "avif": "/assets/img/product-hoodie-hover-676.avif"
+        }
+      ]
+    },
+    "product-tee-pack": {
+      "original": "PRODUCTT-Shirt.jpg",
+      "usage": "Shop / Mushi World Premium Tee primary",
+      "trimmed": false,
+      "width": 678,
+      "height": 678,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-tee-pack-480.webp",
+          "avif": "/assets/img/product-tee-pack-480.avif"
+        },
+        {
+          "width": 678,
+          "webp": "/assets/img/product-tee-pack-678.webp",
+          "avif": "/assets/img/product-tee-pack-678.avif"
+        }
+      ]
+    },
+    "product-tee-hover": {
+      "original": "PRODUCTT-ShirtHOVER.jpg",
+      "usage": "Shop / Mushi World Premium Tee hover",
+      "trimmed": false,
+      "width": 676,
+      "height": 676,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-tee-hover-480.webp",
+          "avif": "/assets/img/product-tee-hover-480.avif"
+        },
+        {
+          "width": 676,
+          "webp": "/assets/img/product-tee-hover-676.webp",
+          "avif": "/assets/img/product-tee-hover-676.avif"
+        }
+      ]
+    },
+    "product-pants-pack": {
+      "original": "PRODUCTPants.jpg",
+      "usage": "Shop / Distressed Baggy Sweatpants primary",
+      "trimmed": false,
+      "width": 678,
+      "height": 678,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-pants-pack-480.webp",
+          "avif": "/assets/img/product-pants-pack-480.avif"
+        },
+        {
+          "width": 678,
+          "webp": "/assets/img/product-pants-pack-678.webp",
+          "avif": "/assets/img/product-pants-pack-678.avif"
+        }
+      ]
+    },
+    "product-pants-hover": {
+      "original": "PRODUCTPantsHOVER.jpg",
+      "usage": "Shop / Distressed Baggy Sweatpants hover",
+      "trimmed": false,
+      "width": 676,
+      "height": 676,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-pants-hover-480.webp",
+          "avif": "/assets/img/product-pants-hover-480.avif"
+        },
+        {
+          "width": 676,
+          "webp": "/assets/img/product-pants-hover-676.webp",
+          "avif": "/assets/img/product-pants-hover-676.avif"
+        }
+      ]
+    },
+    "product-longsleeve-pack": {
+      "original": "PRODUCTShirt.jpg",
+      "usage": "Shop / What War Long Sleeve T-Shirt primary",
+      "trimmed": false,
+      "width": 678,
+      "height": 678,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-longsleeve-pack-480.webp",
+          "avif": "/assets/img/product-longsleeve-pack-480.avif"
+        },
+        {
+          "width": 678,
+          "webp": "/assets/img/product-longsleeve-pack-678.webp",
+          "avif": "/assets/img/product-longsleeve-pack-678.avif"
+        }
+      ]
+    },
+    "product-longsleeve-hover": {
+      "original": "PRODUCTShirt-1.jpg",
+      "usage": "Shop / What War Long Sleeve T-Shirt hover",
+      "trimmed": false,
+      "width": 676,
+      "height": 676,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-longsleeve-hover-480.webp",
+          "avif": "/assets/img/product-longsleeve-hover-480.avif"
+        },
+        {
+          "width": 676,
+          "webp": "/assets/img/product-longsleeve-hover-676.webp",
+          "avif": "/assets/img/product-longsleeve-hover-676.avif"
+        }
+      ]
+    },
+    "product-beachball-pack": {
+      "original": "PRODUCTBeach-Ball.jpg",
+      "usage": "Shop / Beach Ball primary",
+      "trimmed": false,
+      "width": 678,
+      "height": 678,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-beachball-pack-480.webp",
+          "avif": "/assets/img/product-beachball-pack-480.avif"
+        },
+        {
+          "width": 678,
+          "webp": "/assets/img/product-beachball-pack-678.webp",
+          "avif": "/assets/img/product-beachball-pack-678.avif"
+        }
+      ]
+    },
+    "product-beachball-hover": {
+      "original": "PRODUCTBeach-BallHOVER.jpg",
+      "usage": "Shop / Beach Ball hover",
+      "trimmed": false,
+      "width": 676,
+      "height": 676,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-beachball-hover-480.webp",
+          "avif": "/assets/img/product-beachball-hover-480.avif"
+        },
+        {
+          "width": 676,
+          "webp": "/assets/img/product-beachball-hover-676.webp",
+          "avif": "/assets/img/product-beachball-hover-676.avif"
+        }
+      ]
+    },
+    "product-floaty-pack": {
+      "original": "PRODUCTFloatie.jpg",
+      "usage": "Shop / Floaty primary",
+      "trimmed": false,
+      "width": 678,
+      "height": 678,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-floaty-pack-480.webp",
+          "avif": "/assets/img/product-floaty-pack-480.avif"
+        },
+        {
+          "width": 678,
+          "webp": "/assets/img/product-floaty-pack-678.webp",
+          "avif": "/assets/img/product-floaty-pack-678.avif"
+        }
+      ]
+    },
+    "product-floaty-hover": {
+      "original": "PRODUCTFloatieHOVER.jpg",
+      "usage": "Shop / Floaty hover",
+      "trimmed": false,
+      "width": 676,
+      "height": 676,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-floaty-hover-480.webp",
+          "avif": "/assets/img/product-floaty-hover-480.avif"
+        },
+        {
+          "width": 676,
+          "webp": "/assets/img/product-floaty-hover-676.webp",
+          "avif": "/assets/img/product-floaty-hover-676.avif"
+        }
+      ]
+    },
+    "product-fan-pack": {
+      "original": "PRODUCTFan.jpg",
+      "usage": "Shop / Fan primary",
+      "trimmed": false,
+      "width": 678,
+      "height": 678,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-fan-pack-480.webp",
+          "avif": "/assets/img/product-fan-pack-480.avif"
+        },
+        {
+          "width": 678,
+          "webp": "/assets/img/product-fan-pack-678.webp",
+          "avif": "/assets/img/product-fan-pack-678.avif"
+        }
+      ]
+    },
+    "product-fan-hover": {
+      "original": "PRODUCTFanHOVER.jpg",
+      "usage": "Shop / Fan hover",
+      "trimmed": false,
+      "width": 676,
+      "height": 676,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-fan-hover-480.webp",
+          "avif": "/assets/img/product-fan-hover-480.avif"
+        },
+        {
+          "width": 676,
+          "webp": "/assets/img/product-fan-hover-676.webp",
+          "avif": "/assets/img/product-fan-hover-676.avif"
+        }
+      ]
+    },
+    "hero-shop-all": {
+      "original": "Mushi-SHOP-HeroALL.jpg",
+      "usage": "Shop All hero",
+      "trimmed": false,
+      "width": 2576,
+      "height": 1205,
+      "aspectRatio": 2.1378,
+      "variants": [
+        {
+          "width": 1280,
+          "webp": "/assets/img/hero-shop-all-1280.webp",
+          "avif": "/assets/img/hero-shop-all-1280.avif"
+        },
+        {
+          "width": 2576,
+          "webp": "/assets/img/hero-shop-all-2576.webp",
+          "avif": "/assets/img/hero-shop-all-2576.avif"
+        }
+      ]
+    },
+    "hero-shop-gummies": {
+      "original": "Mushi-SHOP-HeroGUMMIES.jpg",
+      "usage": "Gummies collection hero",
+      "trimmed": false,
+      "width": 2576,
+      "height": 1205,
+      "aspectRatio": 2.1378,
+      "variants": [
+        {
+          "width": 1280,
+          "webp": "/assets/img/hero-shop-gummies-1280.webp",
+          "avif": "/assets/img/hero-shop-gummies-1280.avif"
+        },
+        {
+          "width": 2576,
+          "webp": "/assets/img/hero-shop-gummies-2576.webp",
+          "avif": "/assets/img/hero-shop-gummies-2576.avif"
+        }
+      ]
+    },
     "category-gummies": {
       "original": "gummies.png",
       "usage": "Category showcase / Gummies",

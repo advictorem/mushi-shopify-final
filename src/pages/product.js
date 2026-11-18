@@ -29,20 +29,20 @@ export function render(main) {
         <h1 class="pdp__title">${esc(p.title)}</h1>
         <p class="card__format">${esc(p.formatLabel)}</p>
         ${priceMarkup(p)}
-        <p class="pdp__short">${esc(p.shortDescription)}</p>
+        ${p.shortDescription ? `<p class="pdp__short">${esc(p.shortDescription)}</p>` : ''}
         ${p.attributes.length ? `<ul class="pdp__attrs">${p.attributes.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>` : ''}
+        ${p.price == null ? `<p class="page__preview">${esc(p.pending || 'Coming soon.')}</p>` : `
         <div class="pdp__buy">
           ${stepper(p.title)}
           <button class="btn btn--dark" type="button" data-add>Add to cart ${icons.bagPlus}</button>
-        </div>
+        </div>`}
         <div class="pdp__details">
-          <h2>Description</h2>
-          <p>${esc(p.fullDescription)}</p>
+          ${p.fullDescription ? `<h2>Description</h2><p>${esc(p.fullDescription)}</p>` : ''}
           ${p.flavorProfile ? `<h2>Flavor profile</h2><p>${esc(p.flavorProfile)}</p>` : ''}
           ${p.perfectFor ? `<h2>Perfect for ${reviewFlag('Benefit language copied from the live product page — needs compliance review')}</h2><p>${esc(p.perfectFor)}</p>` : ''}
           ${p.details ? `<h2>Details</h2><p>${esc(p.details)}</p>` : ''}
         </div>
-        <p class="pdp__source">Price and copy verified against <a class="link" href="${p.liveUrl}" target="_blank" rel="noopener">the live product page</a> on ${catalogMeta.verifiedAt}.</p>
+        ${p.liveUrl ? `<p class="pdp__source">Price and copy verified against <a class="link" href="${p.liveUrl}" target="_blank" rel="noopener">the live product page</a> on ${catalogMeta.verifiedAt}.</p>` : ''}
       </div>
     </section>
     ${related.length ? `

@@ -15,7 +15,7 @@ let cart = sanitize(store.get(CART_KEY, []));
 
 function sanitize(lines) {
   if (!Array.isArray(lines)) return [];
-  return lines.filter((l) => l && byHandle(l.handle) && Number.isInteger(l.quantity) && l.quantity > 0);
+  return lines.filter((l) => l && byHandle(l.handle)?.price != null && Number.isInteger(l.quantity) && l.quantity > 0);
 }
 
 function byHandle(handle) {
@@ -69,7 +69,8 @@ export function getCart() {
 }
 
 export function addToCart(handle, quantity = 1) {
-  if (!byHandle(handle)) return getCart();
+  const product = byHandle(handle);
+  if (!product || product.price == null || !product.available) return getCart(); // unpriced items cannot be bought
   const qty = Math.max(1, Math.min(99, Math.floor(quantity)));
   const line = cart.find((l) => l.handle === handle);
   if (line) line.quantity = Math.min(99, line.quantity + qty);

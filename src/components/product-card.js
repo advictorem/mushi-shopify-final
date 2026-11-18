@@ -13,7 +13,7 @@ export const stepper = (label, value = 1, attrs = '') => `
     <button type="button" class="stepper__btn" data-step="1" aria-label="Increase quantity for ${esc(label)}">+</button>
   </div>`;
 
-export const priceMarkup = (p) => `
+export const priceMarkup = (p) => p.price == null ? '<p class="price price--pending">Price coming soon</p>' : `
   <p class="price">
     <span class="sr-only">Price</span><span class="price__now">${money(p.price, p.currency)}</span>
     ${p.compareAtPrice ? `<span class="sr-only">Was</span><s class="price__was">${money(p.compareAtPrice, p.currency)}</s>` : ''}
@@ -39,10 +39,11 @@ export function productCard(p) {
         <h3 class="card__title"><a href="${productUrl(p)}">${esc(p.title)}</a></h3>
         <p class="card__format">${esc(p.formatLabel)}</p>
         ${priceMarkup(p)}
+        ${p.price == null ? `<div class="card__buy"><span class="btn btn--outline card__soon" aria-disabled="true">Coming soon</span></div>` : `
         <div class="card__buy">
           <button class="btn btn--dark card__add" type="button" data-add>Add to cart ${icons.bagPlus}</button>
           ${stepper(p.title)}
-        </div>
+        </div>`}
       </div>
     </article>`;
 }

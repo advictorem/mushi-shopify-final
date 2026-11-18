@@ -57,7 +57,7 @@ export function render(main) {
 
     <section class="page__section page__section--wide" aria-labelledby="ing-products">
       <h2 class="section-title" id="ing-products">Our products</h2>
-      <div class="grid-products">${getProducts().filter((p) => p.category !== 'merch').map(productCard).join('')}</div>
+      <div class="grid-products">${getProducts().filter((p) => ['gummies', 'chocolates'].includes(p.category)).map(productCard).join('')}</div>
     </section>
 
     <section class="page__section prose prose--small" aria-labelledby="ing-safety">

@@ -7,9 +7,10 @@
     "notes": [
       "Live catalog listed 9 products on the verification date; no product had a compare-at price or more than the single default variant.",
       "Exclusive MUSHI Fan ($27.00) is on the live catalog but was not in the brief's reference list.",
-      "Merch products have no approved image export yet (images.primary is null).",
       "The Figma comp shows $60.00 / $65.00 and SALE / POPULAR badges; those are not on the live site and are not used.",
-      "Chocolate short descriptions are the first sentence of the live description; the live homepage only carries short copy for gummies."
+      "Chocolate short descriptions are the first sentence of the live description; the live homepage only carries short copy for gummies.",
+      "Four apparel products (merch) come from the Shop All comp, not the live catalog. They have no verified price, so price is null and they cannot be added to the cart. The comp's $60.00 is not used.",
+      "Floaty, Beach Ball and Fan are grouped as 'extras' per the Shop All comp; names and prices remain those of the live catalog."
     ]
   },
   "categories": [
@@ -24,6 +25,10 @@
     {
       "handle": "merch",
       "title": "Merch"
+    },
+    {
+      "handle": "extras",
+      "title": "Extras"
     }
   ],
   "products": [
@@ -282,8 +287,8 @@
       "id": "10201401327925",
       "handle": "exclusive-mushi-floaty",
       "title": "Exclusive MUSHI Floaty",
-      "category": "merch",
-      "formatLabel": "Merch",
+      "category": "extras",
+      "formatLabel": "Extras",
       "price": 4000,
       "compareAtPrice": null,
       "currency": "USD",
@@ -306,9 +311,12 @@
         }
       ],
       "images": {
-        "primary": null,
-        "hover": null,
-        "gallery": []
+        "primary": "product-floaty-pack",
+        "hover": "product-floaty-hover",
+        "gallery": [
+          "product-floaty-pack",
+          "product-floaty-hover"
+        ]
       },
       "liveUrl": "https://mushiworld.com/products/exclusive-mushi-floaty",
       "sourceUrl": "https://mushiworld.com/collections/all",
@@ -318,8 +326,8 @@
       "id": "10201399820597",
       "handle": "exclusive-mushi-beach-ball",
       "title": "Exclusive MUSHI Beach Ball",
-      "category": "merch",
-      "formatLabel": "Merch",
+      "category": "extras",
+      "formatLabel": "Extras",
       "price": 3000,
       "compareAtPrice": null,
       "currency": "USD",
@@ -342,9 +350,12 @@
         }
       ],
       "images": {
-        "primary": null,
-        "hover": null,
-        "gallery": []
+        "primary": "product-beachball-pack",
+        "hover": "product-beachball-hover",
+        "gallery": [
+          "product-beachball-pack",
+          "product-beachball-hover"
+        ]
       },
       "liveUrl": "https://mushiworld.com/products/exclusive-mushi-beach-ball",
       "sourceUrl": "https://mushiworld.com/collections/all",
@@ -354,8 +365,8 @@
       "id": "10201399198005",
       "handle": "exclusive-mushi-fan-13inch",
       "title": "Exclusive MUSHI Fan",
-      "category": "merch",
-      "formatLabel": "Merch",
+      "category": "extras",
+      "formatLabel": "Extras",
       "price": 2700,
       "compareAtPrice": null,
       "currency": "USD",
@@ -378,13 +389,144 @@
         }
       ],
       "images": {
-        "primary": null,
-        "hover": null,
-        "gallery": []
+        "primary": "product-fan-pack",
+        "hover": "product-fan-hover",
+        "gallery": [
+          "product-fan-pack",
+          "product-fan-hover"
+        ]
       },
       "liveUrl": "https://mushiworld.com/products/exclusive-mushi-fan-13inch",
       "sourceUrl": "https://mushiworld.com/collections/all",
       "verifiedAt": "2026-11-18"
+    },
+    {
+      "id": null,
+      "handle": "what-war-long-sleeve-t-shirt",
+      "title": "What War Long Sleeve T-Shirt",
+      "category": "merch",
+      "formatLabel": "Apparel",
+      "price": null,
+      "compareAtPrice": null,
+      "currency": "USD",
+      "available": false,
+      "shortDescription": "",
+      "shortDescriptionSource": null,
+      "fullDescription": "",
+      "flavorProfile": null,
+      "perfectFor": null,
+      "details": null,
+      "badges": [],
+      "attributes": [],
+      "variants": [],
+      "images": {
+        "primary": "product-longsleeve-pack",
+        "hover": "product-longsleeve-hover",
+        "gallery": [
+          "product-longsleeve-pack",
+          "product-longsleeve-hover"
+        ]
+      },
+      "liveUrl": null,
+      "sourceUrl": "design-source/reference/shop-all-comp.jpg",
+      "verifiedAt": null,
+      "pending": "Not on the live catalog yet: price, sizes and description to be supplied"
+    },
+    {
+      "id": null,
+      "handle": "mushi-world-premium-tee",
+      "title": "Mushi World Premium Tee",
+      "category": "merch",
+      "formatLabel": "Apparel",
+      "price": null,
+      "compareAtPrice": null,
+      "currency": "USD",
+      "available": false,
+      "shortDescription": "",
+      "shortDescriptionSource": null,
+      "fullDescription": "",
+      "flavorProfile": null,
+      "perfectFor": null,
+      "details": null,
+      "badges": [],
+      "attributes": [],
+      "variants": [],
+      "images": {
+        "primary": "product-tee-pack",
+        "hover": "product-tee-hover",
+        "gallery": [
+          "product-tee-pack",
+          "product-tee-hover"
+        ]
+      },
+      "liveUrl": null,
+      "sourceUrl": "design-source/reference/shop-all-comp.jpg",
+      "verifiedAt": null,
+      "pending": "Not on the live catalog yet: price, sizes and description to be supplied"
+    },
+    {
+      "id": null,
+      "handle": "find-your-peace-hoodie",
+      "title": "Find Your Peace Hoodie",
+      "category": "merch",
+      "formatLabel": "Apparel",
+      "price": null,
+      "compareAtPrice": null,
+      "currency": "USD",
+      "available": false,
+      "shortDescription": "",
+      "shortDescriptionSource": null,
+      "fullDescription": "",
+      "flavorProfile": null,
+      "perfectFor": null,
+      "details": null,
+      "badges": [],
+      "attributes": [],
+      "variants": [],
+      "images": {
+        "primary": "product-hoodie-pack",
+        "hover": "product-hoodie-hover",
+        "gallery": [
+          "product-hoodie-pack",
+          "product-hoodie-hover"
+        ]
+      },
+      "liveUrl": null,
+      "sourceUrl": "design-source/reference/shop-all-comp.jpg",
+      "verifiedAt": null,
+      "pending": "Not on the live catalog yet: price, sizes and description to be supplied"
+    },
+    {
+      "id": null,
+      "handle": "distressed-baggy-sweatpants",
+      "title": "Distressed Baggy Sweatpants",
+      "category": "merch",
+      "formatLabel": "Apparel",
+      "price": null,
+      "compareAtPrice": null,
+      "currency": "USD",
+      "available": false,
+      "shortDescription": "",
+      "shortDescriptionSource": null,
+      "fullDescription": "",
+      "flavorProfile": null,
+      "perfectFor": null,
+      "details": null,
+      "badges": [],
+      "attributes": [],
+      "variants": [],
+      "images": {
+        "primary": "product-pants-pack",
+        "hover": "product-pants-hover",
+        "gallery": [
+          "product-pants-pack",
+          "product-pants-hover"
+        ]
+      },
+      "liveUrl": null,
+      "sourceUrl": "design-source/reference/shop-all-comp.jpg",
+      "verifiedAt": null,
+      "pending": "Not on the live catalog yet: price, sizes and description to be supplied"
     }
   ]
 }
