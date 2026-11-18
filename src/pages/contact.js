@@ -1,5 +1,5 @@
 import { siteConfig } from '../data/site.config.js';
-import { picture } from '../data/assets.js';
+import { beachMarkup } from '../sections/beach.js';
 import { pageHeader, previewBanner } from './_shared.js';
 import { PREVIEW_NOTE } from '../adapters/forms.js';
 
@@ -18,6 +18,6 @@ export function render(main) {
       </form>
       <p class="page__cta">Or email us at <a class="link" href="mailto:${siteConfig.contactEmail}">${siteConfig.contactEmail}</a>.</p>
     </section>
-    <div class="page-beach" aria-hidden="true" data-rise>${picture('contact-beach', { alt: '', sizes: '100vw' })}</div>`;
+    ${beachMarkup()}`;
   main.classList.add('page--flush');
 }

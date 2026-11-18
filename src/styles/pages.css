@@ -780,6 +780,20 @@
   display: block;
   width: 100%;
 }
+/* About: the beach reaches up behind WE ARE MUSHI; taller crop on phones. */
+.page-beach--deep {
+  margin-top: calc(var(--u) * -25);
+}
+@media (max-width: 699px) {
+  .page-beach--deep {
+    margin-top: -34vw;
+  }
+  .page-beach--deep img {
+    width: 190%;
+    max-width: none;
+    margin-left: -84%;
+  }
+}
 .page--flush > .page__section {
   position: relative;
   z-index: 1;
@@ -802,5 +816,223 @@
     position: static;
     width: 100%;
     margin: 0;
+  }
+}
+
+/* ---------- About: scroll-filled manifesto ---------- */
+/* Fill state. --p is written per item by src/utils/scroll-fill.js; 1 = filled. */
+.sf-pending [data-fill-item] {
+  --p: 0;
+}
+.sf-pending [data-scroll-fill] {
+  --bp: 0;
+}
+.fill-word {
+  display: inline-block;
+  padding: 0.07em 0.03em 0.07em 0;
+  color: var(--fill-on);
+  transform: scaleY(var(--display-stretch));
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .fill-word {
+    /* Two colours with a soft edge that travels left to right through the word. */
+    background-image: linear-gradient(
+      90deg,
+      var(--fill-on) calc(var(--p, 1) * (100% + 0.45em) - 0.45em),
+      var(--fill-off) calc(var(--p, 1) * (100% + 0.45em))
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+  .fill-word::selection {
+    background: var(--c-navy);
+    -webkit-text-fill-color: var(--c-white);
+  }
+}
+
+.manifesto {
+  --fill-on: var(--c-navy);
+  --fill-off: rgb(28 41 50 / 0.3);
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font: 700 var(--m-fs) / 1.13 var(--font-display);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.manifesto--light {
+  --fill-on: #f3fdfe;
+  --fill-off: rgb(255 255 255 / 0.4);
+}
+.manifesto--navy {
+  --fill-on: #2d4051;
+  --fill-off: rgb(45 64 81 / 0.24);
+}
+.manifesto--peach {
+  --fill-on: #ebac88;
+  --fill-off: rgb(235 172 136 / 0.34);
+}
+.manifesto__rows {
+  display: block;
+}
+
+/* Inline image: the frame keeps its place in the line; only what is inside moves. */
+.imedia {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 0.877em;
+  width: calc(0.877em * var(--ar));
+  overflow: hidden;
+  border-radius: 0.045em;
+  opacity: calc(0.28 + var(--p, 1) * 0.72);
+}
+.imedia__frame {
+  position: absolute;
+  inset: 0;
+  transform: translate3d(0, calc((1 - var(--p, 1)) * 12%), 0) scale(calc(1.22 - var(--p, 1) * 0.22));
+  will-change: transform;
+}
+.imedia picture {
+  position: absolute;
+  inset: -14% 0;
+}
+.imedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Peach Bliss pack: rises between WE ARE and MUSHI as the block fills (--bp). */
+.manifesto__pack {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.28em;
+  margin: -0.5em 0.02em;
+  opacity: min(1, var(--bp, 1) * 2.2);
+  transform: translate3d(0, calc((1 - var(--bp, 1)) * 38%), 0) rotate(calc((1 - var(--bp, 1)) * -7deg)) scale(calc(0.86 + var(--bp, 1) * 0.14));
+  will-change: transform, opacity;
+}
+.manifesto__pack img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0.06em 0.09em rgb(120 70 40 / 0.22));
+}
+
+.about {
+  --u: min(1vw, 19.2px); /* layout unit: the comp scales with the viewport up to 1920px */
+  --m-fs: clamp(2.75rem, 12.6vw, 6.75rem);
+  --pin: clamp(6rem, 20vh, 12rem); /* how long the opening statement is held while it fills */
+  position: relative;
+  overflow-x: hidden;
+  overflow-x: clip;
+  background: linear-gradient(
+    to bottom,
+    #00cbda 0,
+    #4fd4e1 calc(var(--u) * 22),
+    #a4e0e6 calc(var(--u) * 46),
+    #dbe9e7 calc(var(--u) * 68),
+    #efe5dc calc(var(--u) * 84),
+    #f0e6dc 100%
+  );
+}
+.about > section {
+  position: relative;
+  padding-inline: calc(var(--u) * 7.25);
+}
+.about__hero {
+  padding-top: calc(var(--u) * 3.2);
+  padding-bottom: calc(var(--u) * 19);
+}
+/* Short hold: the opening statement sticks for --pin of scrolling while it fills. */
+.about__pin::after {
+  content: '';
+  display: block;
+  height: var(--pin);
+}
+.about__pin .manifesto {
+  position: sticky;
+  top: calc(var(--header-h) + 1rem);
+}
+.about__philosophy {
+  padding-bottom: calc(var(--u) * 13.5);
+}
+.about__reveal {
+  padding-bottom: calc(var(--u) * 9);
+}
+.about .page-beach {
+  z-index: 0;
+}
+/* Sky photo with palms, behind everything; drifts more slowly than the text (data-parallax). */
+.about__palms {
+  position: absolute;
+  z-index: 0;
+  top: calc(100% - var(--pin) - var(--u) * 88);
+  left: calc(var(--u) * -20);
+  width: 140vw;
+  height: 0;
+  pointer-events: none;
+}
+.about__palms picture {
+  display: block;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 4%, #000 26%, #000 62%, transparent 97%);
+  mask-image: linear-gradient(to bottom, transparent 4%, #000 26%, #000 62%, transparent 97%);
+}
+.about__palms img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 900px) {
+  .about {
+    --m-fs: calc(var(--u) * 9.6);
+  }
+  .manifesto {
+    line-height: 1;
+  }
+  .manifesto__row {
+    display: flex;
+    align-items: center;
+    gap: 0.235em;
+    height: calc(var(--u) * 10.62);
+    white-space: nowrap;
+  }
+  .fill-word {
+    padding-block: 0;
+  }
+}
+@media (max-width: 899px) {
+  .about > section {
+    padding-inline: clamp(1rem, 5vw, 2.5rem);
+  }
+  .about__hero {
+    padding-top: 1.25rem;
+    padding-bottom: 34vw;
+  }
+  .about__palms {
+    top: calc(100% - var(--pin) - 62vw);
+  }
+  .imedia {
+    margin-inline: 0.04em;
+  }
+  .about__philosophy {
+    padding-bottom: 22vw;
+  }
+  .about__reveal {
+    padding-bottom: 20vw;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about {
+    --pin: 0px; /* no hold: the statement is already filled */
+  }
+}
+@media (prefers-reduced-motion: reduce) and (min-width: 900px) {
+  .about__palms {
+    top: calc(100% - var(--u) * 70); /* where the parallax would otherwise rest them */
   }
 }

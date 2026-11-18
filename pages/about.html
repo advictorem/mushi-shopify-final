@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Us — MUSHI</title>
-  <meta name="description" content="The story behind MUSHI.">
+  <meta name="description" content="We believe life tastes better when you’re present. The MUSHI philosophy.">
   <!-- Link preview. Change the domain here when the site moves off staging. -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MUSHI">
   <meta property="og:title" content="About Us — MUSHI">
-  <meta property="og:description" content="The story behind MUSHI.">
+  <meta property="og:description" content="We believe life tastes better when you’re present. The MUSHI philosophy.">
   <meta property="og:image" content="https://mushi-shopify-final.vercel.app/assets/share.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="628">
@@ -20,11 +20,54 @@
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="/assets/svg/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/src/styles/main.css">
+  <!-- Scroll-fill starts muted only when motion is allowed; if the script never runs, the text returns to its filled state. -->
+  <script>(function(d){if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.classList.add('sf-pending');setTimeout(function(){d.classList.remove('sf-pending')},4000)})(document.documentElement)</script>
 </head>
 <body class="page-plain" data-page="about">
   <a class="skip-link" href="#main">Skip to content</a>
   <div id="site-header"></div>
-  <main id="main" class="page"></main>
+  <main id="main" class="page page--flush about">
+    <!-- The manifesto is static HTML so it reads without JavaScript. src/pages/about.js only adds motion.
+         Each statement is announced once from the .sr-only sentence; the visual rows are aria-hidden. -->
+    <section class="about__hero">
+      <div class="about__palms" aria-hidden="true"><picture data-parallax="0.3"><source type="image/avif" srcset="/assets/img/about-palms-1400.avif 1400w, /assets/img/about-palms-2600.avif 2600w" sizes="140vw"><source type="image/webp" srcset="/assets/img/about-palms-1400.webp 1400w, /assets/img/about-palms-2600.webp 2600w" sizes="140vw"><img src="/assets/img/about-palms-2600.webp" alt="" width="3828" height="2556" fetchpriority="high" decoding="async"></picture></div>
+      <div class="about__pin" data-fill-pin>
+      <h1 class="manifesto manifesto--light" data-scroll-fill="pin">
+        <span class="sr-only">We believe life tastes better when you’re present.</span>
+        <span class="manifesto__rows" aria-hidden="true">
+        <span class="manifesto__row"><span class="fill-word" data-fill-item>We</span> <span class="fill-word" data-fill-item>believe</span> <span class="fill-word" data-fill-item>life</span> <span class="imedia imedia--standin" data-fill-item style="--ar:1.857"><span class="imedia__frame"><picture data-parallax="0.1"><img src="/assets/placeholder/about-crowd.webp" alt="" width="200" height="104" fetchpriority="high" decoding="async"></picture></span></span></span>
+        <span class="manifesto__row"><span class="fill-word" data-fill-item>tastes</span> <span class="imedia imedia--standin" data-fill-item style="--ar:1.536"><span class="imedia__frame"><picture data-parallax="0.1"><img src="/assets/placeholder/about-mouth.webp" alt="" width="164" height="104" fetchpriority="high" decoding="async"></picture></span></span> <span class="fill-word" data-fill-item>better</span></span>
+        <span class="manifesto__row"><span class="fill-word" data-fill-item>when</span> <span class="fill-word" data-fill-item>you’re</span> <span class="fill-word" data-fill-item>present.</span></span>
+        </span>
+      </h1>
+      </div>
+    </section>
+    <section class="about__philosophy">
+      <h2 class="manifesto manifesto--navy" data-scroll-fill>
+        <span class="sr-only">We blend irresistible flavors with thoughtful ingredients to turn everyday moments into experiences worth savoring.</span>
+        <span class="manifesto__rows" aria-hidden="true">
+        <span class="manifesto__row"><span class="fill-word" data-fill-item>We</span> <span class="fill-word" data-fill-item>blend</span></span>
+        <span class="manifesto__row"><span class="fill-word" data-fill-item>irresistible</span></span>
+        <span class="manifesto__row"><span class="imedia" data-fill-item style="--ar:3.72"><span class="imedia__frame"><picture data-parallax="0.1"><source type="image/avif" srcset="/assets/img/about-chocolate-640.avif 640w, /assets/img/about-chocolate-1070.avif 1070w" sizes="(min-width: 900px) 31vw, 60vw"><source type="image/webp" srcset="/assets/img/about-chocolate-640.webp 640w, /assets/img/about-chocolate-1070.webp 1070w" sizes="(min-width: 900px) 31vw, 60vw"><img src="/assets/img/about-chocolate-1070.webp" alt="" width="1070" height="1070" loading="lazy" decoding="async"></picture></span></span> <span class="fill-word" data-fill-item>flavors</span> <span class="imedia" data-fill-item style="--ar:1.52"><span class="imedia__frame"><picture data-parallax="0.1"><source type="image/avif" srcset="/assets/img/about-cherry-358.avif 358w" sizes="(min-width: 900px) 18vw, 40vw"><source type="image/webp" srcset="/assets/img/about-cherry-358.webp 358w" sizes="(min-width: 900px) 18vw, 40vw"><img src="/assets/img/about-cherry-358.webp" alt="" width="358" height="358" loading="lazy" decoding="async"></picture></span></span></span>
+        <span class="manifesto__row"><span class="fill-word" data-fill-item>with</span> <span class="fill-word" data-fill-item>thoughtful</span></span>
+        <span class="manifesto__row"><span class="fill-word" data-fill-item>ingredients</span> <span class="fill-word" data-fill-item>to</span> <span class="fill-word" data-fill-item>turn</span></span>
+        <span class="manifesto__row"><span class="fill-word" data-fill-item>everyday</span> <span class="imedia" data-fill-item style="--ar:1.857"><span class="imedia__frame"><picture data-parallax="0.1"><source type="image/avif" srcset="/assets/img/about-picnic-646.avif 646w" sizes="(min-width: 900px) 18vw, 40vw"><source type="image/webp" srcset="/assets/img/about-picnic-646.webp 646w" sizes="(min-width: 900px) 18vw, 40vw"><img src="/assets/img/about-picnic-646.webp" alt="" width="646" height="364" loading="lazy" decoding="async"></picture></span></span></span>
+        <span class="manifesto__row"><span class="fill-word" data-fill-item>moments</span> <span class="fill-word" data-fill-item>into</span> <span class="imedia" data-fill-item style="--ar:2.12"><span class="imedia__frame"><picture data-parallax="0.1"><source type="image/avif" srcset="/assets/img/about-ferris-526.avif 526w" sizes="(min-width: 900px) 18vw, 40vw"><source type="image/webp" srcset="/assets/img/about-ferris-526.webp 526w" sizes="(min-width: 900px) 18vw, 40vw"><img src="/assets/img/about-ferris-526.webp" alt="" width="526" height="396" loading="lazy" decoding="async"></picture></span></span></span>
+        <span class="manifesto__row"><span class="fill-word" data-fill-item>experiences</span> <span class="fill-word" data-fill-item>worth</span></span>
+        <span class="manifesto__row"><span class="fill-word" data-fill-item>savoring.</span></span>
+        </span>
+      </h2>
+    </section>
+    <section class="about__reveal">
+      <h2 class="manifesto manifesto--peach" data-scroll-fill>
+        <span class="sr-only">We are Mushi.</span>
+        <span class="manifesto__rows" aria-hidden="true">
+        <span class="manifesto__row"><span class="fill-word" data-fill-item>We</span> <span class="fill-word" data-fill-item>are</span> <span class="manifesto__pack"><picture><source type="image/avif" srcset="/assets/img/about-peach-pack-378.avif"><img src="/assets/img/about-peach-pack-378.webp" alt="" width="378" height="532" loading="lazy" decoding="async"></picture></span> <span class="fill-word" data-fill-item>Mushi.</span></span>
+        </span>
+      </h2>
+    </section>
+    <!-- src/pages/about.js appends the shared beach (src/sections/beach.js) here. -->
+  </main>
   <div id="site-footer"></div>
   <script type="module" src="/src/page.js"></script>
 </body>

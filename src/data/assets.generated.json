@@ -600,6 +600,106 @@
         }
       ]
     },
+    "about-palms": {
+      "original": "palm-trees.png",
+      "usage": "About / sky and palm backdrop",
+      "trimmed": false,
+      "width": 3828,
+      "height": 2556,
+      "aspectRatio": 1.4977,
+      "variants": [
+        {
+          "width": 1400,
+          "webp": "/assets/img/about-palms-1400.webp",
+          "avif": "/assets/img/about-palms-1400.avif"
+        },
+        {
+          "width": 2600,
+          "webp": "/assets/img/about-palms-2600.webp",
+          "avif": "/assets/img/about-palms-2600.avif"
+        }
+      ]
+    },
+    "about-chocolate": {
+      "original": "mushi-choco-milk-2.png",
+      "usage": "About / inline image before FLAVORS",
+      "trimmed": false,
+      "width": 1070,
+      "height": 1070,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 640,
+          "webp": "/assets/img/about-chocolate-640.webp",
+          "avif": "/assets/img/about-chocolate-640.avif"
+        },
+        {
+          "width": 1070,
+          "webp": "/assets/img/about-chocolate-1070.webp",
+          "avif": "/assets/img/about-chocolate-1070.avif"
+        }
+      ]
+    },
+    "about-cherry": {
+      "original": "cherry-2.png",
+      "usage": "About / inline image after FLAVORS",
+      "trimmed": false,
+      "width": 358,
+      "height": 358,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 358,
+          "webp": "/assets/img/about-cherry-358.webp",
+          "avif": "/assets/img/about-cherry-358.avif"
+        }
+      ]
+    },
+    "about-picnic": {
+      "original": "picnic.png",
+      "usage": "About / inline image after EVERYDAY",
+      "trimmed": false,
+      "width": 646,
+      "height": 364,
+      "aspectRatio": 1.7747,
+      "variants": [
+        {
+          "width": 646,
+          "webp": "/assets/img/about-picnic-646.webp",
+          "avif": "/assets/img/about-picnic-646.avif"
+        }
+      ]
+    },
+    "about-ferris": {
+      "original": "ferris-wheel.png",
+      "usage": "About / inline image after MOMENTS INTO",
+      "trimmed": false,
+      "width": 526,
+      "height": 396,
+      "aspectRatio": 1.3283,
+      "variants": [
+        {
+          "width": 526,
+          "webp": "/assets/img/about-ferris-526.webp",
+          "avif": "/assets/img/about-ferris-526.avif"
+        }
+      ]
+    },
+    "about-peach-pack": {
+      "original": "mushi-peach-product.png",
+      "usage": "About / Peach Bliss pack in WE ARE MUSHI",
+      "trimmed": false,
+      "width": 378,
+      "height": 532,
+      "aspectRatio": 0.7105,
+      "variants": [
+        {
+          "width": 378,
+          "webp": "/assets/img/about-peach-pack-378.webp",
+          "avif": "/assets/img/about-peach-pack-378.avif"
+        }
+      ]
+    },
     "hero-shop-all": {
       "original": "Mushi-SHOP-HeroALL.jpg",
       "usage": "Shop All hero",
@@ -1134,6 +1234,22 @@
       "height": 600,
       "missing": true,
       "source": "cropped from design-source/reference/age-gate-screenshot.png"
+    },
+    "about-crowd": {
+      "usage": "About / inline image after LIFE (low-res crop, export needed)",
+      "file": "/assets/placeholder/about-crowd.webp",
+      "width": 200,
+      "height": 104,
+      "missing": true,
+      "source": "cropped from design-source/reference/about-comp.png"
+    },
+    "about-mouth": {
+      "usage": "About / inline image after TASTES (low-res crop, export needed)",
+      "file": "/assets/placeholder/about-mouth.webp",
+      "width": 164,
+      "height": 104,
+      "missing": true,
+      "source": "cropped from design-source/reference/about-comp.png"
     }
   },
   "video": {

@@ -109,3 +109,27 @@ Deviations from the comps, on purpose: live-catalog names and prices are used (t
 Checked at 1440px, console clean on every route: transparent interior header, uncut page-header labels, FAQ dosage scale, shorter shop heroes, sort menu, inline coaching and wholesale forms, shipping/privacy/terms/opt-out pages. Not checked on mobile or other browsers.
 
 Policy copy is pasted from mushiworld.com on 2026-11-18 into `src/data/policies/*.md` with these substitutions: `[Your Store Name]`/`[MUSHI]` → MUSHI, `[yourstorename.com]` → mushiworld.com, "Origins" → MUSHI, `gummiesmushi@gmail.com` → support@mushiworld.com, `[LINK TO REFUND POLICY]` → Returns & Exchanges on the shipping page, `[LINK TO PRIVACY POLICY]` → the privacy page. Footer payment badges are text placeholders; Shopify renders the official icons from enabled payment methods.
+
+## Round 7 — About page (scroll-filled manifesto)
+
+Built from `design-source/reference/about-comp.png`. Route: `/pages/about` (also `/about` via a rewrite in `vercel.json`).
+
+**What was added**
+- `src/utils/scroll-fill.js` — reusable scroll-fill (`[data-scroll-fill]` + `[data-fill-item]`, writes `--p` / `--bp`). Options and behaviour are documented at the top of the file. Started for every page by `initSite()`.
+- `.fill-word`, `.imedia`, `.manifesto*` in `src/styles/pages.css` — word fill, inline image frame (reveal + contained parallax via the existing `data-parallax`), row layout.
+- `src/sections/beach.js` — the Contact page beach (`[data-rise]`) moved into a shared function; Contact and About both call it. Contact renders the same markup as before.
+- Manifesto text is static HTML in `pages/about.html`; each statement is read once from an `.sr-only` sentence and the visual rows are `aria-hidden`.
+
+**Checked (Chrome, Playwright)**
+- 375, 430, 768, 1024, 1366, 1440, 1920: no horizontal overflow, console clean.
+- 1366 full page compared side by side with the comp: row widths within about 1%, row pitch 145px vs 145px.
+- Fill advances with scroll in reading order, reverses on scroll up, inline images and the pack reveal with their words; beach rises as on Contact.
+- Reduced motion: text shown filled, no pin, no parallax.
+- Existing interaction suite still passes.
+
+**Not checked / limits**
+- Safari, Firefox, iOS and Android were not run (not available in this environment). `background-clip: text` and `position: sticky` are the things to look at in Safari.
+- The opening statement is held (sticky) for about 20% of a screen so it can fill before leaving; this adds that much sky between statements one and two compared with the comp.
+- Two inline images (crowd, mouth) were not in the exports or the upload; they are low-resolution crops from the comp until the originals arrive.
+- The supplied cherry, picnic, ferris wheel and pack images are small (358–646px wide); fine at their inline size, soft on very large or 3x screens.
+- Muted (unfilled) text and the peach statement are below WCAG AA contrast by design; the same sentences are available to assistive tech as plain text.

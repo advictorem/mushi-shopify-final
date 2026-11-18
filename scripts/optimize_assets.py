@@ -52,6 +52,12 @@ RASTER = {
     "ingredients-lab": ("lab-technician.jpg", [640, 1270], "Ingredients / Science is still exploring"),
     "hero-shop-merch": ("JSS_0212.jpg", [1000, 1900], "Merch collection hero"),
     "contact-beach": ("sunset-beach.png", [1250, 2500], "Contact page bottom background"),
+    "about-palms": ("palm-trees.png", [1400, 2600], "About / sky and palm backdrop"),
+    "about-chocolate": ("mushi-choco-milk-2.png", [640, 1070], "About / inline image before FLAVORS"),
+    "about-cherry": ("cherry-2.png", [358], "About / inline image after FLAVORS"),
+    "about-picnic": ("picnic.png", [646], "About / inline image after EVERYDAY"),
+    "about-ferris": ("ferris-wheel.png", [526], "About / inline image after MOMENTS INTO"),
+    "about-peach-pack": ("mushi-peach-product.png", [378], "About / Peach Bliss pack in WE ARE MUSHI"),
     "hero-shop-all": ("Mushi-SHOP-HeroALL.jpg", [1280, 2576], "Shop All hero"),
     "hero-shop-gummies": ("Mushi-SHOP-HeroGUMMIES.jpg", [1280, 2576], "Gummies collection hero"),
     "category-gummies": ("gummies.png", [720, 1400], "Category showcase / Gummies"),
@@ -120,6 +126,8 @@ PLACEHOLDERS = {
     "ugc-4": ("homepage-design-raster.png", (0.645, 0.7665, 0.795, 0.7900), "Instagram polaroid 4"),
     "ugc-5": ("homepage-design-raster.png", (0.855, 0.7610, 0.995, 0.7865), "Instagram polaroid 5"),
     "age-gate": ("age-gate-screenshot.png", (0.4995, 0.1210, 0.8360, 0.8715), "Age gate lifestyle image"),
+    "about-crowd": ("about-comp.png", (946 / 1366, 174 / 3676, 1146 / 1366, 278 / 3676), "About / inline image after LIFE (low-res crop, export needed)"),
+    "about-mouth": ("about-comp.png", (494 / 1366, 321 / 3676, 658 / 1366, 425 / 3676), "About / inline image after TASTES (low-res crop, export needed)"),
 }
 
 

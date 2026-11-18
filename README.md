@@ -132,3 +132,11 @@ Sections map one-to-one to theme sections; `content.js` and `site.config.js` bec
 - Several pieces of copy are flagged for compliance review (FAQ dosage/usage answers, comparison table, benefit icons, testimonials, bundle discount).
 - The age gate is a frontend courtesy gate, not legal age verification.
 - No real-device testing yet (Safari, Firefox, iOS, Android) — see `docs/QA.md`.
+
+## Scroll-fill text and the About page
+
+`pages/about.html` holds the manifesto as static HTML. Motion comes from three shared pieces:
+
+- `src/utils/scroll-fill.js` — add `data-scroll-fill` to a block and `data-fill-item` to each word or inline image; the script writes `--p` (0–1) on each item as the fill passes through it and `--bp` on the block. Colours are set with `--fill-on` / `--fill-off` (see `.manifesto--light|navy|peach` in `src/styles/pages.css`).
+- `.imedia` — inline image frame. The frame keeps its place in the line; the picture inside reveals with `--p` and drifts with `data-parallax`.
+- `src/sections/beach.js` — the sunset beach above the footer, shared by Contact and About.
