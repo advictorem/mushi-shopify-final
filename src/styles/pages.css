@@ -3,16 +3,28 @@
   min-height: 60vh;
   padding-bottom: var(--space-section);
 }
+/* Interior pages: the header floats over the page (transparent until scrolled). */
+.page-plain .page {
+  padding-top: var(--header-h);
+}
 .page__header {
+  --label: clamp(4rem, 13vw, 16rem);
   position: relative;
   overflow: hidden;
-  padding: clamp(3rem, 7vw, 6rem) var(--gutter) clamp(1.5rem, 3vw, 2.5rem);
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  /* tall enough for the whole background word: nothing is cut off */
+  min-height: calc(var(--header-h) + var(--label) * 0.98 + 3.5rem);
+  margin-top: calc(var(--header-h) * -1);
+  padding: calc(var(--header-h) + 1.5rem) var(--gutter) 2rem;
   background: linear-gradient(to bottom, var(--c-mint), var(--c-cream));
   text-align: center;
 }
 .page__label {
   position: absolute;
-  inset: 0.08em 0 auto;
+  inset: calc(var(--header-h) + 1.25rem) 0 auto;
+  font-size: var(--label);
   color: rgb(255 255 255 / 0.5);
 }
 .page__title {
@@ -39,6 +51,28 @@
 }
 .page__narrow {
   max-width: 38rem;
+}
+.page__split--top {
+  align-items: start;
+}
+.page__video .coaching__frame {
+  width: min(25rem, 100%);
+  margin: 0 auto;
+}
+.page__media--sticky {
+  position: sticky;
+  top: calc(var(--header-h) + 1rem);
+}
+.page-form {
+  margin-top: 2rem;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border-radius: var(--radius-m);
+  background: var(--c-white);
+  font-size: 1rem;
+}
+.prose .page-form__title {
+  margin-bottom: 1.25rem;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
 }
 .page__split {
   max-width: calc(var(--container) + 2 * var(--gutter));
@@ -136,7 +170,7 @@
 .pdp {
   max-width: calc(var(--container) + 2 * var(--gutter));
   margin: 0 auto;
-  padding: clamp(1.5rem, 4vw, 3.5rem) var(--gutter) 0;
+  padding: clamp(2rem, 4vw, 3.5rem) var(--gutter) 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(1.5rem, 4vw, 4rem);
@@ -329,7 +363,7 @@
 }
 .shop-hero {
   position: relative;
-  height: clamp(20rem, 44.6vw, 46rem);
+  height: clamp(13rem, 24vw, 24rem);
   overflow: hidden;
   background: #b9b1a8;
   color: var(--c-white);
@@ -341,7 +375,7 @@
 }
 .shop-hero__img {
   position: absolute;
-  inset: -13% 0; /* room to travel on scroll without over-cropping the photo */
+  inset: -40% 0; /* the band is short, so the photo has plenty of room to travel */
 }
 .shop-hero__img picture,
 .shop-hero__img img {
@@ -360,7 +394,7 @@
 }
 .shop-hero__inner {
   position: absolute;
-  inset: auto 0 34% 0;
+  inset: auto 0 12% 0;
   max-width: 90rem;
   margin: 0 auto;
   padding: 0 clamp(1rem, 5.8vw, 5.25rem);
@@ -382,7 +416,7 @@
   box-shadow: 0 0 0 5px rgb(0 0 0 / 0.5);
 }
 .shop-hero__title {
-  font: 500 clamp(3.4rem, 11vw, 13rem) / 0.95 var(--font-display);
+  font: 500 clamp(3rem, 8vw, 9rem) / 0.95 var(--font-display);
   letter-spacing: 0;
   text-transform: uppercase;
   white-space: nowrap;
@@ -402,8 +436,9 @@
 }
 .shop-bar .btn {
   min-height: 2.6rem;
-  font-size: 0.95rem;
-  text-transform: none;
+  /* same type as the main menu links */
+  font: 500 1.15rem / 1 var(--font-display);
+  letter-spacing: 0;
   background: rgb(255 255 255 / 0.4);
 }
 .shop-bar__filters {
@@ -426,48 +461,29 @@
   background: var(--c-white);
   box-shadow: var(--shadow-panel);
 }
-.shop-bar__menu a {
+.shop-bar__menu a,
+.shop-bar__menu button {
   display: block;
+  width: 100%;
+  text-align: left;
+  white-space: nowrap;
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius-s);
-  font: 500 1.05rem / 1.2 var(--font-display);
+  font: 500 1.1rem / 1.2 var(--font-display);
   text-transform: uppercase;
 }
 .shop-bar__menu a:hover,
+.shop-bar__menu button:hover,
+.shop-bar__menu button[aria-pressed='true'],
 .shop-bar__menu a[aria-current] {
   background: var(--c-mint);
 }
-.shop-bar__count {
-  font: 400 var(--fs-mono) / 1 var(--font-mono);
-  letter-spacing: 0.1em;
-}
 .shop-bar__sort {
-  position: relative;
   margin-left: auto;
-  padding-right: 0.4rem;
-  cursor: pointer;
 }
-.shop-bar__sort:hover {
-  background: rgb(255 255 255 / 0.8);
-  color: var(--c-black);
-  border-color: currentColor;
-}
-.shop-bar__sort select {
-  appearance: none;
-  -webkit-appearance: none;
-  border: 0;
-  background: none;
-  padding: 0 0.6rem 0 0;
-  font: inherit;
-  cursor: pointer;
-}
-.shop-bar__sort select:focus-visible {
-  outline: none;
-  box-shadow: none;
-}
-.shop-bar__sort:focus-within {
-  outline: 2px solid var(--c-black);
-  outline-offset: 2px;
+.shop-bar__sort .shop-bar__menu {
+  left: auto;
+  right: 0;
 }
 
 .shop-section {
@@ -594,15 +610,13 @@
 }
 .shop-compare {
   overflow: clip;
-  padding: 0 var(--gutter) clamp(4rem, 8vw, 7rem);
-  background: linear-gradient(to bottom, #f3e3d8 0, #f9f1ec 45%, var(--c-white) 100%);
+  padding: clamp(2rem, 4vw, 4rem) var(--gutter) clamp(4rem, 8vw, 7rem);
+  background: linear-gradient(to bottom, #f3e3d8 0, #f9f1ec 30%, var(--c-white) 70%);
 }
 .shop-compare .compare {
   margin-top: 0;
 }
-.shop-compare .display-label--compare {
-  color: var(--c-white);
-}
+
 
 @media (max-width: 899px) {
   .shop-hero {
@@ -625,7 +639,106 @@
   .shop-grid {
     grid-template-columns: 1fr;
   }
-  .shop-bar__count {
-    display: none;
+}
+
+/* ---------- Policies (FAQ template) ---------- */
+.policy__intro {
+  margin-bottom: 1.5rem;
+}
+.policy__tools {
+  margin-bottom: 0.5rem;
+  text-align: right;
+}
+.accordion--compact .accordion__item summary {
+  font-size: clamp(1.25rem, 2.2vw, 1.9rem);
+}
+.accordion--compact .plus {
+  width: clamp(1.1rem, 1.6vw, 1.5rem);
+}
+.accordion__inner.prose {
+  font-size: 1.05rem;
+}
+.accordion__inner.prose h3 {
+  margin-top: 1.25rem;
+}
+.policy__optout {
+  max-width: 28rem;
+  margin-top: 2rem;
+}
+
+/* ---------- Dosage scale (FAQ page) ---------- */
+.dosage {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3.5rem) var(--gutter) 0;
+  text-align: center;
+}
+.dosage__title {
+  font: 700 var(--fs-h2) / 0.95 var(--font-display);
+  text-transform: uppercase;
+  color: var(--c-orange);
+}
+.dosage__intro {
+  max-width: 34rem;
+  margin: 1rem auto 0;
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+.dosage__oval {
+  margin: clamp(1.5rem, 3vw, 2.5rem) auto 0;
+  padding: clamp(2.5rem, 7vw, 5.5rem) clamp(1.5rem, 12vw, 9rem);
+  border-radius: 50%;
+  background: linear-gradient(120deg, #f2d0c3 0%, #ecb9a3 55%, #e8a78b 100%);
+}
+.dosage__heading {
+  font: 700 clamp(1.75rem, 3.6vw, 3rem) / 1 var(--font-display);
+  text-transform: uppercase;
+  color: var(--c-white);
+}
+.dosage__per {
+  margin: 0.4rem 0 1.25rem;
+  font: 400 var(--fs-mono) / 1 var(--font-mono);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.dosage__bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.35rem;
+  height: clamp(2rem, 4vw, 3.25rem);
+  overflow: hidden;
+  border-radius: 10px;
+}
+.dosage__bar span:nth-child(1) { background: #f6efe8; }
+.dosage__bar span:nth-child(2) { background: linear-gradient(to right, #e8ebe0, #cfe0d6); }
+.dosage__bar span:nth-child(3) { background: linear-gradient(to right, #bfd5c9, #d8b997); }
+.dosage__bar span:nth-child(4) { background: linear-gradient(to right, #cfa377, #c17f5a); }
+.dosage__bar span:nth-child(5) { background: linear-gradient(to right, #b95e3a, #a3402a); }
+.dosage__levels {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  gap: 0.35rem;
+  margin-top: 0.9rem;
+  color: #5a2318;
+}
+.dosage__levels strong {
+  display: block;
+  font: 700 clamp(1.4rem, 2.6vw, 2.2rem) / 1 var(--font-display);
+}
+.dosage__levels span {
+  display: block;
+  margin-top: 0.3rem;
+  font: 400 var(--fs-mono) / 1 var(--font-mono);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.dosage__note {
+  margin-top: 1.25rem;
+  font-size: var(--fs-small);
+  color: var(--c-muted);
+}
+@media (max-width: 699px) {
+  .dosage__oval {
+    border-radius: 3rem;
   }
 }

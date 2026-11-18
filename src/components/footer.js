@@ -13,6 +13,10 @@ const wordmark = logoSvg
   .replace(/ (width|height)="[^"]*"/g, '')
   .replace(/viewBox="[^"]*"/, 'viewBox="0 0 158 38"');
 
+// Text placeholders. On Shopify the official card icons are rendered from the
+// store's enabled payment methods ({{ type | payment_type_svg_tag }}).
+const PAYMENT_METHODS = ['Visa', 'Mastercard', 'Amex', 'PayPal', 'Diners', 'Discover'];
+
 export function mountFooter() {
   const host = qs('#site-footer');
   if (!host) return;
@@ -22,7 +26,7 @@ export function mountFooter() {
       <div class="footer__inner">
         <div class="footer__brand">
           <a href="/" aria-label="MUSHI home">${logoMarkup('logo--light')}</a>
-          <p class="footer__legal-note">21+ only. Use responsibly.</p>
+          <ul class="footer__pay" aria-label="Payment methods">${PAYMENT_METHODS.map((m) => `<li>${m}</li>`).join('')}</ul>
         </div>
         <nav class="footer__nav" aria-label="Footer">
           ${footerNav.map((g) => `
@@ -52,7 +56,7 @@ export function mountFooter() {
       </div>
       <div class="footer__bottom">
         <p class="footer__copy">© ${new Date().getFullYear()} MUSHI. Staging preview — checkout, accounts and forms are not connected.</p>
-        <ul class="footer__legal">${legalNav.map((it) => `<li><a href="${it.href}" target="_blank" rel="noopener">${it.label}</a></li>`).join('')}</ul>
+        <ul class="footer__legal">${legalNav.map((it) => `<li><a href="${it.href}">${it.label}</a></li>`).join('')}</ul>
       </div>
       ${wordmark}
     </footer>`;

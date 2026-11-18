@@ -1,5 +1,4 @@
 // Single source for header, mobile menu and footer links.
-const live = 'https://mushiworld.com';
 
 export const primaryNav = [
   {
@@ -45,10 +44,7 @@ export const footerNav = [
     label: 'Support',
     items: [
       { label: 'Contact Us', href: '/pages/contact.html' },
-      { label: 'support@mushiworld.com', href: 'mailto:support@mushiworld.com', external: true, plain: true },
-      { label: 'Shipping Information', href: `${live}/pages/shipping-policy`, external: true },
-      // No returns page or subscription portal was found on the live site on 2026-11-18.
-      { label: 'Returns & Refunds', href: '/pages/contact.html', pending: true },
+      { label: 'Shipping Information', href: '/pages/shipping.html' },
     ],
   },
   {
@@ -59,7 +55,7 @@ export const footerNav = [
 
 // Small print, shown on the bottom line beside the copyright.
 export const legalNav = [
-  { label: 'Privacy Policy', href: `${live}/pages/privacy-policy`, external: true },
-  { label: 'Terms of Service', href: `${live}/pages/terms-of-service`, external: true },
-  { label: 'Data Sharing Opt-Out', href: `${live}/pages/data-sharing-opt-out`, external: true },
+  { label: 'Privacy Policy', href: '/pages/privacy.html' },
+  { label: 'Terms of Service', href: '/pages/terms.html' },
+  { label: 'Data Sharing Opt-Out', href: '/pages/data-sharing-opt-out.html' },
 ];

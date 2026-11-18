@@ -98,6 +98,46 @@ function inquiryModal({ label, title, intro, name, extra, submit, doneMessage })
   return m;
 }
 
+const outcomeField = (id) => `
+  <div class="field">
+    <label for="${id}">Desired outcomes</label>
+    <div class="select">
+      <select id="${id}" name="outcome">
+        <option value="">Select one</option>
+        ${coachingOutcomes.map((o) => `<option>${o}</option>`).join('')}
+      </select>
+      ${icons.chevron}
+    </div>
+  </div>`;
+
+/** Full coaching form for use on a page (same fields as the modal). */
+export const coachingFormMarkup = () => `
+  <form class="page-form" data-preview-form="coaching" data-success="A Mushi team member will be in touch regarding your appointment, Thank you!" novalidate>
+    <h2 class="page-form__title">Book a free coaching consult</h2>
+    ${field('pagecoaching-name', 'Full name', 'type="text" autocomplete="name"')}
+    ${field('pagecoaching-phone', 'Phone', 'type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+\\(\\)\\-\\s.]{7,}"')}
+    ${field('pagecoaching-email', 'Email', 'type="email" autocomplete="email"')}
+    ${outcomeField('pagecoaching-outcome')}
+    <button class="btn btn--dark" type="submit">Request my free consult</button>
+    <p class="form__status" role="status"></p>
+  </form>`;
+
+/** Full wholesale form for use on a page (contact form fields plus business name). */
+export const wholesaleFormMarkup = () => `
+  <form class="page-form" data-preview-form="wholesale" data-success="A Mushi team member will be in touch regarding your inquiry, Thank you!" novalidate>
+    <h2 class="page-form__title">Wholesale inquiries</h2>
+    ${field('pagewholesale-name', 'Name', 'type="text" autocomplete="name"', false)}
+    ${field('pagewholesale-business', 'Business name', 'type="text" autocomplete="organization"', false)}
+    ${field('pagewholesale-email', 'Email', 'type="email" autocomplete="email"')}
+    ${field('pagewholesale-phone', 'Phone number', 'type="tel" autocomplete="tel"', false)}
+    <div class="field">
+      <label for="pagewholesale-message">Message <span aria-hidden="true">*</span></label>
+      <textarea id="pagewholesale-message" name="message" rows="5" required data-label="message"></textarea>
+    </div>
+    <button class="btn btn--dark" type="submit">Send inquiry</button>
+    <p class="form__status" role="status"></p>
+  </form>`;
+
 export const openCoaching = () =>
   inquiryModal({
     label: 'Book a free coaching consult',

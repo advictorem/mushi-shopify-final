@@ -96,7 +96,7 @@ export const faqs = [
       'We ship to all 50 states. Every Mushi order is delivered directly to your door in discreet outer packaging. What’s inside is your business.',
       'Once your order ships, you’ll receive tracking information so you can follow it along the way. Shipping is free on orders over $100.',
     ],
-    link: { label: 'Read the shipping policy', href: 'https://mushiworld.com/pages/shipping-policy', external: true },
+    link: { label: 'Read the shipping policy', href: '/pages/shipping.html' },
     source: 'mushi-wireframes/faq.html #23, confirmed by client 2026-11-18',
   },
   {

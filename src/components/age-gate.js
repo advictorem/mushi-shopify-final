@@ -32,7 +32,6 @@ export function whenAgeConfirmed(fn) {
 export function initAgeGate() {
   const cfg = siteConfig.ageGate;
   if (!cfg.enabled || isRemembered()) return resolve();
-  const live = siteConfig.liveSite;
   const gate = openModal({
     label: 'Age verification',
     variant: 'split modal--gate',
@@ -55,7 +54,7 @@ export function initAgeGate() {
               <button class="btn btn--pill" type="button" data-gate="back">Go back</button>
             </div>
           </div>
-          <p class="gate__legal">By entering this site you are agreeing to the <a href="${live}/pages/terms-of-service" target="_blank" rel="noopener">Terms of Use</a> and <a href="${live}/pages/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.</p>
+          <p class="gate__legal">By entering this site you are agreeing to the <a href="/pages/terms.html" target="_blank">Terms of Use</a> and <a href="/pages/privacy.html" target="_blank">Privacy Policy</a>.</p>
         </div>
         <div class="gate__media"><img src="/assets/placeholder/age-gate.webp" alt="" width="442" height="602"></div>
       </div>`,

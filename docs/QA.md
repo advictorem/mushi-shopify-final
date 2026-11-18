@@ -103,3 +103,9 @@ Bundle builder page removed (`/pages/bundles` now 404s; the homepage button and 
 Built from `design-source/reference/shop-all-comp.jpg` and `shop-gummies-comp.jpg`. Checked at 1440px: hero parallax moves on scroll, filter menu navigates, sort re-orders each grid, priced items add to the cart, unpriced apparel cannot be added, console clean. Not checked: mobile widths for these two pages beyond the CSS breakpoints, and other browsers.
 
 Deviations from the comps, on purpose: live-catalog names and prices are used (the comps show $60.00 placeholders and SALE/POPULAR/LIMITED badges); the four apparel items have no verified price and show "Price coming soon".
+
+## Round 6 — 2026-11-18
+
+Checked at 1440px, console clean on every route: transparent interior header, uncut page-header labels, FAQ dosage scale, shorter shop heroes, sort menu, inline coaching and wholesale forms, shipping/privacy/terms/opt-out pages. Not checked on mobile or other browsers.
+
+Policy copy is pasted from mushiworld.com on 2026-11-18 into `src/data/policies/*.md` with these substitutions: `[Your Store Name]`/`[MUSHI]` → MUSHI, `[yourstorename.com]` → mushiworld.com, "Origins" → MUSHI, `gummiesmushi@gmail.com` → support@mushiworld.com, `[LINK TO REFUND POLICY]` → Returns & Exchanges on the shipping page, `[LINK TO PRIVACY POLICY]` → the privacy page. Footer payment badges are text placeholders; Shopify renders the official icons from enabled payment methods.
