@@ -1,0 +1,390 @@
+{
+  "_meta": {
+    "description": "Verified snapshot of the live MUSHI catalog. Prices are integer minor units (cents). Not a live sync — replace with Shopify data at integration.",
+    "source": "https://mushiworld.com/collections/all",
+    "productFeed": "https://mushiworld.com/products.json",
+    "verifiedAt": "2026-11-18",
+    "notes": [
+      "Live catalog listed 9 products on the verification date; no product had a compare-at price or more than the single default variant.",
+      "Exclusive MUSHI Fan ($27.00) is on the live catalog but was not in the brief's reference list.",
+      "Merch products have no approved image export yet (images.primary is null).",
+      "The Figma comp shows $60.00 / $65.00 and SALE / POPULAR badges; those are not on the live site and are not used.",
+      "Chocolate short descriptions are the first sentence of the live description; the live homepage only carries short copy for gummies."
+    ]
+  },
+  "categories": [
+    {
+      "handle": "gummies",
+      "title": "Gummies"
+    },
+    {
+      "handle": "chocolates",
+      "title": "Chocolates"
+    },
+    {
+      "handle": "merch",
+      "title": "Merch"
+    }
+  ],
+  "products": [
+    {
+      "id": "9959617659189",
+      "handle": "cherry",
+      "title": "Cherry",
+      "category": "gummies",
+      "formatLabel": "5000MG infused gummies",
+      "price": 5500,
+      "compareAtPrice": null,
+      "currency": "USD",
+      "available": true,
+      "shortDescription": "Bold cherry with a tart spark. A little bite, and ideas bloom.",
+      "shortDescriptionSource": "https://mushiworld.com/",
+      "fullDescription": "Rich, bold, and irresistibly smooth. Our Cherry Mushroom-Infused Gummies combine the deep, juicy sweetness of ripe cherries with the natural benefits of mushrooms. Each gummy is crafted with premium, plant-based ingredients to support your well-being while delivering a deliciously tart and luscious cherry flavor.",
+      "flavorProfile": "Sweet, slightly tart, and bursting with rich cherry goodness.",
+      "perfectFor": "Relaxation, mental clarity, and everyday wellness.",
+      "details": null,
+      "badges": [
+        "Bestseller"
+      ],
+      "attributes": [
+        "Vegan",
+        "Gluten Free",
+        "MCT Oil",
+        "Lab Tested"
+      ],
+      "variants": [
+        {
+          "id": null,
+          "title": "Default Title",
+          "price": 5500,
+          "compareAtPrice": null,
+          "available": true
+        }
+      ],
+      "images": {
+        "primary": "product-cherry-pack",
+        "hover": "product-cherry-hover",
+        "gallery": [
+          "product-cherry-pack",
+          "product-cherry-hover"
+        ]
+      },
+      "liveUrl": "https://mushiworld.com/products/cherry",
+      "sourceUrl": "https://mushiworld.com/collections/all",
+      "verifiedAt": "2026-11-18"
+    },
+    {
+      "id": "9959619428661",
+      "handle": "green-apple",
+      "title": "Green Apple",
+      "category": "gummies",
+      "formatLabel": "5000MG infused gummies",
+      "price": 5500,
+      "compareAtPrice": null,
+      "currency": "USD",
+      "available": true,
+      "shortDescription": "Crisp, tart, and quietly dreamy. Ease into something sweeter.",
+      "shortDescriptionSource": "https://mushiworld.com/",
+      "fullDescription": "A crisp, tart twist on wellness. Our Green Apple Mushroom-Infused Gummies blend the refreshing taste of green apple with the natural benefits of functional mushrooms. Crafted with high-quality, plant-based ingredients, these gummies offer a deliciously sour kick while supporting mind and body balance.",
+      "flavorProfile": "Tart, crisp, and slightly sweet with a smooth finish.",
+      "perfectFor": "A refreshing pick-me-up, daily wellness support, and mindful moments.",
+      "details": null,
+      "badges": [],
+      "attributes": [
+        "Vegan",
+        "Gluten Free",
+        "MCT Oil",
+        "Lab Tested"
+      ],
+      "variants": [
+        {
+          "id": null,
+          "title": "Default Title",
+          "price": 5500,
+          "compareAtPrice": null,
+          "available": true
+        }
+      ],
+      "images": {
+        "primary": "product-apple-pack",
+        "hover": "product-apple-hover",
+        "gallery": [
+          "product-apple-pack",
+          "product-apple-hover"
+        ]
+      },
+      "liveUrl": "https://mushiworld.com/products/green-apple",
+      "sourceUrl": "https://mushiworld.com/collections/all",
+      "verifiedAt": "2026-11-18"
+    },
+    {
+      "id": "9959615594805",
+      "handle": "peach-bliss",
+      "title": "Peach Bliss",
+      "category": "gummies",
+      "formatLabel": "5000MG infused gummies",
+      "price": 5500,
+      "compareAtPrice": null,
+      "currency": "USD",
+      "available": true,
+      "shortDescription": "Juicy peach. Golden calm. Let the moment unfold.",
+      "shortDescriptionSource": "https://mushiworld.com/",
+      "fullDescription": "Juicy, smooth, and naturally uplifting. Our Peach Bliss Mushroom-Infused Gummies capture the delicate sweetness of sun-ripened peaches, perfectly paired with the wellness benefits of mushrooms. Every bite melts into a luscious, fruity experience designed to nourish your mind and body.",
+      "flavorProfile": "Sweet, juicy, and velvety with a smooth finish.",
+      "perfectFor": "Daily wellness, relaxation, and a touch of indulgence.",
+      "details": null,
+      "badges": [],
+      "attributes": [
+        "Vegan",
+        "Gluten Free",
+        "MCT Oil",
+        "Lab Tested"
+      ],
+      "variants": [
+        {
+          "id": null,
+          "title": "Default Title",
+          "price": 5500,
+          "compareAtPrice": null,
+          "available": true
+        }
+      ],
+      "images": {
+        "primary": "product-peach-pack",
+        "hover": "product-peach-hover",
+        "gallery": [
+          "product-peach-pack",
+          "product-peach-hover"
+        ]
+      },
+      "liveUrl": "https://mushiworld.com/products/peach-bliss",
+      "sourceUrl": "https://mushiworld.com/collections/all",
+      "verifiedAt": "2026-11-18"
+    },
+    {
+      "id": "10418628067637",
+      "handle": "dark-chocolate",
+      "title": "Dark Chocolate",
+      "category": "chocolates",
+      "formatLabel": "5000MG infused chocolate",
+      "price": 5500,
+      "compareAtPrice": null,
+      "currency": "USD",
+      "available": true,
+      "shortDescription": "Rich, bold, and deeply satisfying.",
+      "shortDescriptionSource": "first sentence of the live product description",
+      "fullDescription": "Rich, bold, and deeply satisfying. Our Mushroom-Infused Dark Chocolate deliver an intense cocoa experience with smooth, velvety depth and a refined finish. Crafted for those who appreciate pure chocolate flavor, each piece blends premium dark chocolate with the grounding benefits of functional mushrooms.",
+      "flavorProfile": "Bold cocoa, slightly bittersweet, smooth and lingering.",
+      "perfectFor": "Focus, balance, evening wind-down, and mindful indulgence.",
+      "details": null,
+      "badges": [],
+      "attributes": [],
+      "variants": [
+        {
+          "id": null,
+          "title": "Default Title",
+          "price": 5500,
+          "compareAtPrice": null,
+          "available": true
+        }
+      ],
+      "images": {
+        "primary": "product-choco-dark-pack",
+        "hover": "product-choco-dark-hover",
+        "gallery": [
+          "product-choco-dark-pack",
+          "product-choco-dark-hover"
+        ]
+      },
+      "liveUrl": "https://mushiworld.com/products/dark-chocolate",
+      "sourceUrl": "https://mushiworld.com/collections/all",
+      "verifiedAt": "2026-11-18"
+    },
+    {
+      "id": "10418622005557",
+      "handle": "milk-chocolate",
+      "title": "Milk Chocolate",
+      "category": "chocolates",
+      "formatLabel": "5000MG infused chocolate",
+      "price": 5500,
+      "compareAtPrice": null,
+      "currency": "USD",
+      "available": true,
+      "shortDescription": "Creamy, comforting, and luxuriously smooth.",
+      "shortDescriptionSource": "first sentence of the live product description",
+      "fullDescription": "Creamy, comforting, and luxuriously smooth. Our Mushroom-Infused Milk Chocolate offers a silky, melt-in-your-mouth experience with a perfectly balanced sweetness. The rich dairy notes harmonize beautifully with our mushroom blend, creating a deliciously uplifting treat that feels both nostalgic and nourishing.",
+      "flavorProfile": "Creamy, sweet, and velvety with a soft cocoa finish.",
+      "perfectFor": "Everyday enjoyment, gentle mood support, and a feel-good treat.",
+      "details": null,
+      "badges": [],
+      "attributes": [],
+      "variants": [
+        {
+          "id": null,
+          "title": "Default Title",
+          "price": 5500,
+          "compareAtPrice": null,
+          "available": true
+        }
+      ],
+      "images": {
+        "primary": "product-choco-milk-pack",
+        "hover": "product-choco-milk-hover",
+        "gallery": [
+          "product-choco-milk-pack",
+          "product-choco-milk-hover"
+        ]
+      },
+      "liveUrl": "https://mushiworld.com/products/milk-chocolate",
+      "sourceUrl": "https://mushiworld.com/collections/all",
+      "verifiedAt": "2026-11-18"
+    },
+    {
+      "id": "10418684100917",
+      "handle": "midnight-berry",
+      "title": "Midnight Berry",
+      "category": "chocolates",
+      "formatLabel": "5000MG infused chocolate",
+      "price": 5500,
+      "compareAtPrice": null,
+      "currency": "USD",
+      "available": true,
+      "shortDescription": "Decadent, vibrant, and irresistibly layered.",
+      "shortDescriptionSource": "first sentence of the live product description",
+      "fullDescription": "Decadent, vibrant, and irresistibly layered. Our Mushroom Infused Dark Chocolate with Berry Filling combine rich dark cocoa with a luscious burst of bright berry at the center. Beneath the smooth chocolate shell lies a vibrant, fruit-forward filling, perfectly balanced and elevated with the wellness benefits of mushrooms.",
+      "flavorProfile": "Bold dark chocolate, bright berry tang, smooth and balanced finish.",
+      "perfectFor": "Elevated indulgence, creative moments, and a sophisticated sweet escape.",
+      "details": null,
+      "badges": [],
+      "attributes": [],
+      "variants": [
+        {
+          "id": null,
+          "title": "Default Title",
+          "price": 5500,
+          "compareAtPrice": null,
+          "available": true
+        }
+      ],
+      "images": {
+        "primary": "product-choco-berry-pack",
+        "hover": "product-choco-berry-hover",
+        "gallery": [
+          "product-choco-berry-pack",
+          "product-choco-berry-hover"
+        ]
+      },
+      "liveUrl": "https://mushiworld.com/products/midnight-berry",
+      "sourceUrl": "https://mushiworld.com/collections/all",
+      "verifiedAt": "2026-11-18"
+    },
+    {
+      "id": "10201401327925",
+      "handle": "exclusive-mushi-floaty",
+      "title": "Exclusive MUSHI Floaty",
+      "category": "merch",
+      "formatLabel": "Merch",
+      "price": 4000,
+      "compareAtPrice": null,
+      "currency": "USD",
+      "available": true,
+      "shortDescription": "More than a float—it’s made for memories.",
+      "shortDescriptionSource": "first sentence of the live product description",
+      "fullDescription": "More than a float—it’s made for memories. Big, bold, and comfortable, it keeps you above the water and in the center of the fun. Perfect for pools, lakes, or laid-back beach days.",
+      "flavorProfile": null,
+      "perfectFor": null,
+      "details": "Size: 47 inches X-Large Adult Size Durable Donut Floaty.",
+      "badges": [],
+      "attributes": [],
+      "variants": [
+        {
+          "id": null,
+          "title": "Default Title",
+          "price": 4000,
+          "compareAtPrice": null,
+          "available": true
+        }
+      ],
+      "images": {
+        "primary": null,
+        "hover": null,
+        "gallery": []
+      },
+      "liveUrl": "https://mushiworld.com/products/exclusive-mushi-floaty",
+      "sourceUrl": "https://mushiworld.com/collections/all",
+      "verifiedAt": "2026-11-18"
+    },
+    {
+      "id": "10201399820597",
+      "handle": "exclusive-mushi-beach-ball",
+      "title": "Exclusive MUSHI Beach Ball",
+      "category": "merch",
+      "formatLabel": "Merch",
+      "price": 3000,
+      "compareAtPrice": null,
+      "currency": "USD",
+      "available": true,
+      "shortDescription": "More than a beach ball—it’s part of the moment.",
+      "shortDescriptionSource": "first sentence of the live product description",
+      "fullDescription": "More than a beach ball—it’s part of the moment. From pool parties to festivals, it keeps the energy alive, bouncing from friend to stranger and back again. Bright, durable, and ready for summer.",
+      "flavorProfile": null,
+      "perfectFor": null,
+      "details": "Size: 18 inch Party/Beach Ball",
+      "badges": [],
+      "attributes": [],
+      "variants": [
+        {
+          "id": null,
+          "title": "Default Title",
+          "price": 3000,
+          "compareAtPrice": null,
+          "available": true
+        }
+      ],
+      "images": {
+        "primary": null,
+        "hover": null,
+        "gallery": []
+      },
+      "liveUrl": "https://mushiworld.com/products/exclusive-mushi-beach-ball",
+      "sourceUrl": "https://mushiworld.com/collections/all",
+      "verifiedAt": "2026-11-18"
+    },
+    {
+      "id": "10201399198005",
+      "handle": "exclusive-mushi-fan-13inch",
+      "title": "Exclusive MUSHI Fan",
+      "category": "merch",
+      "formatLabel": "Merch",
+      "price": 2700,
+      "compareAtPrice": null,
+      "currency": "USD",
+      "available": true,
+      "shortDescription": "More than a fan—it's a part of the experience.",
+      "shortDescriptionSource": "first sentence of the live product description",
+      "fullDescription": "More than a fan—it's a part of the experience. Designed for raves, festivals, and poolside escapes, this folding fan keeps you cool when the heat rises. With a bold clack that cuts through the music, it’s the ultimate accessory for nights that don’t quit.",
+      "flavorProfile": null,
+      "perfectFor": null,
+      "details": "Size: 13 inch Clacking Foldable Fan",
+      "badges": [],
+      "attributes": [],
+      "variants": [
+        {
+          "id": null,
+          "title": "Default Title",
+          "price": 2700,
+          "compareAtPrice": null,
+          "available": true
+        }
+      ],
+      "images": {
+        "primary": null,
+        "hover": null,
+        "gallery": []
+      },
+      "liveUrl": "https://mushiworld.com/products/exclusive-mushi-fan-13inch",
+      "sourceUrl": "https://mushiworld.com/collections/all",
+      "verifiedAt": "2026-11-18"
+    }
+  ]
+}

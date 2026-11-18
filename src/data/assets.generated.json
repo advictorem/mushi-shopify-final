@@ -1,0 +1,726 @@
+{
+  "images": {
+    "product-cherry-pack": {
+      "original": "CHERRY1.jpg",
+      "usage": "Gummies carousel / Cherry primary",
+      "trimmed": false,
+      "width": 1352,
+      "height": 1352,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-cherry-pack-480.webp",
+          "avif": "/assets/img/product-cherry-pack-480.avif"
+        },
+        {
+          "width": 900,
+          "webp": "/assets/img/product-cherry-pack-900.webp",
+          "avif": "/assets/img/product-cherry-pack-900.avif"
+        }
+      ]
+    },
+    "product-cherry-hover": {
+      "original": "CHERRY2.jpg",
+      "usage": "Gummies carousel / Cherry hover",
+      "trimmed": false,
+      "width": 1352,
+      "height": 1352,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-cherry-hover-480.webp",
+          "avif": "/assets/img/product-cherry-hover-480.avif"
+        },
+        {
+          "width": 900,
+          "webp": "/assets/img/product-cherry-hover-900.webp",
+          "avif": "/assets/img/product-cherry-hover-900.avif"
+        }
+      ]
+    },
+    "product-apple-pack": {
+      "original": "APPLE1.jpg",
+      "usage": "Gummies carousel / Green Apple primary",
+      "trimmed": false,
+      "width": 1352,
+      "height": 1352,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-apple-pack-480.webp",
+          "avif": "/assets/img/product-apple-pack-480.avif"
+        },
+        {
+          "width": 900,
+          "webp": "/assets/img/product-apple-pack-900.webp",
+          "avif": "/assets/img/product-apple-pack-900.avif"
+        }
+      ]
+    },
+    "product-apple-hover": {
+      "original": "APPLE2.jpg",
+      "usage": "Gummies carousel / Green Apple hover",
+      "trimmed": false,
+      "width": 1352,
+      "height": 1352,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-apple-hover-480.webp",
+          "avif": "/assets/img/product-apple-hover-480.avif"
+        },
+        {
+          "width": 900,
+          "webp": "/assets/img/product-apple-hover-900.webp",
+          "avif": "/assets/img/product-apple-hover-900.avif"
+        }
+      ]
+    },
+    "product-peach-pack": {
+      "original": "PEACH1.jpg",
+      "usage": "Gummies carousel / Peach Bliss primary",
+      "trimmed": false,
+      "width": 1352,
+      "height": 1352,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-peach-pack-480.webp",
+          "avif": "/assets/img/product-peach-pack-480.avif"
+        },
+        {
+          "width": 900,
+          "webp": "/assets/img/product-peach-pack-900.webp",
+          "avif": "/assets/img/product-peach-pack-900.avif"
+        }
+      ]
+    },
+    "product-peach-hover": {
+      "original": "PEACH2.jpg",
+      "usage": "Gummies carousel / Peach Bliss hover",
+      "trimmed": false,
+      "width": 1352,
+      "height": 1352,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-peach-hover-480.webp",
+          "avif": "/assets/img/product-peach-hover-480.avif"
+        },
+        {
+          "width": 900,
+          "webp": "/assets/img/product-peach-hover-900.webp",
+          "avif": "/assets/img/product-peach-hover-900.avif"
+        }
+      ]
+    },
+    "product-choco-dark-pack": {
+      "original": "choco-dark1.jpg",
+      "usage": "Chocolates carousel / Dark Chocolate primary",
+      "trimmed": false,
+      "width": 1352,
+      "height": 1352,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-choco-dark-pack-480.webp",
+          "avif": "/assets/img/product-choco-dark-pack-480.avif"
+        },
+        {
+          "width": 900,
+          "webp": "/assets/img/product-choco-dark-pack-900.webp",
+          "avif": "/assets/img/product-choco-dark-pack-900.avif"
+        }
+      ]
+    },
+    "product-choco-dark-hover": {
+      "original": "choco-dark2.jpg",
+      "usage": "Chocolates carousel / Dark Chocolate hover",
+      "trimmed": false,
+      "width": 1352,
+      "height": 1352,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-choco-dark-hover-480.webp",
+          "avif": "/assets/img/product-choco-dark-hover-480.avif"
+        },
+        {
+          "width": 900,
+          "webp": "/assets/img/product-choco-dark-hover-900.webp",
+          "avif": "/assets/img/product-choco-dark-hover-900.avif"
+        }
+      ]
+    },
+    "product-choco-milk-pack": {
+      "original": "choco-milk1.jpg",
+      "usage": "Chocolates carousel / Milk Chocolate primary",
+      "trimmed": false,
+      "width": 1352,
+      "height": 1352,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-choco-milk-pack-480.webp",
+          "avif": "/assets/img/product-choco-milk-pack-480.avif"
+        },
+        {
+          "width": 900,
+          "webp": "/assets/img/product-choco-milk-pack-900.webp",
+          "avif": "/assets/img/product-choco-milk-pack-900.avif"
+        }
+      ]
+    },
+    "product-choco-milk-hover": {
+      "original": "choco-milk2.jpg",
+      "usage": "Chocolates carousel / Milk Chocolate hover",
+      "trimmed": false,
+      "width": 1352,
+      "height": 1352,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-choco-milk-hover-480.webp",
+          "avif": "/assets/img/product-choco-milk-hover-480.avif"
+        },
+        {
+          "width": 900,
+          "webp": "/assets/img/product-choco-milk-hover-900.webp",
+          "avif": "/assets/img/product-choco-milk-hover-900.avif"
+        }
+      ]
+    },
+    "product-choco-berry-pack": {
+      "original": "choco-berry1.jpg",
+      "usage": "Chocolates carousel / Midnight Berry primary",
+      "trimmed": false,
+      "width": 1352,
+      "height": 1352,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-choco-berry-pack-480.webp",
+          "avif": "/assets/img/product-choco-berry-pack-480.avif"
+        },
+        {
+          "width": 900,
+          "webp": "/assets/img/product-choco-berry-pack-900.webp",
+          "avif": "/assets/img/product-choco-berry-pack-900.avif"
+        }
+      ]
+    },
+    "product-choco-berry-hover": {
+      "original": "choco-berry2.jpg",
+      "usage": "Chocolates carousel / Midnight Berry hover",
+      "trimmed": false,
+      "width": 1352,
+      "height": 1352,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 480,
+          "webp": "/assets/img/product-choco-berry-hover-480.webp",
+          "avif": "/assets/img/product-choco-berry-hover-480.avif"
+        },
+        {
+          "width": 900,
+          "webp": "/assets/img/product-choco-berry-hover-900.webp",
+          "avif": "/assets/img/product-choco-berry-hover-900.avif"
+        }
+      ]
+    },
+    "category-gummies": {
+      "original": "gummies.png",
+      "usage": "Category showcase / Gummies",
+      "trimmed": true,
+      "width": 1704,
+      "height": 1149,
+      "aspectRatio": 1.483,
+      "variants": [
+        {
+          "width": 720,
+          "webp": "/assets/img/category-gummies-720.webp",
+          "avif": "/assets/img/category-gummies-720.avif"
+        },
+        {
+          "width": 1400,
+          "webp": "/assets/img/category-gummies-1400.webp",
+          "avif": "/assets/img/category-gummies-1400.avif"
+        }
+      ]
+    },
+    "category-chocolates": {
+      "original": "chocolates.png",
+      "usage": "Category showcase / Chocolates",
+      "trimmed": true,
+      "width": 1583,
+      "height": 916,
+      "aspectRatio": 1.7282,
+      "variants": [
+        {
+          "width": 720,
+          "webp": "/assets/img/category-chocolates-720.webp",
+          "avif": "/assets/img/category-chocolates-720.avif"
+        },
+        {
+          "width": 1400,
+          "webp": "/assets/img/category-chocolates-1400.webp",
+          "avif": "/assets/img/category-chocolates-1400.avif"
+        }
+      ]
+    },
+    "category-merch": {
+      "original": "HOODIE.png",
+      "usage": "Category showcase / Merch",
+      "trimmed": true,
+      "width": 1155,
+      "height": 1218,
+      "aspectRatio": 0.9483,
+      "variants": [
+        {
+          "width": 640,
+          "webp": "/assets/img/category-merch-640.webp",
+          "avif": "/assets/img/category-merch-640.avif"
+        },
+        {
+          "width": 1155,
+          "webp": "/assets/img/category-merch-1155.webp",
+          "avif": "/assets/img/category-merch-1155.avif"
+        }
+      ]
+    },
+    "lifestyle-alive": {
+      "original": "mushi-alive.png",
+      "usage": "Lifestyle accordion / Alive",
+      "trimmed": false,
+      "width": 1156,
+      "height": 1436,
+      "aspectRatio": 0.805,
+      "variants": [
+        {
+          "width": 640,
+          "webp": "/assets/img/lifestyle-alive-640.webp",
+          "avif": "/assets/img/lifestyle-alive-640.avif"
+        },
+        {
+          "width": 1100,
+          "webp": "/assets/img/lifestyle-alive-1100.webp",
+          "avif": "/assets/img/lifestyle-alive-1100.avif"
+        }
+      ]
+    },
+    "lifestyle-focus": {
+      "original": "focus.png",
+      "usage": "Lifestyle accordion / Focus",
+      "trimmed": false,
+      "width": 1106,
+      "height": 1372,
+      "aspectRatio": 0.8061,
+      "variants": [
+        {
+          "width": 640,
+          "webp": "/assets/img/lifestyle-focus-640.webp",
+          "avif": "/assets/img/lifestyle-focus-640.avif"
+        },
+        {
+          "width": 1100,
+          "webp": "/assets/img/lifestyle-focus-1100.webp",
+          "avif": "/assets/img/lifestyle-focus-1100.avif"
+        }
+      ]
+    },
+    "lifestyle-present": {
+      "original": "present.png",
+      "usage": "Lifestyle accordion / Present",
+      "trimmed": false,
+      "width": 1106,
+      "height": 1372,
+      "aspectRatio": 0.8061,
+      "variants": [
+        {
+          "width": 640,
+          "webp": "/assets/img/lifestyle-present-640.webp",
+          "avif": "/assets/img/lifestyle-present-640.avif"
+        },
+        {
+          "width": 1100,
+          "webp": "/assets/img/lifestyle-present-1100.webp",
+          "avif": "/assets/img/lifestyle-present-1100.avif"
+        }
+      ]
+    },
+    "lifestyle-creative": {
+      "original": "mushi-creative.png",
+      "usage": "Lifestyle accordion / Creative",
+      "trimmed": false,
+      "width": 1162,
+      "height": 1442,
+      "aspectRatio": 0.8058,
+      "variants": [
+        {
+          "width": 640,
+          "webp": "/assets/img/lifestyle-creative-640.webp",
+          "avif": "/assets/img/lifestyle-creative-640.avif"
+        },
+        {
+          "width": 1100,
+          "webp": "/assets/img/lifestyle-creative-1100.webp",
+          "avif": "/assets/img/lifestyle-creative-1100.avif"
+        }
+      ]
+    },
+    "lifestyle-connected": {
+      "original": "mushi-connected.png",
+      "usage": "Lifestyle accordion / Connected",
+      "trimmed": false,
+      "width": 1406,
+      "height": 1746,
+      "aspectRatio": 0.8053,
+      "variants": [
+        {
+          "width": 640,
+          "webp": "/assets/img/lifestyle-connected-640.webp",
+          "avif": "/assets/img/lifestyle-connected-640.avif"
+        },
+        {
+          "width": 1100,
+          "webp": "/assets/img/lifestyle-connected-1100.webp",
+          "avif": "/assets/img/lifestyle-connected-1100.avif"
+        }
+      ]
+    },
+    "story-intention": {
+      "original": "intention-photo.png",
+      "usage": "Our Story image",
+      "trimmed": false,
+      "width": 2038,
+      "height": 1358,
+      "aspectRatio": 1.5007,
+      "variants": [
+        {
+          "width": 800,
+          "webp": "/assets/img/story-intention-800.webp",
+          "avif": "/assets/img/story-intention-800.avif"
+        },
+        {
+          "width": 1500,
+          "webp": "/assets/img/story-intention-1500.webp",
+          "avif": "/assets/img/story-intention-1500.avif"
+        }
+      ]
+    },
+    "bundle-group": {
+      "original": "mushi-bundle.png",
+      "usage": "Bundle promotion artwork",
+      "trimmed": false,
+      "width": 2176,
+      "height": 1098,
+      "aspectRatio": 1.9818,
+      "variants": [
+        {
+          "width": 900,
+          "webp": "/assets/img/bundle-group-900.webp",
+          "avif": "/assets/img/bundle-group-900.avif"
+        },
+        {
+          "width": 1800,
+          "webp": "/assets/img/bundle-group-1800.webp",
+          "avif": "/assets/img/bundle-group-1800.avif"
+        }
+      ]
+    },
+    "compare-mushi": {
+      "original": "mushi-compare.png",
+      "usage": "Why Mushi / Mushi column",
+      "trimmed": false,
+      "width": 423,
+      "height": 423,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 423,
+          "webp": "/assets/img/compare-mushi-423.webp",
+          "avif": "/assets/img/compare-mushi-423.avif"
+        }
+      ]
+    },
+    "compare-alternatives": {
+      "original": "alternatives.png",
+      "usage": "Why Mushi / alternatives column",
+      "trimmed": false,
+      "width": 436,
+      "height": 352,
+      "aspectRatio": 1.2386,
+      "variants": [
+        {
+          "width": 436,
+          "webp": "/assets/img/compare-alternatives-436.webp",
+          "avif": "/assets/img/compare-alternatives-436.avif"
+        }
+      ]
+    },
+    "newsletter-bg": {
+      "original": "newsletter-bg.png",
+      "usage": "Newsletter background",
+      "trimmed": false,
+      "width": 2732,
+      "height": 2732,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 1100,
+          "webp": "/assets/img/newsletter-bg-1100.webp",
+          "avif": "/assets/img/newsletter-bg-1100.avif"
+        },
+        {
+          "width": 2000,
+          "webp": "/assets/img/newsletter-bg-2000.webp",
+          "avif": "/assets/img/newsletter-bg-2000.avif"
+        }
+      ]
+    }
+  },
+  "icons": {
+    "benefit-belgian": {
+      "original": "BELGIUM.png",
+      "usage": "Brand benefits / 100% Belgium",
+      "file": "/assets/icons/benefit-belgian.png",
+      "width": 188,
+      "height": 266
+    },
+    "benefit-gluten-free": {
+      "original": "GLUTEN FREE.png",
+      "usage": "Brand benefits / Gluten-Free",
+      "file": "/assets/icons/benefit-gluten-free.png",
+      "width": 190,
+      "height": 266
+    },
+    "benefit-lab-tested": {
+      "original": "LAB TESTED.png",
+      "usage": "Brand benefits / Lab Tested",
+      "file": "/assets/icons/benefit-lab-tested.png",
+      "width": 189,
+      "height": 266
+    },
+    "benefit-made-in-usa": {
+      "original": "MCT.png",
+      "usage": "Brand benefits / Made in USA (file is named MCT.png)",
+      "file": "/assets/icons/benefit-made-in-usa.png",
+      "width": 189,
+      "height": 267
+    },
+    "benefit-non-gmo": {
+      "original": "NON GMO.png",
+      "usage": "Brand benefits / Non-GMO",
+      "file": "/assets/icons/benefit-non-gmo.png",
+      "width": 189,
+      "height": 266
+    },
+    "benefit-no-palm": {
+      "original": "PALM.png",
+      "usage": "Brand benefits / No Palm Oils",
+      "file": "/assets/icons/benefit-no-palm.png",
+      "width": 190,
+      "height": 266
+    },
+    "benefit-no-synthetics": {
+      "original": "SYNTHETICS.png",
+      "usage": "Brand benefits / No Synthetics",
+      "file": "/assets/icons/benefit-no-synthetics.png",
+      "width": 184,
+      "height": 266
+    },
+    "benefit-vegan": {
+      "original": "VEGAN.png",
+      "usage": "Brand benefits / Vegan Gummies",
+      "file": "/assets/icons/benefit-vegan.png",
+      "width": 256,
+      "height": 308
+    },
+    "compare-natural": {
+      "original": "natural.png",
+      "usage": "Why Mushi row icon / Natural formula",
+      "file": "/assets/icons/compare-natural.png",
+      "width": 45,
+      "height": 57
+    },
+    "compare-non-addictive": {
+      "original": "non-addictive.png",
+      "usage": "Why Mushi row icon / Non-addictive",
+      "file": "/assets/icons/compare-non-addictive.png",
+      "width": 59,
+      "height": 56
+    },
+    "compare-synthetic": {
+      "original": "synthetic.png",
+      "usage": "Why Mushi row icon / Synthetic chemicals",
+      "file": "/assets/icons/compare-synthetic.png",
+      "width": 44,
+      "height": 50
+    },
+    "compare-sugar": {
+      "original": "sugar.png",
+      "usage": "Why Mushi row icon / Sugar",
+      "file": "/assets/icons/compare-sugar.png",
+      "width": 39,
+      "height": 44
+    },
+    "compare-ingredient": {
+      "original": "ingredient.png",
+      "usage": "Why Mushi row icon / Ingredient source",
+      "file": "/assets/icons/compare-ingredient.png",
+      "width": 59,
+      "height": 60
+    },
+    "compare-aftereffect": {
+      "original": "aftereffect.png",
+      "usage": "Why Mushi row icon / After effects",
+      "file": "/assets/icons/compare-aftereffect.png",
+      "width": 68,
+      "height": 53
+    },
+    "compare-dosing": {
+      "original": "dosing.png",
+      "usage": "Why Mushi row icon / Dosing",
+      "file": "/assets/icons/compare-dosing.png",
+      "width": 38,
+      "height": 54
+    },
+    "compare-readiness": {
+      "original": "readiness.png",
+      "usage": "Why Mushi row icon / Readiness",
+      "file": "/assets/icons/compare-readiness.png",
+      "width": 41,
+      "height": 66
+    },
+    "shipping-truck": {
+      "original": "shipping-truck.png",
+      "usage": "Announcement marquee icon",
+      "file": "/assets/icons/shipping-truck.png",
+      "width": 58,
+      "height": 28
+    },
+    "ingredient-plant": {
+      "original": "plant-icon.png",
+      "usage": "Ingredients page icon",
+      "file": "/assets/icons/ingredient-plant.png",
+      "width": 153,
+      "height": 179
+    },
+    "ingredient-berry": {
+      "original": "berry-icon.png",
+      "usage": "Ingredients page icon",
+      "file": "/assets/icons/ingredient-berry.png",
+      "width": 225,
+      "height": 234
+    },
+    "ingredient-cane": {
+      "original": "cane-icon.png",
+      "usage": "Ingredients page icon",
+      "file": "/assets/icons/ingredient-cane.png",
+      "width": 227,
+      "height": 222
+    }
+  },
+  "svg": {
+    "logo": {
+      "original": "Mushi-Top-Logo(Black).svg",
+      "usage": "Header and footer logo (inlined, recoloured with currentColor)",
+      "file": "/assets/svg/logo.svg"
+    },
+    "badge": {
+      "original": "MUSHI-badge.svg",
+      "usage": "Hero rotating badge (inlined; outer ring rotates)",
+      "file": "/assets/svg/badge.svg"
+    }
+  },
+  "placeholders": {
+    "wholesale-display": {
+      "usage": "Wholesale section photo",
+      "file": "/assets/placeholder/wholesale-display.webp",
+      "width": 752,
+      "height": 595,
+      "missing": true,
+      "source": "cropped from design-source/reference/homepage-design-raster.png"
+    },
+    "ugc-1": {
+      "usage": "Instagram polaroid 1",
+      "file": "/assets/placeholder/ugc-1.webp",
+      "width": 189,
+      "height": 303,
+      "missing": true,
+      "source": "cropped from design-source/reference/homepage-design-raster.png"
+    },
+    "ugc-2": {
+      "usage": "Instagram polaroid 2",
+      "file": "/assets/placeholder/ugc-2.webp",
+      "width": 208,
+      "height": 292,
+      "missing": true,
+      "source": "cropped from design-source/reference/homepage-design-raster.png"
+    },
+    "ugc-3": {
+      "usage": "Instagram polaroid 3",
+      "file": "/assets/placeholder/ugc-3.webp",
+      "width": 198,
+      "height": 310,
+      "missing": true,
+      "source": "cropped from design-source/reference/homepage-design-raster.png"
+    },
+    "ugc-4": {
+      "usage": "Instagram polaroid 4",
+      "file": "/assets/placeholder/ugc-4.webp",
+      "width": 205,
+      "height": 285,
+      "missing": true,
+      "source": "cropped from design-source/reference/homepage-design-raster.png"
+    },
+    "ugc-5": {
+      "usage": "Instagram polaroid 5",
+      "file": "/assets/placeholder/ugc-5.webp",
+      "width": 191,
+      "height": 310,
+      "missing": true,
+      "source": "cropped from design-source/reference/homepage-design-raster.png"
+    },
+    "coaching-still": {
+      "usage": "Coaching video poster",
+      "file": "/assets/placeholder/coaching-still.webp",
+      "width": 331,
+      "height": 434,
+      "missing": true,
+      "source": "cropped from design-source/reference/homepage-design-raster.png"
+    },
+    "age-gate": {
+      "usage": "Age gate lifestyle image",
+      "file": "/assets/placeholder/age-gate.webp",
+      "width": 441,
+      "height": 600,
+      "missing": true,
+      "source": "cropped from design-source/reference/age-gate-screenshot.png"
+    }
+  },
+  "video": {
+    "hero": {
+      "original": "mushi-hero-video-gummie.mp4 (HEVC 1920x1080, 9.04s)",
+      "usage": "Hero background video",
+      "sources": [
+        "/assets/video/hero-1080.mp4",
+        "/assets/video/hero-540.mp4"
+      ],
+      "poster": "/assets/video/hero-poster.webp",
+      "endFrame": "/assets/video/hero-end.webp"
+    }
+  }
+}

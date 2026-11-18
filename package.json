@@ -1,0 +1,21 @@
+{
+  "name": "mushi-shopify-final",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "MUSHI — Shopify Final Design Version. Phase 1 frontend (HTML, CSS, vanilla JS).",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "assets": "python3 scripts/optimize_assets.py"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  },
+  "dependencies": {
+    "@fontsource-variable/oswald": "^5.1.0",
+    "@fontsource/permanent-marker": "^5.1.0",
+    "@fontsource/pt-mono": "^5.1.0"
+  }
+}

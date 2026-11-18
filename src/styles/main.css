@@ -1,0 +1,8 @@
+@import '@fontsource-variable/oswald/index.css';
+@import '@fontsource/permanent-marker/400.css';
+@import '@fontsource/pt-mono/400.css';
+@import './tokens.css';
+@import './base.css';
+@import './components.css';
+@import './sections.css';
+@import './pages.css';

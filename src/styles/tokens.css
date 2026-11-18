@@ -1,0 +1,77 @@
+/* Design tokens. Colours were sampled from the approved comp (PDF raster). */
+:root {
+  /* colour */
+  --c-black: #000;
+  --c-white: #fff;
+  --c-cream: #f1eae2;
+  --c-cream-light: #f6f1ea;
+  --c-card: #e3d4cd;
+  --c-mint: #c1e5cb;
+  --c-mint-light: #f6fbf7;
+  --c-peach: #ffc09f;
+  --c-story: #e7a682;
+  --c-brown: #55372f;
+  --c-brown-deep: #452c27;
+  --c-navy: #1c2932;
+  --c-navy-soft: #5f686f;
+  --c-orange: #f0733f;
+  --c-muted: #5d5d5d;
+  --c-line: rgb(0 0 0 / 0.24);
+  --c-error: #a8201a;
+  --c-flag: #e600c8;
+
+  /* gradients */
+  --g-hero-top: linear-gradient(to bottom, rgb(255 255 255 / 0.82), rgb(255 255 255 / 0.35) 45%, transparent);
+  --g-chocolate: linear-gradient(to bottom, var(--c-cream) 0, #a39089 150px, var(--c-brown) 400px);
+  --g-story: linear-gradient(to bottom, var(--c-story) 0, #f1d8c8 42%, #f4ebe4 78%, var(--c-cream) 100%);
+  --g-faq: linear-gradient(to bottom, var(--c-mint) 0, #c8e8d0 46%, var(--c-mint-light) 64%, var(--c-white) 100%);
+
+  /* type */
+  --font-display: 'Oswald Variable', 'Oswald', 'Arial Narrow', sans-serif;
+  --font-marker: 'Permanent Marker', 'Comic Sans MS', cursive;
+  --font-mono: 'PT Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --fs-display: clamp(4.5rem, 17.45vw, 22rem);
+  --display-stretch: 1.15; /* the comp's labels are ~15% taller than stock Oswald Bold */ /* oversized section labels */
+  --fs-h1: clamp(3.25rem, 9.3vw, 8.4rem);
+  --fs-h2: clamp(2.4rem, 5.4vw, 4.9rem);
+  --fs-h3: clamp(2rem, 3.75vw, 3.4rem);
+  --fs-title: clamp(1.25rem, 1.7vw, 1.5rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-mono: 0.6875rem;
+
+  /* space */
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --container: 71.625rem; /* 1146px content column in the comp */
+  --container-wide: 80rem;
+  --space-section: clamp(4.5rem, 9vw, 8.5rem);
+
+  /* shape */
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --radius-l: 22px;
+  --radius-pill: 999px;
+  --shadow-card: 0 18px 30px -12px rgb(0 0 0 / 0.28);
+  --shadow-panel: 0 30px 80px -20px rgb(0 0 0 / 0.35);
+
+  /* motion */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur: 320ms;
+  --dur-slow: 800ms;
+
+  /* layers */
+  --z-header: 50;
+  --z-modal: 100;
+
+  --announce-h: 2rem;
+  --header-h: 5rem;
+}
+
+@media (max-width: 899px) {
+  :root {
+    --header-h: 3.75rem;
+  }
+}
