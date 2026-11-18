@@ -94,18 +94,20 @@ export const faqs = [
   {
     q: 'Where do you ship?',
     a: [
-      'Orders ship via USPS Ground with an estimated delivery time of 2–5 business days. Please allow up to 48 business hours for processing. Shipping is free on orders over $100.',
+      'We ship to all 50 states. Every Mushi order is delivered directly to your door in discreet outer packaging. What’s inside is your business.',
+      'Once your order ships, you’ll receive tracking information so you can follow it along the way. Shipping is free on orders over $100.',
     ],
     link: { label: 'Read the shipping policy', href: 'https://mushiworld.com/pages/shipping-policy', external: true },
-    source: 'mushiworld.com/pages/shipping-policy',
-    review: 'The draft FAQ says “all 50 states”; shipping eligibility has not been confirmed, so it is left out',
+    source: 'mushi-wireframes/faq.html #23, confirmed by client 2026-11-18',
   },
   {
     q: 'Can I subscribe?',
-    a: [],
-    source: null,
-    review:
-      'No approved answer. The draft FAQ mentions “Subscribe & Save 10%” but the live store has no subscription option',
+    a: [
+      'Yes. Subscribe & Save 10%. Choose your favorite flavor and we’ll automatically send the same flavor from your original purchase on the schedule that works best for you: every week, every 2 weeks or once per month.',
+      'Want to switch flavors? Simply cancel your current subscription and start a new subscription with the flavor you’d like instead.',
+    ],
+    source: 'mushi-wireframes/faq.html #25, confirmed by client 2026-11-18',
+    review: 'Subscription sign-up is not built in Phase 1 — it arrives with the Shopify integration',
   },
 ];
 
@@ -123,11 +125,9 @@ export const comparison = {
   review: 'Comparative and health claims copied from Figma — need compliance review',
 };
 
-// Copied from the reviews shown on mushiworld.com on 2026-11-18. The live
-// site is itself marked as a design preview, so these are NOT confirmed as
-// genuine customer reviews. Replace with verified reviews before launch.
+// Reviews from mushiworld.com, confirmed as genuine by the client on 2026-11-18.
 export const testimonials = {
-  review: 'Reviews copied from the live site preview — not confirmed as genuine customer reviews',
+  review: '',
   items: [
     { quote: 'Split a pack with friends at a rooftop dinner and the whole night just glowed. Juicy peach, zero heaviness.', name: 'Jordan M.', rating: 5, product: 'peach-bliss', tone: 'peach' },
     { quote: 'Cherry Blossom before studio time is my new rule. Rich flavor, and the ideas just keep arriving.', name: 'Alex T.', rating: 5, product: 'cherry', tone: 'cherry' },
