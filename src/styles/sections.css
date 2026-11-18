@@ -12,6 +12,10 @@
   height: 100%;
   object-fit: cover;
   object-position: 50% 42%;
+  /* The subject sits left of centre in the footage (nose at ~44.7% of the frame).
+     Scaling from the left edge brings it under the logo. */
+  transform: scale(1.12);
+  transform-origin: 0 42%;
 }
 .hero__fade {
   position: absolute;
@@ -125,6 +129,7 @@
 .showcase__slide {
   grid-area: 1 / 1;
   display: grid;
+  grid-template-columns: minmax(0, 1fr); /* keeps an over-wide label centred */
   justify-items: center;
   opacity: 0;
   visibility: hidden;
@@ -229,7 +234,7 @@
 /* ---------- 7.5 Lifestyle accordion ---------- */
 .lifestyle__row {
   display: flex;
-  height: clamp(22rem, 34.7vw, 38rem);
+  height: clamp(28rem, 46vw, 50rem);
   background: var(--c-black);
 }
 .lifestyle__panel {
@@ -244,12 +249,6 @@
 }
 .lifestyle__row.has-active .lifestyle__panel:not(.is-active) {
   filter: brightness(0.72) saturate(0.85);
-}
-.lifestyle__panel:focus-visible {
-  outline-offset: -6px;
-  outline-color: var(--c-white);
-  box-shadow: none;
-  z-index: 1;
 }
 .lifestyle__media {
   position: absolute;
@@ -331,8 +330,15 @@
   max-width: var(--container);
   margin: calc(var(--fs-display) * -0.36) auto 1.25rem;
 }
+.products--gummies {
+  padding-bottom: clamp(7rem, 13vw, 12rem);
+  background: linear-gradient(to bottom, var(--c-cream) 0, var(--c-cream) 68%, #ebe2da 82%, #ddd1c9 100%);
+}
+.products--gummies .products__carousel {
+  margin-top: calc(var(--fs-display) * -0.14); /* most of the word shows above the cards */
+}
 .products--chocolates {
-  padding-top: clamp(5rem, 9vw, 8rem);
+  padding-top: clamp(14rem, 22vw, 22rem);
   padding-bottom: clamp(4rem, 7vw, 6.5rem);
   background: var(--g-chocolate);
   color: var(--c-white);
@@ -451,8 +457,8 @@
   font-size: 0.55em;
 }
 .bundle__note {
-  margin-bottom: 1.5rem;
-  font-size: var(--fs-small);
+  margin-bottom: 1.75rem;
+  font: 400 clamp(1.15rem, 1.7vw, 1.6rem) / 1.2 var(--font-display);
 }
 
 /* ---------- 7.11 Wholesale ---------- */
@@ -470,10 +476,6 @@
 }
 .wholesale__media img {
   width: 100%;
-  /* placeholder crop carries the comp's background: blend it and feather the edges */
-  mix-blend-mode: multiply;
-  -webkit-mask-image: radial-gradient(ellipse 60% 62% at 50% 50%, #000 78%, transparent 100%);
-  mask-image: radial-gradient(ellipse 60% 62% at 50% 50%, #000 78%, transparent 100%);
 }
 .wholesale__media .review-flag {
   position: absolute;
@@ -516,7 +518,10 @@
   margin: clamp(4rem, 9vw, 8.5rem) auto 0;
 }
 .display-label--compare {
-  color: var(--c-white);
+  /* Wider than its container on large screens: centre it on the page, not the column. */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  color: #c1e5ca;
 }
 .compare__table {
   width: min(100%, var(--container));
@@ -559,6 +564,9 @@
   padding: 0.75rem 1rem 0.75rem 2.1rem;
   font-size: 0.95rem;
   line-height: 1.25;
+}
+.compare__table td span {
+  white-space: nowrap;
 }
 .compare__table td svg {
   position: absolute;
@@ -717,8 +725,14 @@
   font: 400 0.75rem / 1.3 var(--font-marker);
   text-transform: uppercase;
 }
+.ugc__flag {
+  margin-bottom: 0.75rem;
+}
+.ugc__flag:empty {
+  display: none;
+}
 .ugc .section-title {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   padding: 0 var(--gutter);
 }
 
@@ -757,10 +771,20 @@
   overflow: hidden;
   border-radius: 14px;
 }
-.coaching__media img {
+.coaching__media {
+  position: relative;
+  aspect-ratio: 4 / 5; /* Instagram shows the media at 4:5 */
+  background: #d9cfc8 url('/assets/placeholder/coaching-still.webp') center / cover no-repeat;
+}
+/* Instagram's embed is header (54px) + media + footer. Shift it up and let the
+   rounded container clip everything but the media. */
+.coaching__embed {
+  position: absolute;
+  top: -54px;
+  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: calc(100% + 54px + 30rem);
+  border: 0;
 }
 .coaching__frame .review-flag {
   position: absolute;
@@ -824,35 +848,10 @@
   text-shadow: 0 1px 14px rgb(60 30 24 / 0.5);
 }
 .newsletter__form {
-  width: min(25rem, 100%);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.newsletter__form input {
-  flex: 1 1 0;
-  min-width: 0;
-  min-height: 3rem;
-  padding: 0 6.5rem 0 1.4rem;
-  border: 0;
-  border-radius: var(--radius-pill);
-  background: var(--c-white);
-  color: var(--c-black);
-}
-.newsletter__form input::placeholder {
-  color: #4a4a4a;
-}
-.newsletter__form .btn {
-  margin: 0.25rem 0.25rem 0.25rem -6rem;
-  min-width: 5.75rem;
-}
-.newsletter__form .btn:hover {
-  background: var(--c-peach);
-  border-color: var(--c-peach);
+  width: min(26rem, 100%);
 }
 .newsletter__form .form__status,
 .newsletter__form .field__error {
-  flex-basis: 100%;
   margin-top: 0.75rem;
   padding: 0.4rem 0.9rem;
   border-radius: var(--radius-m);
@@ -880,7 +879,9 @@
     height: clamp(26rem, 118vw, 82svh);
   }
   .hero__video {
-    object-position: 50% 50%;
+    /* Tall crop: there is horizontal slack, so position does the centring. */
+    object-position: 40% 50%;
+    transform: none;
   }
   .hero__title {
     inset: auto 0 22% 0;

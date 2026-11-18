@@ -102,8 +102,11 @@
     <!-- 7.11 Wholesale -->
     <section class="wholesale" aria-labelledby="wholesale-title">
       <div class="wholesale__media" data-reveal>
-        <img src="/assets/placeholder/wholesale-display.webp" alt="MUSHI bulk display boxes of Green Apple, Peach Bliss and Cherry gummies" width="751" height="594" loading="lazy" decoding="async">
-        <span data-wholesale-flag></span>
+        <picture>
+          <source type="image/avif" srcset="/assets/img/wholesale-display-760.avif 760w, /assets/img/wholesale-display-1505.avif 1505w" sizes="(min-width: 900px) 46vw, 92vw">
+          <source type="image/webp" srcset="/assets/img/wholesale-display-760.webp 760w, /assets/img/wholesale-display-1505.webp 1505w" sizes="(min-width: 900px) 46vw, 92vw">
+          <img src="/assets/img/wholesale-display-1505.webp" alt="MUSHI bulk display boxes of Green Apple, Peach Bliss and Cherry gummies" width="1505" height="1123" loading="lazy" decoding="async">
+        </picture>
       </div>
       <div class="wholesale__text" data-reveal>
         <h2 class="wholesale__title" id="wholesale-title">More Mushi.<br>More vibes.</h2>
@@ -138,7 +141,8 @@
     <!-- 7.15 Instagram / UGC -->
     <section class="ugc" aria-labelledby="ugc-title">
       <div class="ugc__row" data-ugc tabindex="0" role="group" aria-label="Community photos"></div>
-      <h2 class="section-title" id="ugc-title">Show us how you Mushi! <span data-ugc-flag></span></h2>
+      <h2 class="section-title" id="ugc-title">Show us how you Mushi!</h2>
+      <p class="ugc__flag" data-ugc-flag></p>
       <a class="btn btn--dark" href="https://instagram.com/taste.mushi" target="_blank" rel="noopener">Follow us @taste.mushi</a>
     </section>
 
@@ -148,12 +152,13 @@
       <div class="coaching__grid">
         <div class="coaching__frame" data-reveal>
           <div class="coaching__media">
-            <img src="/assets/placeholder/coaching-still.webp" alt="Someone lying back on a bed, on a video call with a MUSHI coach" width="349" height="457" loading="lazy" decoding="async">
+            <!-- Instagram's own embed, cropped to the media. Swap for a <video> when the .mp4 is supplied. -->
+            <iframe class="coaching__embed" src="https://www.instagram.com/p/DeLHTLFAf90/embed/" title="MUSHI coaching video on Instagram" loading="lazy" scrolling="no" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
           </div>
           <span data-coaching-flag></span>
         </div>
         <div class="coaching__text" data-reveal>
-          <h2 class="coaching__title" id="coaching-title">Your journey. Your pace. We’re here to help.</h2>
+          <h2 class="coaching__title" id="coaching-title">Your journey. Your pace.</h2>
           <p>Curious about microdosing but not sure where to start? Our MUSHI coaches are here to make exploring something new feel simple and approachable. Get personalized guidance, ask questions, and discover what works best for you all in a relaxed, judgment-free conversation.</p>
           <button class="btn btn--dark" type="button" data-open-modal="coaching">Inquire</button>
         </div>
@@ -167,9 +172,11 @@
         <h2 class="newsletter__title" id="newsletter-title">Join the <em class="marker">feel-<br>good</em> club</h2>
         <p class="newsletter__text">First dibs on new flavors, rituals worth stealing, and 10% off your first order.</p>
         <form class="newsletter__form" data-preview-form="newsletter" data-success="You’re on the list." novalidate>
-          <label class="sr-only" for="newsletter-email">Email address</label>
-          <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Enter your email address" required>
-          <button class="btn btn--dark" type="submit">Submit</button>
+          <div class="pill-field">
+            <label class="sr-only" for="newsletter-email">Email address</label>
+            <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Enter your email address" required>
+            <button class="btn btn--dark" type="submit">Submit</button>
+          </div>
           <p class="form__status" role="status"></p>
         </form>
       </div>

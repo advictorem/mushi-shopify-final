@@ -128,7 +128,7 @@ Sections map one-to-one to theme sections; `content.js` and `site.config.js` bec
 
 - Figma could not be read in this session (canvas does not render to the automation layer), so layout was matched against the annotated PDF and its embedded raster. Spacing and sizes are within a few pixels of the comp at 1440px but were not taken from Figma dev values.
 - Popup A and B are built to the brief’s behaviour with provisional layout and copy.
-- Eight assets are stand-ins (see `missingAssets`).
+- Six assets are stand-ins (see `missingAssets`). The coaching video is Instagram's embed cropped to the media; supply the `.mp4` for true inline playback.
 - Several pieces of copy are flagged for compliance review (FAQ dosage/usage answers, comparison table, benefit icons, testimonials, bundle discount).
 - The age gate is a frontend courtesy gate, not legal age verification.
 - No real-device testing yet (Safari, Firefox, iOS, Android) — see `docs/QA.md`.

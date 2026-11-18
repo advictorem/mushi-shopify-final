@@ -30,7 +30,6 @@ export const footerNav = [
       { label: 'Gummies', href: '/pages/shop.html?category=gummies' },
       { label: 'Chocolates', href: '/pages/shop.html?category=chocolates' },
       { label: 'Merch', href: '/pages/shop.html?category=merch' },
-      { label: 'Bundles', href: '/pages/bundles.html' },
     ],
   },
   {
@@ -55,12 +54,11 @@ export const footerNav = [
     label: 'Partners',
     items: [{ label: 'Wholesale & Bulk', href: '/pages/wholesale.html' }],
   },
-  {
-    label: 'Legal',
-    items: [
-      { label: 'Privacy Policy', href: `${live}/pages/privacy-policy`, external: true },
-      { label: 'Terms of Service', href: `${live}/pages/terms-of-service`, external: true },
-      { label: 'Data Sharing Opt-Out', href: `${live}/pages/data-sharing-opt-out`, external: true },
-    ],
-  },
+];
+
+// Small print, shown on the bottom line beside the copyright.
+export const legalNav = [
+  { label: 'Privacy Policy', href: `${live}/pages/privacy-policy`, external: true },
+  { label: 'Terms of Service', href: `${live}/pages/terms-of-service`, external: true },
+  { label: 'Data Sharing Opt-Out', href: `${live}/pages/data-sharing-opt-out`, external: true },
 ];

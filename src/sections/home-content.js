@@ -51,7 +51,7 @@ export function renderComparison() {
         const a = icon(r.icon);
         return `<tr>
           <th scope="row"><img src="${a.file}" alt="" width="${a.width}" height="${a.height}" loading="lazy">${esc(r.label)}</th>
-          <td>${icons.check}<span>${esc(r.mushi)}</span></td>
+          <td>${icons.check}<span>${esc(r.mushi).replace(/\n/g, '<br>')}</span></td>
           <td>${icons.cross}<span>${esc(r.other)}</span></td>
         </tr>`;
       }).join('')}
@@ -88,6 +88,5 @@ export function renderUgc() {
 
 export function renderAssetFlags() {
   fill('[data-bundle-flag]', reviewFlag('“Save up to 50%” — offer terms not verified on the live site'));
-  fill('[data-wholesale-flag]', reviewFlag('Placeholder cropped from the comp — final photo not in Mushi Exports'));
-  fill('[data-coaching-flag]', reviewFlag('Still from the comp — original coaching video file needed'));
+  fill('[data-coaching-flag]', reviewFlag('Instagram embed — supply the .mp4 for inline playback'));
 }

@@ -105,12 +105,19 @@
 }
 .header.is-stuck,
 .page-plain .header {
-  background: rgb(241 234 226 / 0.93);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* Frosted glass: mostly transparent, the page blurs through. */
+  background: rgb(255 255 255 / 0.22);
+  backdrop-filter: blur(22px) saturate(1.5);
+  -webkit-backdrop-filter: blur(22px) saturate(1.5);
 }
 .header.is-stuck {
-  box-shadow: 0 1px 0 rgb(0 0 0 / 0.08);
+  box-shadow: inset 0 -1px 0 rgb(255 255 255 / 0.35), 0 1px 0 rgb(0 0 0 / 0.06);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .header.is-stuck,
+  .page-plain .header {
+    background: rgb(241 234 226 / 0.92);
+  }
 }
 .page-plain .header {
   margin-bottom: 0;
@@ -560,6 +567,70 @@
 [aria-invalid='true'] {
   border-color: var(--c-error) !important;
 }
+
+/* Select with its own chevron, so the arrow sits inside the padding in every browser. */
+.select {
+  position: relative;
+}
+.select select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.75rem;
+  cursor: pointer;
+}
+.select svg {
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  width: 0.85rem;
+  height: auto;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* White pill holding an input and its button (newsletter, footer). */
+.pill-field {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: var(--radius-pill);
+  background: var(--c-white);
+  color: var(--c-black);
+}
+.pill-field:focus-within {
+  outline: 2px solid var(--c-black);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--c-white);
+}
+.pill-field input {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 2.5rem;
+  padding: 0 0.5rem 0 1.15rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: none;
+  color: var(--c-black);
+}
+.pill-field input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+.pill-field input::placeholder {
+  color: #4a4a4a;
+}
+.pill-field .btn {
+  flex: none;
+}
+.pill-field .btn:hover {
+  background: var(--c-peach);
+  border-color: var(--c-peach);
+  color: var(--c-black);
+}
+.pill-field:has([aria-invalid='true']) {
+  box-shadow: inset 0 0 0 2px var(--c-error);
+}
 .field__error {
   margin-top: 0.3rem;
   color: var(--c-error);
@@ -796,6 +867,30 @@
   margin-bottom: 1.25rem;
   font-size: 1.05rem;
 }
+.inquiry__done {
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0 0.5rem;
+  text-align: center;
+}
+.inquiry__logo {
+  width: min(15rem, 70%);
+  color: var(--c-orange);
+}
+.inquiry__thanks {
+  max-width: 22rem;
+  font: 500 clamp(1.4rem, 2.4vw, 1.75rem) / 1.15 var(--font-display);
+  text-transform: uppercase;
+}
+.inquiry__thanks:focus {
+  outline: none;
+}
+.inquiry__done .inquiry__preview {
+  margin: 0;
+  text-align: left;
+  font-size: var(--fs-small);
+}
 .inquiry__preview {
   margin-bottom: 1rem;
   padding: 0.75rem 1rem;
@@ -1016,33 +1111,46 @@
 .footer__signup {
   grid-column: span 2;
 }
+.footer__signup h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.3rem, 1.6vw, 1.6rem);
+  line-height: 1.05;
+}
 .footer__form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-.footer__form input {
-  flex: 1 1 11rem;
-  min-height: 2.5rem;
-  padding: 0 1.1rem;
-  border: 1px solid rgb(255 255 255 / 0.7);
-  border-radius: var(--radius-pill);
-  background: transparent;
-  color: var(--c-white);
-}
-.footer__form input::placeholder {
-  color: rgb(255 255 255 / 0.75);
+  max-width: 26rem;
 }
 .footer__form .form__status,
 .footer__form .field__error {
-  flex-basis: 100%;
   color: var(--c-peach);
 }
-.footer__copy {
+.footer__bottom {
   max-width: 81rem;
   margin: 3.5rem auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 2rem;
   font-size: 0.8rem;
+}
+.footer__copy {
   opacity: 0.65;
+}
+.footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+.footer__legal a {
+  display: inline-block;
+  padding: 0.35rem 0;
+  opacity: 0.65;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.footer__legal a:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 .footer__wordmark {
   display: block;

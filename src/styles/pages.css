@@ -52,8 +52,8 @@
   overflow: hidden;
   border-radius: var(--radius-m);
 }
-.page__media--plain img {
-  mix-blend-mode: multiply;
+.page__media--plain {
+  border-radius: 0;
 }
 .page__media .review-flag {
   position: absolute;

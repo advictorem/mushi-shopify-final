@@ -2,6 +2,9 @@ import { submitForm, PREVIEW_NOTE } from '../adapters/forms.js';
 import { coachingOutcomes } from '../data/content.js';
 import { qs, qsa } from '../utils/dom.js';
 import { openModal } from './modal.js';
+import { wordmarkMarkup } from './header.js';
+import { siteConfig } from '../data/site.config.js';
+import { icons } from '../utils/dom.js';
 
 const MESSAGES = {
   valueMissing: (label) => `Enter your ${label.toLowerCase()}.`,
@@ -61,7 +64,7 @@ const field = (id, label, attrs, required = true) => `
     <input id="${id}" name="${id.split('-').pop()}" ${attrs} ${required ? 'required' : ''}>
   </div>`;
 
-function inquiryModal({ label, title, intro, name, extra, submit, doneTitle }) {
+function inquiryModal({ label, title, intro, name, extra, submit, doneMessage }) {
   const m = openModal({
     label,
     html: `
@@ -81,11 +84,13 @@ function inquiryModal({ label, title, intro, name, extra, submit, doneTitle }) {
       bindPreviewForm(qs('form', root), {
         onDone() {
           qs('.inquiry', root).innerHTML = `
-            <h2 class="inquiry__title" tabindex="-1">${doneTitle}</h2>
-            <p class="inquiry__preview">${PREVIEW_NOTE}</p>
-            <p class="inquiry__intro">Once the form is connected, this is where the confirmation will appear.</p>
-            <button class="btn btn--dark" type="button" data-close>Close</button>`;
-          qs('.inquiry__title', root).focus();
+            <div class="inquiry__done">
+              ${wordmarkMarkup('inquiry__logo')}
+              <p class="inquiry__thanks" tabindex="-1">${doneMessage}</p>
+              ${siteConfig.showReviewFlags ? `<p class="inquiry__preview">${PREVIEW_NOTE}</p>` : ''}
+              <button class="btn btn--dark" type="button" data-close>Close</button>
+            </div>`;
+          qs('.inquiry__thanks', root).focus();
         },
       });
     },
@@ -100,14 +105,17 @@ export const openCoaching = () =>
     name: 'coaching',
     extra: `
       <div class="field">
-        <label for="coaching-outcome">Desired outcomes <span aria-hidden="true">*</span></label>
-        <select id="coaching-outcome" name="outcome" required data-label="a desired outcome">
-          <option value="">Select one</option>
-          ${coachingOutcomes.map((o) => `<option>${o}</option>`).join('')}
-        </select>
+        <label for="coaching-outcome">Desired outcomes</label>
+        <div class="select">
+          <select id="coaching-outcome" name="outcome">
+            <option value="">Select one</option>
+            ${coachingOutcomes.map((o) => `<option>${o}</option>`).join('')}
+          </select>
+          ${icons.chevron}
+        </div>
       </div>`,
     submit: 'Request my free consult',
-    doneTitle: 'Your request is ready to send',
+    doneMessage: 'A Mushi team member will be in touch regarding your appointment, Thank you!',
   });
 
 export const openWholesale = () =>
@@ -122,7 +130,7 @@ export const openWholesale = () =>
         <input id="wholesale-business" name="business" type="text" autocomplete="organization" required>
       </div>`,
     submit: 'Send inquiry',
-    doneTitle: 'Your inquiry is ready to send',
+    doneMessage: 'A Mushi team member will be in touch regarding your inquiry, Thank you!',
   });
 
 export const openAccount = () =>

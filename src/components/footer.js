@@ -1,4 +1,4 @@
-import { footerNav } from '../data/navigation.js';
+import { footerNav, legalNav } from '../data/navigation.js';
 import { siteConfig } from '../data/site.config.js';
 import { qs, icons } from '../utils/dom.js';
 import { logoMarkup } from './header.js';
@@ -40,15 +40,20 @@ export function mountFooter() {
           <section class="footer__col footer__signup">
             <h2>Get 10% off your first order</h2>
             <form class="footer__form" data-preview-form="newsletter" novalidate>
-              <label class="sr-only" for="footer-email">Email address</label>
-              <input id="footer-email" name="email" type="email" autocomplete="email" placeholder="Email address" required>
-              <button class="btn btn--light" type="submit">Subscribe</button>
+              <div class="pill-field">
+                <label class="sr-only" for="footer-email">Email address</label>
+                <input id="footer-email" name="email" type="email" autocomplete="email" placeholder="Enter your email address" required>
+                <button class="btn btn--dark" type="submit">Subscribe</button>
+              </div>
               <p class="form__status" role="status"></p>
             </form>
           </section>
         </nav>
       </div>
-      <p class="footer__copy">© ${new Date().getFullYear()} MUSHI. Staging preview — checkout, accounts and forms are not connected.</p>
+      <div class="footer__bottom">
+        <p class="footer__copy">© ${new Date().getFullYear()} MUSHI. Staging preview — checkout, accounts and forms are not connected.</p>
+        <ul class="footer__legal">${legalNav.map((it) => `<li><a href="${it.href}" target="_blank" rel="noopener">${it.label}</a></li>`).join('')}</ul>
+      </div>
       ${wordmark}
     </footer>`;
   bindPreviewForm(qs('.footer__form', host), { success: 'You’re on the list.' });

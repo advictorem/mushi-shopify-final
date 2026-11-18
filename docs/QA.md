@@ -58,3 +58,23 @@ Needs from the client:
 - Bundle discount terms behind “Save up to 50%”
 - Support email (live site and wireframes disagree) and a returns/refunds destination
 - Compliance review of flagged copy. Note the live product pages say “functional mushrooms” while the draft FAQ says the blend is not functional mushrooms; one of them needs correcting before launch
+
+## Round 2 — client markup (homepage.pdf), 2026-11-18
+
+Applied and re-checked at 1440px and 1720px, 54 automated checks passing, console clean:
+
+- Hero video scaled from the left so the subject's nose sits under the logo
+- Category showcase centred at wide viewports; Chocolates ("CHOCO") and Merch slides use the Gummies background and label colour
+- Lifestyle tiles taller and no longer buttons (hover still widens them)
+- "GUMMIES" background word raised; gummies-to-chocolates blend lengthened
+- New `VEGAN.png` and `wholesale-bulk-packaging-mix.png` exports in place (wholesale placeholder removed)
+- Bundle footnote enlarged
+- "WHY MUSHI?" centred on the page, colour `#C1E5CA`; "elderberry juice" on its own line
+- UGC heading and button centred
+- Coaching: heading shortened; image replaced with the Instagram embed, cropped to the media
+- Coaching form: Desired outcomes optional with a custom chevron; confirmation shows the Mushi logo and the approved message
+- Newsletter and footer sign-ups share one pill field (input and button inside the pill)
+- Footer: Bundles link removed, legal links moved beside the copyright, sign-up heading enlarged
+- Sticky header is frosted glass (22px blur, 22% white)
+
+Not verified: the Instagram embed itself (Instagram is blocked from the test environment; checked manually that the embed serves a 54px header and 4:5 media). Instagram's embed shows a poster with a play button and plays on Instagram's terms, not as an inline autoplay loop.

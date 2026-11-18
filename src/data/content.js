@@ -18,19 +18,18 @@ export const categories = [
     title: 'Chocolates',
     image: 'category-chocolates',
     alt: 'Three MUSHI chocolate boxes: Midnight Berry, Dark Chocolate and Milk Chocolate',
-    // Not in the comp (only the Gummies state is drawn). Derived from the packaging.
-    bg: '#f3c9bd',
-    label: '#6a4037',
-    review: 'Colours for this slide are not in Figma',
+    // Same background and label colour as Gummies (client direction, 2026-11-18).
+    bg: '#c1e5cb',
+    label: '#ffc09f',
+    labelText: 'Choco',
   },
   {
     handle: 'merch',
     title: 'Merch',
     image: 'category-merch',
     alt: 'MUSHI hoodie, back view',
-    bg: '#cdd9e6',
-    label: '#1c2932',
-    review: 'Colours for this slide are not in Figma',
+    bg: '#c1e5cb',
+    label: '#ffc09f',
   },
 ];
 
@@ -43,14 +42,14 @@ export const lifestyle = [
 ];
 
 export const benefits = [
-  { icon: 'benefit-belgian', label: '100% Belgian chocolate', review: 'Applies to chocolates only' },
+  { icon: 'benefit-belgian', label: '100% Belgian chocolate' },
   { icon: 'benefit-gluten-free', label: 'Gluten-free' },
   { icon: 'benefit-lab-tested', label: 'Lab tested' },
   { icon: 'benefit-made-in-usa', label: 'Made in USA' },
   { icon: 'benefit-non-gmo', label: 'Non-GMO' },
   { icon: 'benefit-no-palm', label: 'No palm oils' },
   { icon: 'benefit-no-synthetics', label: 'No synthetics' },
-  { icon: 'benefit-vegan', label: 'Vegan gummies', review: 'Applies to gummies only' },
+  { icon: 'benefit-vegan', label: 'Vegan gummies' },
 ];
 
 // Answers are taken from the client's own FAQ draft (mushi-wireframes/faq.html)
@@ -117,7 +116,7 @@ export const comparison = {
     { icon: 'compare-non-addictive', label: 'Non-addictive', mushi: 'Natural, non-addictive experience', other: 'Can feel habit-forming or overly intense' },
     { icon: 'compare-synthetic', label: 'Synthetic chemicals', mushi: 'No synthetic chemicals', other: 'Often made with synthetic actives' },
     { icon: 'compare-sugar', label: 'Sugar', mushi: '4g added sugar per gummy', other: 'Often higher sugar or syrup-heavy formulas' },
-    { icon: 'compare-ingredient', label: 'Ingredient source', mushi: 'Organic tapioca syrup, organic cane sugar, pectin, elderberry juice', other: 'Artificial flavors, fillers, and lab-made systems' },
+    { icon: 'compare-ingredient', label: 'Ingredient source', mushi: 'Organic tapioca syrup, organic cane sugar, pectin,\nelderberry juice', other: 'Artificial flavors, fillers, and lab-made systems' },
     { icon: 'compare-aftereffect', label: 'After effects', mushi: 'No crash or hangover after', other: 'Crash, fog, or hangover-like aftereffects' },
     { icon: 'compare-dosing', label: 'Dosing', mushi: '1 gummy serving • 5 per package', other: 'Inconsistent dosing or messy formats' },
     { icon: 'compare-readiness', label: 'Readiness', mushi: 'Ready anytime, no prep', other: 'Often require mixing, measuring, or extra steps' },

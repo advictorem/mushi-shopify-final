@@ -470,6 +470,26 @@
         }
       ]
     },
+    "wholesale-display": {
+      "original": "wholesale-bulk-packaging-mix.png",
+      "usage": "Wholesale section artwork",
+      "trimmed": true,
+      "width": 1505,
+      "height": 1123,
+      "aspectRatio": 1.3402,
+      "variants": [
+        {
+          "width": 760,
+          "webp": "/assets/img/wholesale-display-760.webp",
+          "avif": "/assets/img/wholesale-display-760.avif"
+        },
+        {
+          "width": 1505,
+          "webp": "/assets/img/wholesale-display-1505.webp",
+          "avif": "/assets/img/wholesale-display-1505.avif"
+        }
+      ]
+    },
     "newsletter-bg": {
       "original": "newsletter-bg.png",
       "usage": "Newsletter background",
@@ -545,8 +565,8 @@
       "original": "VEGAN.png",
       "usage": "Brand benefits / Vegan Gummies",
       "file": "/assets/icons/benefit-vegan.png",
-      "width": 256,
-      "height": 308
+      "width": 190,
+      "height": 266
     },
     "compare-natural": {
       "original": "natural.png",
@@ -646,14 +666,6 @@
     }
   },
   "placeholders": {
-    "wholesale-display": {
-      "usage": "Wholesale section photo",
-      "file": "/assets/placeholder/wholesale-display.webp",
-      "width": 752,
-      "height": 595,
-      "missing": true,
-      "source": "cropped from design-source/reference/homepage-design-raster.png"
-    },
     "ugc-1": {
       "usage": "Instagram polaroid 1",
       "file": "/assets/placeholder/ugc-1.webp",

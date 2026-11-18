@@ -46,11 +46,12 @@ RASTER = {
     "bundle-group": ("mushi-bundle.png", [900, 1800], "Bundle promotion artwork"),
     "compare-mushi": ("mushi-compare.png", [423], "Why Mushi / Mushi column"),
     "compare-alternatives": ("alternatives.png", [436], "Why Mushi / alternatives column"),
+    "wholesale-display": ("wholesale-bulk-packaging-mix.png", [760, 1505], "Wholesale section artwork"),
     "newsletter-bg": ("newsletter-bg.png", [1100, 2000], "Newsletter background"),
 }
 
 # Exports with large transparent margins; trimmed to the artwork's bounding box.
-TRIM = {"category-gummies", "category-chocolates", "category-merch"}
+TRIM = {"category-gummies", "category-chocolates", "category-merch", "wholesale-display"}
 
 # Benefit icons have their label baked into the export. MCT.png is the
 # "Made in USA" artwork despite its filename.
@@ -86,7 +87,6 @@ SVGS = {
 # export was supplied. Box is (left, top, right, bottom) as a fraction of the
 # reference image. Replace with real exports and delete these entries.
 PLACEHOLDERS = {
-    "wholesale-display": ("homepage-design-raster.png", (0.075, 0.5135, 0.625, 0.5625), "Wholesale section photo"),
     "ugc-1": ("homepage-design-raster.png", (0.012, 0.7645, 0.150, 0.7895), "Instagram polaroid 1"),
     "ugc-2": ("homepage-design-raster.png", (0.200, 0.7620, 0.352, 0.7860), "Instagram polaroid 2"),
     "ugc-3": ("homepage-design-raster.png", (0.425, 0.7625, 0.570, 0.7880), "Instagram polaroid 3"),

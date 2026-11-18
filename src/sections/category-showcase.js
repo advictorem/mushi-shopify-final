@@ -16,7 +16,7 @@ export function initCategoryShowcase() {
     <div class="showcase__stage" role="group" aria-roledescription="carousel" aria-label="Shop by category" tabindex="0">
       ${categories.map((c, i) => `
         <a class="showcase__slide" href="/pages/shop.html?category=${c.handle}" style="--label:${c.label}" role="group" aria-roledescription="slide" aria-label="${c.title}, ${i + 1} of ${categories.length}">
-          <span class="showcase__label" aria-hidden="true">${c.title}</span>
+          <span class="showcase__label" aria-hidden="true">${c.labelText || c.title}</span>
           ${picture(c.image, { alt: c.alt, sizes: '(min-width: 1100px) 900px, 90vw', cls: 'showcase__img', eager: i === 0 })}
           <span class="showcase__cta">Shop ${c.title.toLowerCase()} ${reviewFlag(c.review)}</span>
         </a>`).join('')}
