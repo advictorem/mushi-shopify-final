@@ -1,1 +1,1 @@
-{ "cleanUrls": true, "rewrites": [{ "source": "/about", "destination": "/pages/about" }] }
+{ "cleanUrls": true, "rewrites": [{ "source": "/about", "destination": "/pages/about" }, { "source": "/products/:handle", "destination": "/pages/product" }] }

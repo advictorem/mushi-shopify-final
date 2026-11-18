@@ -133,3 +133,34 @@ Built from `design-source/reference/about-comp.png`. Route: `/pages/about` (also
 - The crowd image is the supplied `club.jpg` (514px wide). The frame after TASTES plays the hero gummy video cropped to the mouth: silent, looping, only while on screen, poster only with reduced motion. The frame after MOMENTS INTO plays the supplied ferris wheel video the same way, cropped and re-encoded for its inline size.
 - The supplied cherry, picnic and pack images are small (358–646px wide); fine at their inline size, soft on very large or 3x screens.
 - Muted (unfilled) text and the peach statement are below WCAG AA contrast by design; the same sentences are available to assistive tech as plain text.
+
+## Round 8 — Product detail pages
+
+One template (`src/pages/product.js`) for every product, at `/products/<handle>` (rewrite) or `/pages/product?handle=<handle>`.
+
+**What was added**
+- `src/components/purchase-options.js` — one-time / Subscribe and Save cards, schedule select, quantity, Add to cart with line total.
+- `src/data/subscription.config.js` — discount, schedules, default, terms text, selling-plan placeholders.
+- `src/components/product-gallery.js` — crossfade stage, arrows, thumbnails, arrow keys, swipe, lightbox.
+- `src/adapters/commerce.js` — `getPurchaseOptions`, `subscriptionPrice`; cart lines now carry a plan, so the same flavor can be in the cart once as one-time and once as a subscription.
+- Cart drawer and cart page show Subscribe and Save, the schedule and the per-delivery price.
+- Client Raves (homepage card, filtered by product handle), More Flavors (same category, current product excluded), phone Add bar.
+
+**Checked (Chrome, Playwright, `audit/pdp.mjs`, 32 checks, all pass)**
+- One-time is the default; the schedule is hidden and inert until Subscribe and Save is chosen.
+- $55.00 → $49.50 on subscription; quantity 2 → $99.00; back to one-time → $110.00.
+- Schedule change is reflected in the summary and the cart line.
+- Cart: subscription line shows label, schedule, per-delivery price; one-time is a separate line; stepper and Remove act on the right line.
+- Whole card clickable; radios work with arrow keys; gallery arrow keys and lightbox.
+- All six products: correct title, $55.00, own images, More Flavors lists the other two of the same category, raves only for that flavor, four accordions.
+- Extras (e.g. Beach Ball): no subscription selector, still buyable.
+- No horizontal overflow at 375, 430, 768, 1024, 1440, 1920. Console clean.
+
+**Data notes and open items**
+- Subscription: 10% and the schedules (every week, every 2 weeks, once per month) come from the client-confirmed FAQ, not the brief's 2/4/6-week examples. Tagged for review on staging. Not stacked with any quantity promotion.
+- Only two approved images exist per product (pack shot, flavor close-up); the gallery takes more when they are added to `images.gallery`.
+- Reviews exist for Cherry (2), Green Apple (1), Peach Bliss (1). The three chocolates have none, so Client Raves is hidden there (staging shows a tag). No star average is shown.
+- How to use: the two usage answers from the client's FAQ draft (tagged for compliance review); storage copy is pending.
+- What's inside: gummies show the FAQ ingredient statement; nutrition facts, serving size and allergens are pending for all six; chocolates have no approved ingredient list yet.
+- The Purchase Options screenshot referenced in the brief was not attached; the selector follows the brief's written description.
+- Safari, Firefox and real devices were not run.

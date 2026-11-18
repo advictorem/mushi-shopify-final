@@ -125,13 +125,14 @@ export const comparison = {
 };
 
 // Reviews from mushiworld.com, confirmed as genuine by the client on 2026-11-18.
+// `product` is the product handle: product pages show only the reviews for their own flavor.
 export const testimonials = {
   review: '',
   items: [
-    { quote: 'Split a pack with friends at a rooftop dinner and the whole night just glowed. Juicy peach, zero heaviness.', name: 'Jordan M.', rating: 5, product: 'peach-bliss', tone: 'peach' },
-    { quote: 'Cherry Blossom before studio time is my new rule. Rich flavor, and the ideas just keep arriving.', name: 'Alex T.', rating: 5, product: 'cherry', tone: 'cherry' },
-    { quote: 'One tart little apple gummy with my evening tea and my mind actually clocks out. Best sleep ritual I have found.', name: 'Priya S.', rating: 5, product: 'green-apple', tone: 'apple' },
-    { quote: 'These little gummies turned my Sunday reset into the best part of my week.', name: 'Maya R.', rating: 5, product: 'cherry', tone: 'cherry' },
+    { id: 'r-peach-01', quote: 'Split a pack with friends at a rooftop dinner and the whole night just glowed. Juicy peach, zero heaviness.', name: 'Jordan M.', rating: 5, product: 'peach-bliss', tone: 'peach', source: 'mushiworld.com', approved: true },
+    { id: 'r-cherry-01', quote: 'Cherry Blossom before studio time is my new rule. Rich flavor, and the ideas just keep arriving.', name: 'Alex T.', rating: 5, product: 'cherry', tone: 'cherry', source: 'mushiworld.com', approved: true },
+    { id: 'r-apple-01', quote: 'One tart little apple gummy with my evening tea and my mind actually clocks out. Best sleep ritual I have found.', name: 'Priya S.', rating: 5, product: 'green-apple', tone: 'apple', source: 'mushiworld.com', approved: true },
+    { id: 'r-cherry-02', quote: 'These little gummies turned my Sunday reset into the best part of my week.', name: 'Maya R.', rating: 5, product: 'cherry', tone: 'cherry', source: 'mushiworld.com', approved: true },
   ],
 };
 

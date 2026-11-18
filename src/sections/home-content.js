@@ -59,10 +59,10 @@ export function renderComparison() {
   fill('[data-comparison-flag]', reviewFlag(comparison.review));
 }
 
-export function renderTestimonials() {
-  fill('[data-testimonials]', testimonials.items.map((t, i) => {
-    const p = getProduct(t.product);
-    return `
+/** Testimonial card. Shared by the homepage strip and the product pages. */
+export function quoteCard(t, i = 0) {
+  const p = getProduct(t.product);
+  return `
       <figure class="quote quote--${t.tone}${i % 2 ? ' quote--drop' : ''}">
         <div class="quote__top"><span class="quote__mark" aria-hidden="true">“</span><span class="quote__stars" role="img" aria-label="${t.rating} out of 5 stars">${icons.star.repeat(t.rating)}</span></div>
         <blockquote>“${esc(t.quote)}”</blockquote>
@@ -71,7 +71,13 @@ export function renderTestimonials() {
           <span><strong>${esc(p.title)}</strong><small>${esc(t.name)}</small></span>
         </figcaption>
       </figure>`;
-  }).join(''));
+}
+
+/** Approved testimonials for one product only. Never falls back to other flavors. */
+export const testimonialsFor = (handle) => testimonials.items.filter((t) => t.product === handle && t.approved !== false);
+
+export function renderTestimonials() {
+  fill('[data-testimonials]', testimonials.items.map(quoteCard).join(''));
   fill('[data-testimonials-flag]', reviewFlag(testimonials.review));
 }
 

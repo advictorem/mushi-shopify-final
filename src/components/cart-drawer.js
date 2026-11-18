@@ -17,26 +17,27 @@ export function cartMarkup(cart) {
   }
   return `
     <ul class="cart__lines">
-      ${cart.lines.map(({ product: p, quantity, lineTotal }) => `
-        <li class="cart__line" data-cart-line="${p.handle}">
+      ${cart.lines.map(({ key, product: p, quantity, lineTotal, unitPrice, subscription: sub }) => `
+        <li class="cart__line" data-cart-line="${key}">
           <a class="cart__thumb" href="${productUrl(p)}" tabindex="-1" aria-hidden="true">
             ${p.images.primary ? picture(p.images.primary, { alt: '', sizes: '88px' }) : `<span class="cart__thumb-type">${esc(p.title.replace('Exclusive MUSHI ', ''))}</span>`}
           </a>
           <div class="cart__info">
             <a class="cart__name" href="${productUrl(p)}">${esc(p.title)}</a>
             <p class="cart__format">${esc(p.formatLabel)}</p>
-            <p class="cart__each">${money(p.price)} each</p>
+            ${sub ? `<p class="cart__plan"><strong>${esc(sub.label)}</strong> · ${esc(sub.frequency.label)}</p>
+            <p class="cart__each">${money(unitPrice)} each, per delivery <s>${money(p.price)}</s></p>` : `<p class="cart__each">${money(unitPrice)} each</p>`}
             <div class="cart__controls">
               ${stepper(p.title, quantity)}
               <button class="link" type="button" data-remove aria-label="Remove ${esc(p.title)} from cart">Remove</button>
             </div>
           </div>
-          <p class="cart__total" aria-label="Line total">${money(lineTotal)}</p>
+          <p class="cart__total" aria-label="${sub ? 'Line total per delivery' : 'Line total'}">${money(lineTotal)}${sub ? '<small>per delivery</small>' : ''}</p>
         </li>`).join('')}
     </ul>
     <div class="cart__summary">
       <p class="cart__subtotal"><span>Subtotal</span><strong>${money(cart.subtotal)}</strong></p>
-      <p class="cart__note">Shipping and taxes are calculated at checkout.</p>
+      <p class="cart__note">Shipping and taxes are calculated at checkout.${cart.hasSubscription ? ' Subscribe and Save items are a preview: no recurring order is created.' : ''}</p>
       <button class="btn btn--dark btn--block" type="button" data-checkout>Checkout</button>
       <p class="cart__checkout-note" role="status" hidden></p>
     </div>`;
@@ -79,7 +80,7 @@ export function openCart() {
         content.innerHTML = cartMarkup(cart);
         qs('[data-cart-heading-count]', root).textContent = cart.itemCount ? `(${cart.itemCount})` : '';
         if (focused) {
-          const line = content.querySelector(`[data-cart-line="${focused}"]`);
+          const line = content.querySelector(`[data-cart-line="${CSS.escape(focused)}"]`);
           (line?.querySelector(`.${String(cls).split(' ')[0]}[data-step="${document.activeElement?.dataset?.step}"]`) || line?.querySelector('.stepper__value') || qs('.modal__close', root))?.focus();
         }
       };

@@ -140,3 +140,20 @@ Sections map one-to-one to theme sections; `content.js` and `site.config.js` bec
 - `src/utils/scroll-fill.js` — add `data-scroll-fill` to a block and `data-fill-item` to each word or inline image; the script writes `--p` (0–1) on each item as the fill passes through it and `--bp` on the block. Colours are set with `--fill-on` / `--fill-off` (see `.manifesto--light|navy|peach` in `src/styles/pages.css`).
 - `.imedia` — inline image frame. The frame keeps its place in the line; the picture inside reveals with `--p` and drifts with `data-parallax`.
 - `src/sections/beach.js` — the sunset beach above the footer, shared by Contact and About.
+
+## Subscriptions (Subscribe and Save) — how it connects to Shopify later
+
+Phase 1 is a frontend preview: nothing is billed or scheduled.
+
+| Frontend today | Shopify / RecurrinGO later |
+| --- | --- |
+| `src/data/subscription.config.js` (discount, schedules, terms) | The product's selling plan group, configured in RecurrinGO. Replace the config with `product.selling_plan_groups`. |
+| `frequencies[n].sellingPlanId` (null) | The selling plan ID for that schedule. |
+| `getPurchaseOptions(product)` in `src/adapters/commerce.js` | Build the same shape from the selling plans; take each plan's own price adjustment instead of the single percentage. |
+| `subscriptionPrice(base)` | Use the selling plan allocation price from Shopify; delete the local calculation. |
+| `addToCart(handle, qty, { plan })` | `POST /cart/add.js` with `{ id: variantId, quantity, selling_plan: sellingPlanId }` (or the Storefront API `sellingPlanId` on the cart line). |
+| Cart line `subscription.frequency` | `line.selling_plan_allocation.selling_plan.name`. |
+
+The selector markup lives in `src/components/purchase-options.js`. Two routes at integration: keep this selector and feed it selling plans (above), or, if RecurrinGO requires its own widget, mount that widget in place of `purchaseOptionsMarkup()` and keep the rest of the page. Which one applies has to be confirmed against the app during integration.
+
+Subscriptions are the same product and flavor on a schedule. They are separate from bundles and quantity discounts, and the two are not combined here.
