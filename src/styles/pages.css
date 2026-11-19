@@ -1500,3 +1500,8 @@
   padding-left: 2rem;
   font-weight: 400;
 }
+
+/* Title sentences wrap as whole units. */
+.page__title-part {
+  display: inline-block;
+}

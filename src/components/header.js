@@ -129,7 +129,6 @@ function openMobileMenu() {
             <ul>${g.items.map((it) => `<li><a href="${it.href}">${it.label}</a></li>`).join('')}</ul>
           </section>`).join('')}
         <div class="mobile-nav__foot">
-          <button type="button" class="btn btn--outline" data-mobile="search">${icons.search} Search</button>
           <button type="button" class="btn btn--outline" data-mobile="account">${icons.account} Account</button>
         </div>
       </nav>`,
