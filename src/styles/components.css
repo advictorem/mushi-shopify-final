@@ -233,8 +233,7 @@
 @media (max-width: 899px) {
   .nav,
   .header__account,
-  .header__cart-label,
-  .header__actions [data-open='search'] {
+  .header__cart-label {
     display: none;
   }
   .header__menu {
