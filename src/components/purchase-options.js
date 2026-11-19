@@ -20,6 +20,7 @@ export function purchaseOptionsMarkup(p) {
   const id = `po-${p.handle}`;
   return `
     <form class="po" data-purchase-options novalidate>
+      ${sizesMarkup(p)}
       ${sub ? `
       <fieldset class="po__set">
         <legend class="po__legend">Purchase options ${sub.demo ? reviewFlag('Subscription preview: discount, schedules and terms need final sign-off; nothing is billed') : ''}</legend>
@@ -47,14 +48,33 @@ export function purchaseOptionsMarkup(p) {
             <p class="po__terms">${esc(sub.termsText)}</p>
           </div>
         </div>
-      </fieldset>` : `<p class="po__single"><span class="sr-only">Price</span>${money(p.price, p.currency)}</p>`}
+      </fieldset>` : p.price != null ? `<p class="po__single"><span class="sr-only">Price</span>${money(p.price, p.currency)}</p>` : `<p class="po__single po__single--pending">Price coming soon</p>${p.pending ? `<p class="po__terms">${esc(p.pending)}</p>` : ''}`}
       <div class="po__buy">
-        ${stepper(p.title)}
-        <button class="btn btn--dark po__add" type="submit"><span data-add-label>Add to cart</span> ${icons.bagPlus}</button>
+        ${p.price != null && p.available ? stepper(p.title) : ''}
+        ${p.price != null && p.available
+          ? '<button class="btn btn--dark po__add" type="submit">Add to cart</button>'
+          : '<button class="btn btn--dark po__add" type="button" disabled>Coming soon</button>'}
       </div>
-      <p class="po__summary" data-summary></p>
+      <p class="po__summary" data-summary hidden></p>
       <p class="sr-only" role="status" data-announce></p>
     </form>`;
+}
+
+/** Size pills for apparel. Unavailable sizes are disabled, greyed and crossed out. */
+function sizesMarkup(p) {
+  if (!p.sizes?.length) return '';
+  const first = p.sizes.find((z) => z.available);
+  return `
+      <fieldset class="po__set sizes">
+        <legend class="po__legend">Size: <span data-size-label>${esc(first?.label ?? 'Unavailable')}</span> ${reviewFlag(p.sizesPending)}</legend>
+        <div class="sizes__row">
+          ${p.sizes.map((z) => `
+          <label class="sizes__pill${z.available ? '' : ' is-out'}">
+            <input type="radio" name="size" value="${esc(z.label)}"${z === first ? ' checked' : ''}${z.available ? '' : ' disabled'}>
+            <span>${esc(z.label)}${z.available ? '' : '<span class="sr-only"> (unavailable)</span>'}</span>
+          </label>`).join('')}
+        </div>
+      </fieldset>`;
 }
 
 /**
@@ -74,8 +94,8 @@ export function initPurchaseOptions(root, p, { onChange, onAdd }) {
     const type = sub && form.elements.purchase.value === 'subscription' ? 'subscription' : 'one-time';
     const frequency = type === 'subscription' ? sub.frequencies.find((f) => f.id === form.elements.frequency.value) : null;
     const unitPrice = type === 'subscription' ? sub.price : p.price;
-    const quantity = clamp(qty.value);
-    return { handle: p.handle, type, frequency, quantity, unitPrice, total: unitPrice * quantity };
+    const quantity = qty ? clamp(qty.value) : 1;
+    return { handle: p.handle, type, frequency, quantity, unitPrice, total: (unitPrice ?? 0) * quantity, size: form.elements.size?.value ?? null };
   }
 
   function paint(announce) {
@@ -85,22 +105,27 @@ export function initPurchaseOptions(root, p, { onChange, onAdd }) {
       freqWrap.classList.toggle('is-open', s.type === 'subscription');
       freqWrap.inert = s.type !== 'subscription';
     }
-    qs('[data-add-label]', form).textContent = `Add to cart — ${money(s.total, p.currency)}`;
+    const size = form.elements.size?.value;
+    if (size) qs('[data-size-label]', form).textContent = size;
+    // The line under the button appears only when it adds something: a subscription, or more than one.
     const summary = s.type === 'subscription'
-      ? `${s.quantity} × ${p.title}, ${money(s.total, p.currency)} per delivery, ${s.frequency.label.toLowerCase()}`
-      : sub ? `${s.quantity} × ${p.title}, one-time purchase` : '';
-    qs('[data-summary]', form).textContent = summary;
-    if (announce) qs('[data-announce]', form).textContent = `${s.type === 'subscription' ? `${sub.label} selected.` : 'One-time purchase selected.'} ${summary}. Total ${money(s.total, p.currency)}.`;
+      ? `${s.quantity} × ${p.title}: ${money(s.total, p.currency)} per delivery, ${s.frequency.label.toLowerCase()}`
+      : s.quantity > 1 && p.price != null ? `${s.quantity} × ${p.title}: ${money(s.total, p.currency)}` : '';
+    const line = qs('[data-summary]', form);
+    line.textContent = summary;
+    line.hidden = !summary;
+    if (announce) qs('[data-announce]', form).textContent = `${size ? `Size ${size}. ` : ''}${sub ? (s.type === 'subscription' ? `${sub.label} selected. ` : 'One-time purchase selected. ') : ''}${p.price != null ? `Total ${money(s.total, p.currency)}${s.type === 'subscription' ? ` per delivery, ${s.frequency.label.toLowerCase()}` : ''}.` : ''}`;
     onChange?.(s);
   }
 
   const add = () => {
+    if (!qty) return;
     onAdd(getState());
     qty.value = 1;
     paint(false);
   };
   form.addEventListener('change', () => {
-    qty.value = clamp(qty.value);
+    if (qty) qty.value = clamp(qty.value);
     paint(true);
   });
   // The shared stepper buttons update the input after this handler runs.

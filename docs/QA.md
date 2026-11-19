@@ -164,3 +164,16 @@ One template (`src/pages/product.js`) for every product, at `/products/<handle>`
 - What's inside: gummies show the FAQ ingredient statement; nutrition facts, serving size and allergens are pending for all six; chocolates have no approved ingredient list yet.
 - The Purchase Options screenshot referenced in the brief was not attached; the selector follows the brief's written description.
 - Safari, Firefox and real devices were not run.
+
+## Round 9 — Product page revisions
+
+- Gummies and chocolates: page background fades down from the product's pack colour (`theme` in `products.json`, sampled from each approved pack shot). Merch and extras: white page.
+- Corners on the gallery, info card, purchase cards and select use the homepage tile radius (`--radius-m`).
+- Gallery: images stack in the left column and scroll; thumbnails and arrows removed. Phone: swipeable row with a counter. Click still enlarges.
+- Info card simplified to title, format, short line, six brand icons, purchase options, quantity, Add to cart. Breadcrumb, category label, flavor line, fact pills and source line removed. The line under the button appears only for a subscription or a quantity above one.
+- Share button on every product page: device share sheet where available, otherwise copies the link.
+- Client Raves: at least three cards per flavor. Missing ones are placeholders that say so, carry a staging tag, and are not rendered when `showReviewFlags` is off.
+- Apparel pages: size pills (unavailable sizes disabled, greyed, crossed out), Overview / Washing / Hand-dyed / No bleach sections with placeholder copy, photos at about 825px square on a 1440px screen against about 495px for gummies and chocolates (roughly 2.8 times the area).
+- The information column stays in view beside the gallery when it fits the screen; when it is taller (Description open) it scrolls normally, so nothing is cut off.
+
+Checked in Chrome with `audit/pdp.mjs` (all pass), console clean, no overflow at 375–1920. Open items: apparel sizes, stock and prices are placeholders; apparel source photos are 678px, so they are soft at this size; Safari, Firefox and devices not run.

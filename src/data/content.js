@@ -169,3 +169,15 @@ export const coachingOutcomes = [
   'Connection & Social Experiences',
   'Building a Mindful Ritual',
 ];
+
+// Apparel product pages: accordion sections. Placeholder copy until the real
+// garment details are supplied; shown with a staging review tag.
+export const merchDetails = {
+  review: 'Placeholder copy — replace with the real garment details',
+  sections: [
+    { title: 'Overview', text: ['Placeholder. A short description of the piece goes here: the fit, the fabric and weight, where the graphic sits and what makes it a MUSHI piece.'] },
+    { title: 'Washing', text: ['Placeholder. Washing instructions go here, for example water temperature, washing inside out with similar colors, and how to dry.'] },
+    { title: 'Hand-dyed', text: ['Placeholder. If this piece is hand-dyed, a note goes here explaining that color and pattern vary slightly from piece to piece and may soften with washing.'] },
+    { title: 'No bleach', text: ['Placeholder. Care warnings go here, for example no bleach, no fabric softener and no ironing over the print.'] },
+  ],
+};

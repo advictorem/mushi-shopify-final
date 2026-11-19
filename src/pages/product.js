@@ -1,11 +1,14 @@
-import { getProduct, getProducts, addToCart, catalogMeta } from '../adapters/commerce.js';
-import { faqs } from '../data/content.js';
+import { getProduct, getProducts, addToCart } from '../adapters/commerce.js';
+import { faqs, benefits, merchDetails } from '../data/content.js';
+import { icon } from '../data/assets.js';
+import { siteConfig } from '../data/site.config.js';
 import { productCard } from '../components/product-card.js';
 import { purchaseOptionsMarkup, initPurchaseOptions } from '../components/purchase-options.js';
 import { galleryMarkup, initGallery } from '../components/product-gallery.js';
 import { openCart } from '../components/cart-drawer.js';
 import { reviewFlag } from '../components/review-flag.js';
 import { quoteCard, testimonialsFor, faqMarkup } from '../sections/home-content.js';
+import { picture } from '../data/assets.js';
 import { esc, icons, money, qs } from '../utils/dom.js';
 
 // /products/<handle> (Vercel rewrite) or /pages/product.html?handle=<handle>
@@ -23,6 +26,12 @@ const section = (title, body, open = false) => `
 /** Description / How to use / What's inside / FAQs, from product data and the approved FAQ copy. */
 function accordions(p) {
   const consumable = ['gummies', 'chocolates'].includes(p.category);
+  if (p.category === 'merch') {
+    return `
+    <div class="accordion pdp__accordion" data-accordion>
+      ${merchDetails.sections.map((m, i) => section(esc(m.title), `${m.text.map((t) => `<p>${esc(t)}</p>`).join('')}${reviewFlag(merchDetails.review)}`, i === 0)).join('')}
+    </div>`;
+  }
   const description = [
     p.fullDescription ? `<p>${esc(p.fullDescription)}</p>` : '',
     p.flavorProfile ? `<p><strong>Flavor profile:</strong> ${esc(p.flavorProfile)}</p>` : '',
@@ -42,6 +51,25 @@ function accordions(p) {
     </div>`;
 }
 
+// The six brand icons that apply to every gummy and chocolate (the homepage set, minus the two format-specific ones).
+const FACT_ICONS = ['benefit-gluten-free', 'benefit-lab-tested', 'benefit-made-in-usa', 'benefit-non-gmo', 'benefit-no-palm', 'benefit-no-synthetics'];
+const factIcons = () => `
+  <ul class="pdp__icons" aria-label="Product facts">
+    ${benefits.filter((b) => FACT_ICONS.includes(b.icon)).map((b) => `<li title="${esc(b.label)}"><img src="${icon(b.icon).file}" alt="${esc(b.label)}" width="${icon(b.icon).width}" height="${icon(b.icon).height}" loading="lazy" decoding="async"></li>`).join('')}
+  </ul>`;
+
+const MIN_RAVES = 3;
+/** Stand-in card so the Client Raves layout can be reviewed. Staging only: never shown once review tags are off. */
+const ravePlaceholder = (p) => `
+      <figure class="quote quote--${p.tone || 'cherry'} quote--placeholder">
+        <div class="quote__top"><span class="quote__mark" aria-hidden="true">“</span>${reviewFlag('Placeholder — not a customer review')}</div>
+        <blockquote>Placeholder. An approved ${esc(p.title)} review will appear here.</blockquote>
+        <figcaption>
+          <span class="quote__thumb">${picture(p.images.primary, { alt: '', sizes: '44px' })}</span>
+          <span><strong>${esc(p.title)}</strong><small>Customer name</small></span>
+        </figcaption>
+      </figure>`;
+
 /** Product detail template: one template for every product, driven by the product data. */
 export function render(main) {
   const p = getProduct(currentHandle());
@@ -50,38 +78,43 @@ export function render(main) {
     return;
   }
   document.title = `${p.title} — MUSHI`;
-  const images = p.images.gallery.map((key, i) => ({ key, alt: i === 0 ? `${p.title} packaging` : `${p.title} flavor close-up` }));
-  const raves = testimonialsFor(p.handle);
+  const consumable = ['gummies', 'chocolates'].includes(p.category);
+  const images = p.images.gallery.map((key, i) => ({ key, alt: i === 0 ? `${p.title}${consumable ? ' packaging' : ''}` : `${p.title}, ${consumable ? 'flavor close-up' : 'second view'}` }));
+  const raves = consumable ? testimonialsFor(p.handle) : [];
+  const fillers = consumable && siteConfig.showReviewFlags ? Math.max(0, MIN_RAVES - raves.length) : 0;
   const more = getProducts(p.category).filter((r) => r.handle !== p.handle);
   const buyable = p.price != null && p.available;
-  const categoryLabel = ['gummies', 'chocolates'].includes(p.category) ? `Mushi ${p.category}` : p.category;
+
+  // Gummies and chocolates fade from their pack colour; merch sits on white.
+  main.classList.add('page--product', consumable ? 'page--tinted' : 'page--white');
+  if (p.theme) main.style.setProperty('--theme', p.theme);
 
   main.innerHTML = `
-    <section class="pdp pdp--${p.handle}" data-pdp>
+    <section class="pdp${consumable ? '' : ' pdp--merch'}" data-pdp>
       <div class="pdp__gallery">
-        ${images.length ? galleryMarkup(images) : `<div class="gallery__stage"><div class="card__art card__art--type pdp__type"><span>${esc(p.title.replace('Exclusive MUSHI ', ''))}</span></div></div><p class="pdp__missing">${reviewFlag('No approved product image in Mushi Exports')}</p>`}
+        ${images.length ? galleryMarkup(images, consumable ? '(min-width: 900px) 40vw, 100vw' : '(min-width: 900px) 62vw, 100vw') : `<div class="card__art card__art--type pdp__type"><span>${esc(p.title.replace('Exclusive MUSHI ', ''))}</span></div><p class="pdp__missing">${reviewFlag('No approved product image in Mushi Exports')}</p>`}
       </div>
-      <div class="pdp__info">
-        <nav aria-label="Breadcrumb" class="pdp__crumbs"><a class="link" href="/pages/shop.html">Shop</a> / <a class="link" href="/pages/shop.html?category=${p.category}">${esc(p.category)}</a></nav>
-        <p class="pdp__category">${esc(categoryLabel)}</p>
-        <h1 class="pdp__title">${esc(p.title)}</h1>
-        <p class="pdp__format">${esc(p.formatLabel)}${raves.length ? ` <a class="link" href="#raves">${raves.length} client rave${raves.length > 1 ? 's' : ''}</a>` : ''}</p>
-        ${p.shortDescription ? `<p class="pdp__short">${esc(p.shortDescription)}</p>` : ''}
-        ${p.flavorProfile ? `<p class="pdp__flavor"><span>Flavor</span> ${esc(p.flavorProfile)}</p>` : ''}
-        ${buyable ? purchaseOptionsMarkup(p) : `<p class="price price--pending">Price coming soon</p><p class="page__preview">${esc(p.pending || 'Coming soon.')}</p>`}
-        ${p.attributes.length ? `<ul class="pdp__attrs" aria-label="Product facts">${p.attributes.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>` : ''}
+      <div class="pdp__info" data-pdp-info>
+        <div class="pdp__card">
+          <button class="pdp__share" type="button" data-share aria-label="Share ${esc(p.title)}">${icons.share}</button>
+          <h1 class="pdp__title">${esc(p.title)}</h1>
+          <p class="pdp__format">${esc(p.formatLabel)}</p>
+          ${p.shortDescription ? `<p class="pdp__short">${esc(p.shortDescription)}</p>` : ''}
+          ${consumable ? factIcons() : ''}
+          ${purchaseOptionsMarkup(p)}
+          <p class="pdp__share-note" role="status" data-share-note hidden></p>
+        </div>
         ${accordions(p)}
-        ${p.liveUrl ? `<p class="pdp__source">Price and copy verified against <a class="link" href="${p.liveUrl}" target="_blank" rel="noopener">the live product page</a> on ${catalogMeta.verifiedAt}.</p>` : ''}
       </div>
     </section>
-    ${raves.length ? `
+    ${raves.length + fillers ? `
       <section class="raves" id="raves" aria-labelledby="raves-title">
         <h2 class="section-title" id="raves-title">Client raves</h2>
-        <div class="raves__row" tabindex="0" role="group" aria-label="${esc(p.title)} reviews">${raves.map((t) => quoteCard(t)).join('')}</div>
-      </section>` : (['gummies', 'chocolates'].includes(p.category) ? `<p class="raves__none">${reviewFlag(`Client Raves hidden: no approved ${p.title} review yet`)}</p>` : '')}
+        <div class="raves__row" tabindex="0" role="group" aria-label="${esc(p.title)} reviews">${raves.map((t) => quoteCard(t)).join('')}${ravePlaceholder(p).repeat(fillers)}</div>
+      </section>` : ''}
     ${more.length ? `
       <section class="page__section page__section--wide more-flavors" aria-labelledby="more-title">
-        <h2 class="section-title" id="more-title">${['gummies', 'chocolates'].includes(p.category) ? 'More flavors' : `More ${esc(p.category)}`}</h2>
+        <h2 class="section-title" id="more-title">${consumable ? 'More flavors' : `More ${esc(p.category)}`}</h2>
         <div class="grid-products${more.length === 2 ? ' grid-products--two' : ''}">${more.map(productCard).join('')}</div>
       </section>` : ''}
     ${buyable ? `
@@ -91,11 +124,13 @@ export function render(main) {
       </div>` : ''}`;
 
   initGallery(main, images);
-  if (!buyable) return;
+  initShare(main, p);
+  stickInfo(qs('[data-pdp-info]', main));
 
   const bar = qs('[data-pdp-bar]', main);
   const po = initPurchaseOptions(main, p, {
     onChange(s) {
+      if (!bar) return;
       qs('[data-bar-price]', bar).textContent = `— ${money(s.total, p.currency)}`;
       qs('[data-bar-note]', bar).textContent = s.type === 'subscription' ? `Subscribe and Save · ${s.frequency.label}` : `Qty ${s.quantity}`;
     },
@@ -104,9 +139,43 @@ export function render(main) {
       openCart();
     },
   });
+  if (!bar) return;
   qs('[data-bar-add]', bar).addEventListener('click', po.add);
   // Phone-only bar: appears once the main button has scrolled out of view above.
   new IntersectionObserver(([e]) => {
     bar.hidden = e.isIntersecting || e.boundingClientRect.top > 0;
   }).observe(qs('.po__add', main));
+}
+
+/** Share button: the device share sheet where there is one, otherwise copy the link. */
+function initShare(main, p) {
+  const note = qs('[data-share-note]', main);
+  qs('[data-share]', main).addEventListener('click', async () => {
+    const data = { title: `${p.title} — MUSHI`, url: location.href };
+    try {
+      if (navigator.share) return await navigator.share(data);
+      await navigator.clipboard.writeText(data.url);
+      note.textContent = 'Link copied.';
+    } catch (err) {
+      if (err?.name === 'AbortError') return; // share sheet closed
+      note.textContent = `Copy this link: ${data.url}`;
+    }
+    note.hidden = false;
+  });
+}
+
+/**
+ * Keeps the information column in view while the gallery scrolls. When the
+ * column is taller than the screen (an accordion is open) it sticks by its
+ * bottom edge instead, so no control is ever stuck out of reach.
+ */
+function stickInfo(info) {
+  const set = () => {
+    const header = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) * parseFloat(getComputedStyle(document.documentElement).fontSize) || 80;
+    const top = header + 16;
+    const room = window.innerHeight - top - 16;
+    info.style.setProperty('--stick', `${info.offsetHeight <= room ? top : window.innerHeight - info.offsetHeight - 16}px`);
+  };
+  new ResizeObserver(set).observe(info);
+  window.addEventListener('resize', set, { passive: true });
 }

@@ -10,7 +10,9 @@
       "The Figma comp shows $60.00 / $65.00 and SALE / POPULAR badges; those are not on the live site and are not used.",
       "Chocolate short descriptions are the first sentence of the live description; the live homepage only carries short copy for gummies.",
       "Four apparel products (merch) come from the Shop All comp, not the live catalog. They have no verified price, so price is null and they cannot be added to the cart. The comp's $60.00 is not used.",
-      "Floaty, Beach Ball and Fan are grouped as 'extras' per the Shop All comp; names and prices remain those of the live catalog."
+      "Floaty, Beach Ball and Fan are grouped as 'extras' per the Shop All comp; names and prices remain those of the live catalog.",
+      "`theme` is the background colour of each product's pack shot (sampled from the approved image); the product page fades from it.",
+      "Apparel `sizes` are placeholders until the real size run and stock are supplied."
     ]
   },
   "categories": [
@@ -76,7 +78,9 @@
       },
       "liveUrl": "https://mushiworld.com/products/cherry",
       "sourceUrl": "https://mushiworld.com/collections/all",
-      "verifiedAt": "2026-11-18"
+      "verifiedAt": "2026-11-18",
+      "theme": "#e2ccb8",
+      "tone": "cherry"
     },
     {
       "id": "9959619428661",
@@ -120,7 +124,9 @@
       },
       "liveUrl": "https://mushiworld.com/products/green-apple",
       "sourceUrl": "https://mushiworld.com/collections/all",
-      "verifiedAt": "2026-11-18"
+      "verifiedAt": "2026-11-18",
+      "theme": "#d3e0c6",
+      "tone": "apple"
     },
     {
       "id": "9959615594805",
@@ -164,7 +170,9 @@
       },
       "liveUrl": "https://mushiworld.com/products/peach-bliss",
       "sourceUrl": "https://mushiworld.com/collections/all",
-      "verifiedAt": "2026-11-18"
+      "verifiedAt": "2026-11-18",
+      "theme": "#e6c5a3",
+      "tone": "peach"
     },
     {
       "id": "10418628067637",
@@ -203,7 +211,9 @@
       },
       "liveUrl": "https://mushiworld.com/products/dark-chocolate",
       "sourceUrl": "https://mushiworld.com/collections/all",
-      "verifiedAt": "2026-11-18"
+      "verifiedAt": "2026-11-18",
+      "theme": "#e7ab9d",
+      "tone": "cherry"
     },
     {
       "id": "10418622005557",
@@ -242,7 +252,9 @@
       },
       "liveUrl": "https://mushiworld.com/products/milk-chocolate",
       "sourceUrl": "https://mushiworld.com/collections/all",
-      "verifiedAt": "2026-11-18"
+      "verifiedAt": "2026-11-18",
+      "theme": "#a7c5b1",
+      "tone": "cherry"
     },
     {
       "id": "10418684100917",
@@ -281,7 +293,9 @@
       },
       "liveUrl": "https://mushiworld.com/products/midnight-berry",
       "sourceUrl": "https://mushiworld.com/collections/all",
-      "verifiedAt": "2026-11-18"
+      "verifiedAt": "2026-11-18",
+      "theme": "#d1677d",
+      "tone": "cherry"
     },
     {
       "id": "10201401327925",
@@ -430,7 +444,30 @@
       "liveUrl": null,
       "sourceUrl": "design-source/reference/shop-all-comp.jpg",
       "verifiedAt": null,
-      "pending": "Not on the live catalog yet: price, sizes and description to be supplied"
+      "pending": "Not on the live catalog yet: price, sizes and description to be supplied",
+      "sizes": [
+        {
+          "label": "XS",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": false
+        }
+      ],
+      "sizesPending": "Placeholder sizes and availability (XL is marked unavailable to show the sold-out state) — replace with the real size run"
     },
     {
       "id": null,
@@ -462,7 +499,30 @@
       "liveUrl": null,
       "sourceUrl": "design-source/reference/shop-all-comp.jpg",
       "verifiedAt": null,
-      "pending": "Not on the live catalog yet: price, sizes and description to be supplied"
+      "pending": "Not on the live catalog yet: price, sizes and description to be supplied",
+      "sizes": [
+        {
+          "label": "XS",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": false
+        }
+      ],
+      "sizesPending": "Placeholder sizes and availability (XL is marked unavailable to show the sold-out state) — replace with the real size run"
     },
     {
       "id": null,
@@ -494,7 +554,30 @@
       "liveUrl": null,
       "sourceUrl": "design-source/reference/shop-all-comp.jpg",
       "verifiedAt": null,
-      "pending": "Not on the live catalog yet: price, sizes and description to be supplied"
+      "pending": "Not on the live catalog yet: price, sizes and description to be supplied",
+      "sizes": [
+        {
+          "label": "XS",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": false
+        }
+      ],
+      "sizesPending": "Placeholder sizes and availability (XL is marked unavailable to show the sold-out state) — replace with the real size run"
     },
     {
       "id": null,
@@ -526,7 +609,30 @@
       "liveUrl": null,
       "sourceUrl": "design-source/reference/shop-all-comp.jpg",
       "verifiedAt": null,
-      "pending": "Not on the live catalog yet: price, sizes and description to be supplied"
+      "pending": "Not on the live catalog yet: price, sizes and description to be supplied",
+      "sizes": [
+        {
+          "label": "XS",
+          "available": true
+        },
+        {
+          "label": "S",
+          "available": true
+        },
+        {
+          "label": "M",
+          "available": true
+        },
+        {
+          "label": "L",
+          "available": true
+        },
+        {
+          "label": "XL",
+          "available": false
+        }
+      ],
+      "sizesPending": "Placeholder sizes and availability (XL is marked unavailable to show the sold-out state) — replace with the real size run"
     }
   ]
 }
