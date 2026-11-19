@@ -23,6 +23,19 @@ const section = (title, body, open = false) => `
     <div class="accordion__body"><div class="accordion__inner">${body}</div></div>
   </details>`;
 
+/** Nutrition Facts as a real table, from the product's back-of-pack data. */
+const nutritionTable = (n) => `
+  <table class="nutrition">
+    <caption>Nutrition Facts</caption>
+    <tbody>
+      <tr><th scope="row">Servings per container</th><td>${esc(n.servingsPerContainer)}</td><td></td></tr>
+      <tr><th scope="row">Serving size</th><td>${esc(n.servingSize)}</td><td></td></tr>
+      <tr class="nutrition__cal"><th scope="row">Calories</th><td>${esc(n.calories)}</td><td></td></tr>
+      <tr class="nutrition__head"><td></td><th scope="col">Amount per serving</th><th scope="col">% Daily Value</th></tr>
+      ${n.rows.map((r) => `<tr><th scope="row"${r.indent ? ` class="nutrition__in${r.indent}"` : ''}>${esc(r.label)}</th><td>${esc(r.amount)}</td><td>${r.dv ? esc(r.dv) : ''}</td></tr>`).join('')}
+    </tbody>
+  </table>`;
+
 /** Description / How to use / What's inside / FAQs, from product data and the approved FAQ copy. */
 function accordions(p) {
   const consumable = ['gummies', 'chocolates'].includes(p.category);
@@ -38,14 +51,18 @@ function accordions(p) {
     p.perfectFor ? `<p><strong>Perfect for:</strong> ${esc(p.perfectFor)} ${reviewFlag('Benefit language copied from the live product page — needs compliance review')}</p>` : '',
     p.details ? `<p>${esc(p.details)}</p>` : '',
   ].join('');
-  const inside = p.category === 'gummies'
-    ? `${paras(faq('What’s inside?'))}${pending('Nutrition facts, serving size and allergen information will be added from the approved packaging panel.')}`
+  const pk = p.packaging;
+  const inside = pk
+    ? `${nutritionTable(pk.nutrition)}<p><strong>Ingredients:</strong> ${esc(pk.ingredients)}</p>`
     : pending('The ingredient list, nutrition facts and allergen information for this chocolate will be added from the approved packaging panel.');
+  const use = `${paras(faq('How much should I have?'))}${paras(faq('When should I enjoy it?'))}${pk
+    ? `<p><strong>Storage:</strong> ${esc(pk.storage)}</p><p><strong>Warning:</strong> ${esc(pk.warning)}</p>`
+    : pending('Storage guidance and warnings will be added from the approved packaging copy.')}`;
   const productFaqs = [faq('Where do you ship?'), faq('Can I subscribe?')].filter(Boolean);
   return `
     <div class="accordion pdp__accordion" data-accordion>
       ${description ? section('Description', description, true) : ''}
-      ${consumable ? section('How to use', `${paras(faq('How much should I have?'))}${paras(faq('When should I enjoy it?'))}${pending('Storage guidance will be added from the approved packaging copy.')}`) : ''}
+      ${consumable ? section('How to use', use) : ''}
       ${consumable ? section('What’s inside', `${inside}<p><a class="link" href="/pages/ingredients.html">See all ingredients</a></p>`) : ''}
       ${section('FAQs', `<div class="pdp__faqs">${faqMarkup(productFaqs)}</div><p><a class="link" href="/pages/faqs.html">Read all FAQs</a></p>`)}
     </div>`;
@@ -79,7 +96,7 @@ export function render(main) {
   }
   document.title = `${p.title} — MUSHI`;
   const consumable = ['gummies', 'chocolates'].includes(p.category);
-  const images = p.images.gallery.map((key, i) => ({ key, alt: i === 0 ? `${p.title}${consumable ? ' packaging' : ''}` : `${p.title}, ${consumable ? 'flavor close-up' : 'second view'}` }));
+  const images = p.images.gallery.map((key, i) => ({ key, alt: i === 0 ? `${p.title}${consumable ? ' packaging' : ''}` : `${p.title}, ${p.category === 'gummies' ? 'back of the pack with nutrition facts and ingredients' : p.category === 'chocolates' ? 'box open showing the chocolate' : 'second view'}` }));
   const raves = consumable ? testimonialsFor(p.handle) : [];
   const fillers = consumable && siteConfig.showReviewFlags ? Math.max(0, MIN_RAVES - raves.length) : 0;
   const more = getProducts(p.category).filter((r) => r.handle !== p.handle);

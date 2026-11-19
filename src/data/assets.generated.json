@@ -120,6 +120,126 @@
         }
       ]
     },
+    "product-cherry-back": {
+      "original": "cherry-back.png",
+      "usage": "Product page / Cherry back of pack",
+      "trimmed": false,
+      "width": 2160,
+      "height": 2160,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 800,
+          "webp": "/assets/img/product-cherry-back-800.webp",
+          "avif": "/assets/img/product-cherry-back-800.avif"
+        },
+        {
+          "width": 1400,
+          "webp": "/assets/img/product-cherry-back-1400.webp",
+          "avif": "/assets/img/product-cherry-back-1400.avif"
+        }
+      ]
+    },
+    "product-apple-back": {
+      "original": "apple-back.png",
+      "usage": "Product page / Green Apple back of pack",
+      "trimmed": false,
+      "width": 2160,
+      "height": 2160,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 800,
+          "webp": "/assets/img/product-apple-back-800.webp",
+          "avif": "/assets/img/product-apple-back-800.avif"
+        },
+        {
+          "width": 1400,
+          "webp": "/assets/img/product-apple-back-1400.webp",
+          "avif": "/assets/img/product-apple-back-1400.avif"
+        }
+      ]
+    },
+    "product-peach-back": {
+      "original": "peach-back.png",
+      "usage": "Product page / Peach Bliss back of pack",
+      "trimmed": false,
+      "width": 2160,
+      "height": 2160,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 800,
+          "webp": "/assets/img/product-peach-back-800.webp",
+          "avif": "/assets/img/product-peach-back-800.avif"
+        },
+        {
+          "width": 1400,
+          "webp": "/assets/img/product-peach-back-1400.webp",
+          "avif": "/assets/img/product-peach-back-1400.avif"
+        }
+      ]
+    },
+    "product-choco-dark-open": {
+      "original": "choco-dark-open.png",
+      "usage": "Product page / Dark Chocolate open box",
+      "trimmed": false,
+      "width": 2000,
+      "height": 2000,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 800,
+          "webp": "/assets/img/product-choco-dark-open-800.webp",
+          "avif": "/assets/img/product-choco-dark-open-800.avif"
+        },
+        {
+          "width": 1400,
+          "webp": "/assets/img/product-choco-dark-open-1400.webp",
+          "avif": "/assets/img/product-choco-dark-open-1400.avif"
+        }
+      ]
+    },
+    "product-choco-milk-open": {
+      "original": "choco-milk-open.png",
+      "usage": "Product page / Milk Chocolate open box",
+      "trimmed": false,
+      "width": 2000,
+      "height": 2000,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 800,
+          "webp": "/assets/img/product-choco-milk-open-800.webp",
+          "avif": "/assets/img/product-choco-milk-open-800.avif"
+        },
+        {
+          "width": 1400,
+          "webp": "/assets/img/product-choco-milk-open-1400.webp",
+          "avif": "/assets/img/product-choco-milk-open-1400.avif"
+        }
+      ]
+    },
+    "product-choco-berry-open": {
+      "original": "choco-berry-open.png",
+      "usage": "Product page / Midnight Berry open box",
+      "trimmed": false,
+      "width": 2000,
+      "height": 2000,
+      "aspectRatio": 1.0,
+      "variants": [
+        {
+          "width": 800,
+          "webp": "/assets/img/product-choco-berry-open-800.webp",
+          "avif": "/assets/img/product-choco-berry-open-800.avif"
+        },
+        {
+          "width": 1400,
+          "webp": "/assets/img/product-choco-berry-open-1400.webp",
+          "avif": "/assets/img/product-choco-berry-open-1400.avif"
+        }
+      ]
+    },
     "product-choco-dark-pack": {
       "original": "choco-dark1.jpg",
       "usage": "Chocolates carousel / Dark Chocolate primary",
@@ -1243,14 +1363,6 @@
       ],
       "poster": "/assets/video/about-ferris-poster.webp"
     },
-    "coaching": {
-      "original": "mushi-coaching-video-justin.mp4 (H.264 720x1280, 33.6s, with audio)",
-      "usage": "Coaching section video (9:16)",
-      "sources": [
-        "/assets/video/coaching.mp4"
-      ],
-      "poster": "/assets/video/coaching-poster.webp"
-    },
     "about-chocolate": {
       "original": "chocolate-video.mov (H.264 640x360, 35.1s, 9.8 MB; first 8s, cropped 640x220, no audio)",
       "usage": "About / inline video before FLAVORS",
@@ -1258,6 +1370,14 @@
         "/assets/video/about-chocolate.mp4"
       ],
       "poster": "/assets/video/about-chocolate-poster.webp"
+    },
+    "coaching": {
+      "original": "mushi-coaching-video-justin.mp4 (H.264 720x1280, 33.6s, with audio)",
+      "usage": "Coaching section video (9:16)",
+      "sources": [
+        "/assets/video/coaching.mp4"
+      ],
+      "poster": "/assets/video/coaching-poster.webp"
     }
   }
 }

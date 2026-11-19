@@ -1,11 +1,12 @@
-import { beachMarkup } from '../sections/beach.js';
+import { beachMarkup, initBeachRipple } from '../sections/beach.js';
 import { qsa, reducedMotion } from '../utils/dom.js';
 import { whenAgeConfirmed } from '../components/age-gate.js';
 
 // The manifesto markup lives in pages/about.html. This adds the shared beach and
 // starts the inline video; scroll-fill, parallax and rise are started by initSite() (src/app.js).
 export function render(main) {
-  main.insertAdjacentHTML('beforeend', beachMarkup({ deep: true }));
+  main.insertAdjacentHTML('beforeend', beachMarkup({ deep: true, ripple: true }));
+  initBeachRipple(main);
   initInlineVideos(main);
 }
 

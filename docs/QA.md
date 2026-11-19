@@ -177,3 +177,10 @@ One template (`src/pages/product.js`) for every product, at `/products/<handle>`
 - The information column stays in view beside the gallery when it fits the screen; when it is taller (Description open) it scrolls normally, so nothing is cut off.
 
 Checked in Chrome with `audit/pdp.mjs` (all pass), console clean, no overflow at 375–1920. Open items: apparel sizes, stock and prices are placeholders; apparel source photos are 678px, so they are soft at this size; Safari, Firefox and devices not run.
+
+## Round 10 — Pack backs, nutrition, beach ripple
+
+- Product pages: the second gallery image is now the back of the pack (gummies) or the open box (chocolates). Cards on the shop and homepage keep their fruit hover image.
+- Gummies: nutrition facts, ingredients, storage line and warning are transcribed from the supplied back-of-pack artwork into `products.json` (`packaging`) and shown under What's inside / How to use. Cherry lists Elderberry Juice (Color); Green Apple and Peach Bliss list Color (Vegetable and Fruit Juice). Chocolates still have no panel, so theirs stays pending.
+- About: water ripple over the sea in the beach photo (`initBeachRipple` in `src/sections/beach.js`). Screens 700px and wider only, only while on screen, off with reduced motion. Measured about 54 frames a second in Chrome at 1440px. Not measured in Safari, where SVG filters are slower.
+- `audit/pdp.mjs`: 39 checks pass, console clean.

@@ -12,7 +12,8 @@
       "Four apparel products (merch) come from the Shop All comp, not the live catalog. They have no verified price, so price is null and they cannot be added to the cart. The comp's $60.00 is not used.",
       "Floaty, Beach Ball and Fan are grouped as 'extras' per the Shop All comp; names and prices remain those of the live catalog.",
       "`theme` is the background colour of each product's pack shot (sampled from the approved image); the product page fades from it.",
-      "Apparel `sizes` are placeholders until the real size run and stock are supplied."
+      "Apparel `sizes` are placeholders until the real size run and stock are supplied.",
+      "Gummy `packaging` (nutrition facts, ingredients, storage, warning) is transcribed from the back-of-pack artwork supplied 2026-11-18. Chocolates have no panel yet."
     ]
   },
   "categories": [
@@ -73,14 +74,59 @@
         "hover": "product-cherry-hover",
         "gallery": [
           "product-cherry-pack",
-          "product-cherry-hover"
+          "product-cherry-back"
         ]
       },
       "liveUrl": "https://mushiworld.com/products/cherry",
       "sourceUrl": "https://mushiworld.com/collections/all",
       "verifiedAt": "2026-11-18",
       "theme": "#e2ccb8",
-      "tone": "cherry"
+      "tone": "cherry",
+      "packaging": {
+        "source": "Back-of-pack artwork supplied by the client, 2026-11-18",
+        "nutrition": {
+          "servingsPerContainer": "5",
+          "servingSize": "1 Gummy (8g)",
+          "calories": "20",
+          "rows": [
+            {
+              "label": "Total Fat",
+              "amount": "0g",
+              "dv": "0%"
+            },
+            {
+              "label": "Sodium",
+              "amount": "0g",
+              "dv": "0%"
+            },
+            {
+              "label": "Total Carbohydrate",
+              "amount": "5g",
+              "dv": "2%"
+            },
+            {
+              "label": "Total Sugars",
+              "amount": "4g",
+              "dv": null,
+              "indent": 1
+            },
+            {
+              "label": "Includes 4g Added Sugars",
+              "amount": "",
+              "dv": "8%",
+              "indent": 2
+            },
+            {
+              "label": "Protein",
+              "amount": "0g",
+              "dv": null
+            }
+          ]
+        },
+        "ingredients": "Organic Tapioca Syrup, Organic Cane Sugar, Water, Pectin; Less than 2% of: Natural Flavor, Elderberry Juice (Color), Citric Acid, Sodium Citrate, Organic Mushroom Blend.",
+        "storage": "Store in a dry, cool environment.",
+        "warning": "Keep out of reach of children. Use while pregnant or breastfeeding may be harmful. Consult with your healthcare provider before use. May cause drowsiness. Do not operate a vehicle or heavy machinery while using this product. Use responsibly."
+      }
     },
     {
       "id": "9959619428661",
@@ -119,14 +165,59 @@
         "hover": "product-apple-hover",
         "gallery": [
           "product-apple-pack",
-          "product-apple-hover"
+          "product-apple-back"
         ]
       },
       "liveUrl": "https://mushiworld.com/products/green-apple",
       "sourceUrl": "https://mushiworld.com/collections/all",
       "verifiedAt": "2026-11-18",
       "theme": "#d3e0c6",
-      "tone": "apple"
+      "tone": "apple",
+      "packaging": {
+        "source": "Back-of-pack artwork supplied by the client, 2026-11-18",
+        "nutrition": {
+          "servingsPerContainer": "5",
+          "servingSize": "1 Gummy (8g)",
+          "calories": "20",
+          "rows": [
+            {
+              "label": "Total Fat",
+              "amount": "0g",
+              "dv": "0%"
+            },
+            {
+              "label": "Sodium",
+              "amount": "0g",
+              "dv": "0%"
+            },
+            {
+              "label": "Total Carbohydrate",
+              "amount": "5g",
+              "dv": "2%"
+            },
+            {
+              "label": "Total Sugars",
+              "amount": "4g",
+              "dv": null,
+              "indent": 1
+            },
+            {
+              "label": "Includes 4g Added Sugars",
+              "amount": "",
+              "dv": "8%",
+              "indent": 2
+            },
+            {
+              "label": "Protein",
+              "amount": "0g",
+              "dv": null
+            }
+          ]
+        },
+        "ingredients": "Organic Tapioca Syrup, Organic Cane Sugar, Water, Pectin; Less than 2% of: Natural Flavor, Color (Vegetable and Fruit Juice), Citric Acid, Sodium Citrate, Organic Mushroom Blend.",
+        "storage": "Store in a dry, cool environment.",
+        "warning": "Keep out of reach of children. Use while pregnant or breastfeeding may be harmful. Consult with your healthcare provider before use. May cause drowsiness. Do not operate a vehicle or heavy machinery while using this product. Use responsibly."
+      }
     },
     {
       "id": "9959615594805",
@@ -165,14 +256,59 @@
         "hover": "product-peach-hover",
         "gallery": [
           "product-peach-pack",
-          "product-peach-hover"
+          "product-peach-back"
         ]
       },
       "liveUrl": "https://mushiworld.com/products/peach-bliss",
       "sourceUrl": "https://mushiworld.com/collections/all",
       "verifiedAt": "2026-11-18",
       "theme": "#e6c5a3",
-      "tone": "peach"
+      "tone": "peach",
+      "packaging": {
+        "source": "Back-of-pack artwork supplied by the client, 2026-11-18",
+        "nutrition": {
+          "servingsPerContainer": "5",
+          "servingSize": "1 Gummy (8g)",
+          "calories": "20",
+          "rows": [
+            {
+              "label": "Total Fat",
+              "amount": "0g",
+              "dv": "0%"
+            },
+            {
+              "label": "Sodium",
+              "amount": "0g",
+              "dv": "0%"
+            },
+            {
+              "label": "Total Carbohydrate",
+              "amount": "5g",
+              "dv": "2%"
+            },
+            {
+              "label": "Total Sugars",
+              "amount": "4g",
+              "dv": null,
+              "indent": 1
+            },
+            {
+              "label": "Includes 4g Added Sugars",
+              "amount": "",
+              "dv": "8%",
+              "indent": 2
+            },
+            {
+              "label": "Protein",
+              "amount": "0g",
+              "dv": null
+            }
+          ]
+        },
+        "ingredients": "Organic Tapioca Syrup, Organic Cane Sugar, Water, Pectin; Less than 2% of: Natural Flavor, Color (Vegetable and Fruit Juice), Citric Acid, Sodium Citrate, Organic Mushroom Blend.",
+        "storage": "Store in a dry, cool environment.",
+        "warning": "Keep out of reach of children. Use while pregnant or breastfeeding may be harmful. Consult with your healthcare provider before use. May cause drowsiness. Do not operate a vehicle or heavy machinery while using this product. Use responsibly."
+      }
     },
     {
       "id": "10418628067637",
@@ -206,7 +342,7 @@
         "hover": "product-choco-dark-hover",
         "gallery": [
           "product-choco-dark-pack",
-          "product-choco-dark-hover"
+          "product-choco-dark-open"
         ]
       },
       "liveUrl": "https://mushiworld.com/products/dark-chocolate",
@@ -247,7 +383,7 @@
         "hover": "product-choco-milk-hover",
         "gallery": [
           "product-choco-milk-pack",
-          "product-choco-milk-hover"
+          "product-choco-milk-open"
         ]
       },
       "liveUrl": "https://mushiworld.com/products/milk-chocolate",
@@ -288,7 +424,7 @@
         "hover": "product-choco-berry-hover",
         "gallery": [
           "product-choco-berry-pack",
-          "product-choco-berry-hover"
+          "product-choco-berry-open"
         ]
       },
       "liveUrl": "https://mushiworld.com/products/midnight-berry",
