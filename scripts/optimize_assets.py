@@ -54,7 +54,6 @@ RASTER = {
     "contact-beach": ("sunset-beach.png", [1250, 2500], "Contact page bottom background"),
     "about-palms": ("palm-trees.png", [1400, 2600], "About / sky and palm backdrop"),
     "about-crowd": ("club.jpg", [514], "About / inline image after LIFE"),
-    "about-chocolate": ("mushi-choco-milk-2.png", [640, 1070], "About / inline image before FLAVORS"),
     "about-cherry": ("cherry-2.png", [358], "About / inline image after FLAVORS"),
     "about-picnic": ("picnic.png", [646], "About / inline image after EVERYDAY"),
     "about-peach-pack": ("mushi-peach-product.png", [378], "About / Peach Bliss pack in WE ARE MUSHI"),
@@ -253,6 +252,23 @@ def main():
             "original": "ferris-wheel-video.mp4 (H.264 1920x1080, 15.2s, 34.8 MB; first 8s, 498x300, no audio)",
             "usage": "About / inline video after MOMENTS INTO",
             "sources": ["/assets/video/about-ferris.mp4"], "poster": "/assets/video/about-ferris-poster.webp",
+        }
+
+    choc = os.path.join(SRC, "chocolate-video.mov")
+    if os.path.exists(choc):
+        # About page inline frame before FLAVORS: centre band of the pour, first 8s, silent.
+        vdir = os.path.join(OUT, "video")
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-t", "8", "-i", choc, "-vf", "crop=640:220:0:80,fps=25", "-c:v", "libx264", "-crf", "27",
+                        "-preset", "slow", "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-an",
+                        os.path.join(vdir, "about-chocolate.mp4")], check=True)
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "1", "-i", choc, "-vf", "crop=640:220:0:80", "-frames:v", "1",
+                        "-update", "1", os.path.join(vdir, "_c.png")], check=True)
+        Image.open(os.path.join(vdir, "_c.png")).convert("RGB").save(os.path.join(vdir, "about-chocolate-poster.webp"), "WEBP", quality=76, method=6)
+        os.remove(os.path.join(vdir, "_c.png"))
+        manifest["video"]["about-chocolate"] = {
+            "original": "chocolate-video.mov (H.264 640x360, 35.1s, 9.8 MB; first 8s, cropped 640x220, no audio)",
+            "usage": "About / inline video before FLAVORS",
+            "sources": ["/assets/video/about-chocolate.mp4"], "poster": "/assets/video/about-chocolate-poster.webp",
         }
 
     coach = os.path.join(SRC, "mushi-coaching-video-justin.mp4")

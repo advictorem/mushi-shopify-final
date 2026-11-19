@@ -635,26 +635,6 @@
         }
       ]
     },
-    "about-chocolate": {
-      "original": "mushi-choco-milk-2.png",
-      "usage": "About / inline image before FLAVORS",
-      "trimmed": false,
-      "width": 1070,
-      "height": 1070,
-      "aspectRatio": 1.0,
-      "variants": [
-        {
-          "width": 640,
-          "webp": "/assets/img/about-chocolate-640.webp",
-          "avif": "/assets/img/about-chocolate-640.avif"
-        },
-        {
-          "width": 1070,
-          "webp": "/assets/img/about-chocolate-1070.webp",
-          "avif": "/assets/img/about-chocolate-1070.avif"
-        }
-      ]
-    },
     "about-cherry": {
       "original": "cherry-2.png",
       "usage": "About / inline image after FLAVORS",
@@ -1270,6 +1250,14 @@
         "/assets/video/coaching.mp4"
       ],
       "poster": "/assets/video/coaching-poster.webp"
+    },
+    "about-chocolate": {
+      "original": "chocolate-video.mov (H.264 640x360, 35.1s, 9.8 MB; first 8s, cropped 640x220, no audio)",
+      "usage": "About / inline video before FLAVORS",
+      "sources": [
+        "/assets/video/about-chocolate.mp4"
+      ],
+      "poster": "/assets/video/about-chocolate-poster.webp"
     }
   }
 }
