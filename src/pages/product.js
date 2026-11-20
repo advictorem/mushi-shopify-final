@@ -109,7 +109,7 @@ export function render(main) {
   main.innerHTML = `
     <section class="pdp${consumable ? '' : ' pdp--merch'}" data-pdp>
       <div class="pdp__gallery">
-        ${images.length ? galleryMarkup(images, consumable ? '(min-width: 900px) 40vw, 100vw' : '(min-width: 900px) 62vw, 100vw') : `<div class="card__art card__art--type pdp__type"><span>${esc(p.title.replace('Exclusive MUSHI ', ''))}</span></div><p class="pdp__missing">${reviewFlag('No approved product image in Mushi Exports')}</p>`}
+        ${images.length ? galleryMarkup(images, '(min-width: 900px) 60vw, 100vw') : `<div class="card__art card__art--type pdp__type"><span>${esc(p.title.replace('Exclusive MUSHI ', ''))}</span></div><p class="pdp__missing">${reviewFlag('No approved product image in Mushi Exports')}</p>`}
       </div>
       <div class="pdp__info" data-pdp-info>
         <div class="pdp__card">

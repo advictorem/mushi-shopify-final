@@ -220,19 +220,15 @@
 .page--white {
   background: var(--c-white);
 }
+/* One layout for every product: full width, with the photos about 1.75x the
+   information column. */
 .pdp {
-  max-width: calc(68rem + 2 * var(--gutter));
   margin: 0 auto;
   padding: clamp(1.25rem, 3vw, 2.5rem) var(--gutter) 0;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
   gap: clamp(1.5rem, 3.5vw, 3rem);
   align-items: start;
-}
-/* Merch: photos about three times the area of the gummy and chocolate shots. */
-.pdp--merch {
-  max-width: none;
-  grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
 }
 /* Stacked gallery on the left; the information column stays in view beside it (--stick is set in product.js). */
 .pdp__info {
