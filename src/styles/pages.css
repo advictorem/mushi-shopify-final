@@ -248,16 +248,11 @@
   padding: 0;
   aspect-ratio: 1;
   overflow: hidden;
-  border-radius: var(--radius-m);
-  /* No lighter placeholder behind the photo: with one, the rounded clip's
-     antialiased corner shows it as a pale 1px arc against the page. */
+  /* Square corners on every product photo: a rounded clip over a photo leaves a
+     pale antialiased arc at the corners on some displays. */
+  border-radius: 0;
   background: transparent;
   cursor: zoom-in;
-}
-/* The photo carries the same corner as the frame that clips it. */
-.gallery__item picture,
-.gallery__item img {
-  border-radius: inherit;
 }
 .gallery__item picture {
   display: block;
@@ -279,7 +274,7 @@
   display: block;
   width: min(86vw, 86vh, 60rem);
   height: auto;
-  border-radius: var(--radius-m);
+  border-radius: 0;
 }
 .pdp__card {
   position: relative;
