@@ -235,9 +235,6 @@
   .showcase__arrow {
     display: none;
   }
-  .showcase__dots {
-    display: flex;
-  }
 }
 
 /* ---------- 7.5 Lifestyle accordion ---------- */
@@ -929,8 +926,9 @@
     transform: none;
   }
   .hero__title {
-    inset: auto 0 22% 0;
-    transform: none;
+    /* over her mouth (58% down the frame) */
+    inset: 58% 0 auto;
+    transform: translateY(-50%);
   }
   .hero__badge {
     width: 5rem;

@@ -1217,3 +1217,10 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* Phones: carousels are swiped, so the pagination dots are hidden. */
+@media (max-width: 899px) {
+  .carousel__dots {
+    display: none;
+  }
+}

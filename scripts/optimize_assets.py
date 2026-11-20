@@ -221,6 +221,13 @@ def main():
             small = im.resize((960, round(im.height * 960 / im.width)), Image.LANCZOS)
             small.save(os.path.join(vdir, name + "-960.webp"), "WEBP", quality=72, method=6)
             os.remove(os.path.join(vdir, tmp))
+        # Loading fallback: the supplied still (Mushi-hero-lips.jpg), framed so the mouth sits where it does in the video.
+        still = os.path.join(SRC, "Mushi-hero-lips.jpg")
+        if os.path.exists(still):
+            ph = Image.open(still).convert("RGB")
+            ph = ph.resize((2285, round(ph.height * 2285 / ph.width)), Image.LANCZOS).crop((312, 4, 2232, 1084))
+            ph.save(os.path.join(vdir, "hero-poster.webp"), "WEBP", quality=80, method=6)
+            ph.resize((960, 540), Image.LANCZOS).save(os.path.join(vdir, "hero-poster-960.webp"), "WEBP", quality=80, method=6)
         manifest["video"]["hero"] = {
             "original": "mushi-hero-video-gummie.mp4 (HEVC 1920x1080, 9.04s)",
             "usage": "Hero background video",

@@ -58,7 +58,7 @@ export const faqs = [
   {
     q: 'What is Mushi?',
     a: [
-      'Mushi creates Feel-Good Indulgences—gummies and chocolates that bring together thoughtful ingredients, craveable flavor and an experience designed to make everyday moments feel a little more special.',
+      'Mushi creates Feel⁠-⁠Good Indulgences—gummies and chocolates that bring together thoughtful ingredients, craveable flavor and an experience designed to make everyday moments feel a little more special.',
       'We believe feeling good should feel less like a wellness routine and more like something you actually look forward to.',
     ],
     source: 'mushi-wireframes/faq.html #01',

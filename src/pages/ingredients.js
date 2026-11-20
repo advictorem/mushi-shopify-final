@@ -29,7 +29,7 @@ export function render(main) {
       <div class="page__media">${picture('ingredients-mushroom-blend', { alt: 'Mushrooms growing on a mossy log in soft forest light', sizes: '(min-width: 900px) 44vw, 92vw' })}</div>
       <div class="prose">
         <h2 id="ing-blend">Organic mushroom blend ${flag}</h2>
-        <p>Our blend is built around the qualities people actually look for in a modern feel-good ritual. On one end, the things that sharpen a day — focus, memory, mental clarity and the kind of cognitive performance that holds up past the first hour. Underneath it, the quieter work: immune support and antioxidant support.</p>
+        <p>Our blend is built around the qualities people actually look for in a modern feel⁠-⁠good ritual. On one end, the things that sharpen a day — focus, memory, mental clarity and the kind of cognitive performance that holds up past the first hour. Underneath it, the quieter work: immune support and antioxidant support.</p>
         <p>Then there’s how the day actually feels. Natural energy and stamina that build steadily instead of spiking, with enough balance and relaxation left over for the evening.</p>
         <p>Rather than relying on a single ingredient or a single effect, we bring complementary mushrooms together into one intentionally developed formula.</p>
       </div>

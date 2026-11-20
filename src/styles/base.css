@@ -111,6 +111,7 @@ button {
 }
 
 .marker {
+  white-space: nowrap; /* "feel-good" never splits at the hyphen */
   font-family: var(--font-marker);
   font-style: normal;
   font-weight: 400;
