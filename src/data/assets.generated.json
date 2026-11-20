@@ -1,11 +1,11 @@
 {
   "images": {
     "product-cherry-pack": {
-      "original": "CHERRY1.jpg",
+      "original": "CHERRY1.png",
       "usage": "Gummies carousel / Cherry primary",
       "trimmed": false,
-      "width": 1352,
-      "height": 1352,
+      "width": 2160,
+      "height": 2160,
       "aspectRatio": 1.0,
       "variants": [
         {
@@ -17,6 +17,11 @@
           "width": 900,
           "webp": "/assets/img/product-cherry-pack-900.webp",
           "avif": "/assets/img/product-cherry-pack-900.avif"
+        },
+        {
+          "width": 1600,
+          "webp": "/assets/img/product-cherry-pack-1600.webp",
+          "avif": "/assets/img/product-cherry-pack-1600.avif"
         }
       ]
     },
@@ -41,11 +46,11 @@
       ]
     },
     "product-apple-pack": {
-      "original": "APPLE1.jpg",
+      "original": "APPLE1.png",
       "usage": "Gummies carousel / Green Apple primary",
       "trimmed": false,
-      "width": 1352,
-      "height": 1352,
+      "width": 2160,
+      "height": 2160,
       "aspectRatio": 1.0,
       "variants": [
         {
@@ -57,6 +62,11 @@
           "width": 900,
           "webp": "/assets/img/product-apple-pack-900.webp",
           "avif": "/assets/img/product-apple-pack-900.avif"
+        },
+        {
+          "width": 1600,
+          "webp": "/assets/img/product-apple-pack-1600.webp",
+          "avif": "/assets/img/product-apple-pack-1600.avif"
         }
       ]
     },
@@ -81,11 +91,11 @@
       ]
     },
     "product-peach-pack": {
-      "original": "PEACH1.jpg",
+      "original": "PEACH1.png",
       "usage": "Gummies carousel / Peach Bliss primary",
       "trimmed": false,
-      "width": 1352,
-      "height": 1352,
+      "width": 2160,
+      "height": 2160,
       "aspectRatio": 1.0,
       "variants": [
         {
@@ -97,6 +107,11 @@
           "width": 900,
           "webp": "/assets/img/product-peach-pack-900.webp",
           "avif": "/assets/img/product-peach-pack-900.avif"
+        },
+        {
+          "width": 1600,
+          "webp": "/assets/img/product-peach-pack-1600.webp",
+          "avif": "/assets/img/product-peach-pack-1600.avif"
         }
       ]
     },
@@ -244,8 +259,8 @@
       "original": "choco-dark1.jpg",
       "usage": "Chocolates carousel / Dark Chocolate primary",
       "trimmed": false,
-      "width": 1352,
-      "height": 1352,
+      "width": 2000,
+      "height": 2000,
       "aspectRatio": 1.0,
       "variants": [
         {
@@ -257,6 +272,11 @@
           "width": 900,
           "webp": "/assets/img/product-choco-dark-pack-900.webp",
           "avif": "/assets/img/product-choco-dark-pack-900.avif"
+        },
+        {
+          "width": 1600,
+          "webp": "/assets/img/product-choco-dark-pack-1600.webp",
+          "avif": "/assets/img/product-choco-dark-pack-1600.avif"
         }
       ]
     },
@@ -284,8 +304,8 @@
       "original": "choco-milk1.jpg",
       "usage": "Chocolates carousel / Milk Chocolate primary",
       "trimmed": false,
-      "width": 1352,
-      "height": 1352,
+      "width": 2000,
+      "height": 2000,
       "aspectRatio": 1.0,
       "variants": [
         {
@@ -297,6 +317,11 @@
           "width": 900,
           "webp": "/assets/img/product-choco-milk-pack-900.webp",
           "avif": "/assets/img/product-choco-milk-pack-900.avif"
+        },
+        {
+          "width": 1600,
+          "webp": "/assets/img/product-choco-milk-pack-1600.webp",
+          "avif": "/assets/img/product-choco-milk-pack-1600.avif"
         }
       ]
     },
@@ -324,8 +349,8 @@
       "original": "choco-berry1.jpg",
       "usage": "Chocolates carousel / Midnight Berry primary",
       "trimmed": false,
-      "width": 1352,
-      "height": 1352,
+      "width": 2000,
+      "height": 2000,
       "aspectRatio": 1.0,
       "variants": [
         {
@@ -337,6 +362,11 @@
           "width": 900,
           "webp": "/assets/img/product-choco-berry-pack-900.webp",
           "avif": "/assets/img/product-choco-berry-pack-900.avif"
+        },
+        {
+          "width": 1600,
+          "webp": "/assets/img/product-choco-berry-pack-1600.webp",
+          "avif": "/assets/img/product-choco-berry-pack-1600.avif"
         }
       ]
     },
