@@ -369,6 +369,10 @@
 .card__media picture {
   position: absolute;
   inset: 0;
+  border-radius: inherit;
+}
+.card__img {
+  border-radius: inherit;
 }
 .card__img {
   width: 100%;

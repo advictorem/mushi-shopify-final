@@ -249,8 +249,15 @@
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: var(--radius-m);
-  background: var(--c-card);
+  /* No lighter placeholder behind the photo: with one, the rounded clip's
+     antialiased corner shows it as a pale 1px arc against the page. */
+  background: transparent;
   cursor: zoom-in;
+}
+/* The photo carries the same corner as the frame that clips it. */
+.gallery__item picture,
+.gallery__item img {
+  border-radius: inherit;
 }
 .gallery__item picture {
   display: block;
