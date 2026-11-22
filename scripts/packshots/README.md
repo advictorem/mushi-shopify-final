@@ -1,56 +1,34 @@
-# Multi-pack studio images
+# Multi-pack studio images (approved 22 Nov 2026)
 
-Composites for the 5-pack, 10-pack and mixed-box product images. Every pouch is
-the original MUSHI render, cut out at full resolution: no packaging pixel is
-generated, so logos, flavour names, illustrations and badge text stay exact.
-The layout and lighting follow the UNREAL Snacks variety-pack references:
-tiered rows, controlled overlap, one key light, grounded shadows.
+Pack-size images for the product pages: 5 pack and 10 pack for every gummy and
+chocolate, plus the Custom Gummies 5 pack. Every pouch and box is placed as
+supplied, only scaled; no packaging pixel is generated or repainted.
 
-## Sources
+| Image | Layout |
+|---|---|
+| `<flavor>-5pack` (gummies) | UNREAL-style: two pouches behind and higher, three in front, centre closest |
+| `gummies-custom-5pack` | the same layout, mixed flavors |
+| `cherry-10pack`, `peach-10pack` | the real box of ten with its "10 Pack" end panel to camera, one pouch in front |
+| `apple-10pack` | the real box (only a top-down photo exists, so no "10 Pack" panel yet) with one pouch |
+| `<flavor>-5pack`, `-10pack` (chocolates) | 4 or 9 boxes lying in a loose stack, one box standing in front |
 
-| Asset | From | Used for |
-|---|---|---|
-| `design-source/exports/CHERRY1.png`, `APPLE1.png`, `PEACH1.png` | 2160px hero renders (supplied 20 Nov) | every gummy pouch |
-| `MUSHI_EXPORTS.zip` → `gummies.png`, `mushi-bundle.png` | group renders | reviewed, not used: the bundle render's badge text is garbled |
+## Sources (`design-source/packshots/src`)
 
-The zip has no individual transparent pouch files, so the cut-outs are made here.
+- `<flavor>-pack.png`: the supplied transparent pouch and chocolate-box PNGs.
+- `cherry-10box-cut.png`: box from photo DSC07326, colour matched to the front photo DSC07313
+  (the end-panel photo has a warm cast that made the pink box read peach).
+- `peach-10box-matched.png`: box from DSC07465, colour and exposure matched to DSC07474.
+- `apple-10box-cut.png`: box from DSC07377.
 
-## Pipeline
+## Scripts
 
-1. `silhouette.py` — one pouch outline, measured on the Cherry render and shared by
-   all three gummy renders (same 3D model and camera; edges match to the pixel).
-   The bottom edge is traced along the dark contact line, not taken from the model mask.
-2. `gmask.py` — the real gummy pair in front of each pouch.
-3. `compose.py OUT [name ...]` — seamless sweep backdrop, then pouches back to front with:
-   a soft shadow cast left onto the wall and onto any pouch behind, a floor shadow and a
-   contact line for pouches on the floor, slight per-pouch rotation, depth shading for
-   rear rows, and a light film grain over the whole frame.
+- `boxcut.py` (rembg) and `boxcut2.py` (convex hull, for pale boxes on white) cut boxes out of photos.
+- `boxcolor.py CUT REF_PHOTO x0,y0,x1,y1 OUT [full]` matches cardboard colour to a reference photo.
+- `compose2.py OUT [name ...]` builds the frames: seamless sweep, then items back to front with a
+  floor shadow laid back from each silhouette, a soft shadow thrown back-left, occlusion shading on
+  the items behind, and a contact shadow that follows each item's real bottom edge. Chocolate boxes
+  lying flat are built from the render's own side panel and cover, perspective-corrected.
 
-Masks live in `design-source/packshots/masks`, cut-outs in `.../cutouts`, 2400px masters in
-`.../masters`. Web renditions (800/1600, WebP + AVIF) go to `public/assets/img`.
-Re-running `compose.py` reproduces the masters exactly.
-
-## Quality checks (run on every render)
-
-- Exact package count per image.
-- Share of each pouch left visible after overlaps (minimum 47% so far).
-- The gummies in the renders hide each pouch's bottom-right corner. Pouches drawn
-  without their gummies keep that corner hidden behind a pouch in front; the audit
-  measures exposed corner pixels and must report 0.
-
-## Known limits
-
-- The renders have real gummies in front of every pouch, and no gummy-free version
-  exists, so each front-row pouch keeps its gummy pair as photographed. Flipping or
-  rotating the pairs was tested and does not cover the corner. Transparent, gummy-free
-  pouch renders from the designer would remove this constraint.
-- Green Apple has no clean corner in any supplied render, so in mixed boxes it rides the
-  back row.
-
-## Higgsfield
-
-The connected Higgsfield integration can read the account (2,207 credits, Ultra plan)
-but cannot generate or upload. Generation would have to run through the browser, and
-any model redraws package text and logos, so the brief's compositing route is used for
-packaging. Higgsfield remains an option for scene plates (backdrop, surfaces, light)
-behind these genuine cut-outs.
+Approved frames (2048px JPG) are in `design-source/packshots/final`. Web renditions
+(480/900/1600, AVIF + WebP) are in `public/assets/img/packshots` and, in the theme,
+`assets/mushi-packshot-<name>-<w>.<avif|webp>`.
