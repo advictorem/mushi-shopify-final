@@ -1,0 +1,31 @@
+{
+  "mushi-cherry-5pack-hero": {
+    "file": "mushi-cherry-5pack-hero.png",
+    "packages": 5,
+    "flavours": {
+      "cherry1": 5
+    },
+    "min_visible_share": 0.57,
+    "exposed_corner_px": 0
+  },
+  "mushi-cherry-10pack-hero": {
+    "file": "mushi-cherry-10pack-hero.png",
+    "packages": 10,
+    "flavours": {
+      "cherry1": 10
+    },
+    "min_visible_share": 0.47,
+    "exposed_corner_px": 0
+  },
+  "mushi-gummies-custom-5pack": {
+    "file": "mushi-gummies-custom-5pack.png",
+    "packages": 5,
+    "flavours": {
+      "apple1": 2,
+      "cherry1": 2,
+      "peach1": 1
+    },
+    "min_visible_share": 0.57,
+    "exposed_corner_px": 0
+  }
+}
