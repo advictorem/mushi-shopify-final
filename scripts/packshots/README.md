@@ -1,4 +1,11 @@
-# Multi-pack studio images (approved 22 Nov 2026)
+# Multi-pack images
+
+**25 Nov 2026:** Cherry, Green Apple, Peach and Milk Chocolate 5 and 10 pack images are now
+supplied photography (`design-source/packshots/photography`, Cherry 5 pack padded to square).
+The composites below remain only for Dark Chocolate, Midnight Berry and the Custom Gummies 5 pack,
+until their photography arrives.
+
+## Composites (approved 22 Nov 2026)
 
 Pack-size images for the product pages: 5 pack and 10 pack for every gummy and
 chocolate, plus the Custom Gummies 5 pack. Every pouch and box is placed as
